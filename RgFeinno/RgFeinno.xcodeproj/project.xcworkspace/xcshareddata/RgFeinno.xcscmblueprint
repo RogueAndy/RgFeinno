@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1E7F410E0D29A4969A62D5471287DD2BAFB50F40",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1E7F410E0D29A4969A62D5471287DD2BAFB50F40" : 0,
+    "5245F1024032FC2351C50317B2882911065AEF65" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3E050989-71CC-4517-8CCA-F4211895D82F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1E7F410E0D29A4969A62D5471287DD2BAFB50F40" : "RgFeinno\/",
+    "5245F1024032FC2351C50317B2882911065AEF65" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RgFeinno",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RgFeinno\/RgFeinno.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/RogueAndy\/RgFeinno.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1E7F410E0D29A4969A62D5471287DD2BAFB50F40"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/zlj520cyh\/git_nongxingtong.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5245F1024032FC2351C50317B2882911065AEF65"
+    }
+  ]
+}
