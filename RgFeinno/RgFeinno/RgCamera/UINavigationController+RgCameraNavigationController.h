@@ -1,5 +1,5 @@
 //
-//  UIViewController+RgCameraViewController.h
+//  UINavigationController+RgCameraNavigationController.h
 //  RgFeinno
 //
 //  Created by Rogue Andy on 16/8/29.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (RgCameraViewController)
+@interface UINavigationController (RgCameraNavigationController)
 
 - (void)setCameraBarWithFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor;
 

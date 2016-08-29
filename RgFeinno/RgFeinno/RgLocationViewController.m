@@ -27,22 +27,21 @@
 
 - (void)show {
 
-//    [RgCamera cameraPhotoType:RgCameraPhotoShoot barFontColor:[UIColor whiteColor] barColor:[UIColor blueColor] pushInParentController:self didFinishPickingPhotoWithInfo:^(NSDictionary *cameraInfo, UIImagePickerController *caremaEntity) {
-//        
-//        [caremaEntity dismissViewControllerAnimated:YES completion:^{
-//            NSLog(@"------- %@", cameraInfo);
-//        }];
-//
-//    }];
-    
-    [RgCamera cameraVideoType:RgCameraVideoShoot barFontColor:[UIColor whiteColor] barColor:[UIColor blueColor] pushInParentController:self didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
+    [RgCamera cameraPhotoType:RgCameraPhotoLocalSource barFontColor:[UIColor whiteColor] barColor:[UIColor orangeColor] pushInParentController:self didFinishPickingPhotoWithInfo:^(NSDictionary *cameraInfo, UIImagePickerController *caremaEntity) {
         
         [caremaEntity dismissViewControllerAnimated:YES completion:^{
-            NSLog(@"------- %@", videoURL);
+            NSLog(@"------- %@", cameraInfo);
         }];
 
-        
     }];
+    
+//    [RgCamera cameraVideoType:RgCameraVideoShoot barFontColor:[UIColor whiteColor] barColor:[UIColor blueColor] pushInParentController:self didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
+//        
+//        [caremaEntity dismissViewControllerAnimated:YES completion:^{
+//            NSLog(@"------- %@", videoURL);
+//        }];
+// 
+//    }];
 
 }
 

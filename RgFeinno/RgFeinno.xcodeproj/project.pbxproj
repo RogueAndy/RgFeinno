@@ -17,7 +17,7 @@
 		C1148BB21D74053700C804BA /* RgLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BB11D74053700C804BA /* RgLocationViewController.m */; };
 		C1148BB61D74083800C804BA /* RgCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BB51D74083800C804BA /* RgCamera.m */; };
 		C1148BB81D740A4200C804BA /* rg_camera_back.png in Resources */ = {isa = PBXBuildFile; fileRef = C1148BB71D740A4200C804BA /* rg_camera_back.png */; };
-		C1148BBB1D740A7000C804BA /* UIViewController+RgCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BBA1D740A7000C804BA /* UIViewController+RgCameraViewController.m */; };
+		C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,8 @@
 		C1148BB41D74083800C804BA /* RgCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCamera.h; sourceTree = "<group>"; };
 		C1148BB51D74083800C804BA /* RgCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCamera.m; sourceTree = "<group>"; };
 		C1148BB71D740A4200C804BA /* rg_camera_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rg_camera_back.png; sourceTree = "<group>"; };
-		C1148BB91D740A7000C804BA /* UIViewController+RgCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RgCameraViewController.h"; sourceTree = "<group>"; };
-		C1148BBA1D740A7000C804BA /* UIViewController+RgCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RgCameraViewController.m"; sourceTree = "<group>"; };
+		C1148BBC1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+RgCameraNavigationController.h"; sourceTree = "<group>"; };
+		C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+RgCameraNavigationController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +112,8 @@
 				C1148BB71D740A4200C804BA /* rg_camera_back.png */,
 				C1148BB41D74083800C804BA /* RgCamera.h */,
 				C1148BB51D74083800C804BA /* RgCamera.m */,
-				C1148BB91D740A7000C804BA /* UIViewController+RgCameraViewController.h */,
-				C1148BBA1D740A7000C804BA /* UIViewController+RgCameraViewController.m */,
+				C1148BBC1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.h */,
+				C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */,
 			);
 			path = RgCamera;
 			sourceTree = "<group>";
@@ -190,9 +190,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1148BBB1D740A7000C804BA /* UIViewController+RgCameraViewController.m in Sources */,
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
 				C1148BAF1D74031800C804BA /* RgLocation.m in Sources */,
+				C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */,
 				C1148BB21D74053700C804BA /* RgLocationViewController.m in Sources */,
 				C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */,
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
