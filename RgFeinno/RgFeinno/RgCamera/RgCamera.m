@@ -37,6 +37,18 @@
 
 @property (nonatomic, strong) AVAssetExportSession *exprotSession;
 
+/**
+ *  视频显示最大的时间秒
+ */
+
+@property (nonatomic, assign) CGFloat videoMaxSecond;
+
+/**
+ *  视频最大的大小限制 M
+ */
+
+@property (nonatomic, assign) CGFloat videoMaxSize;
+
 @end
 
 @implementation RgCamera
@@ -52,10 +64,10 @@
 
 #pragma mark - Video
 
-+ (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *videoURL, UIImagePickerController *caremaEntity))complete {
++ (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor maxSecond:(CGFloat)videoMaxSecond maxSize:(CGFloat)videoMaxSize pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *, UIImagePickerController *))complete {
 
     RgCamera *camera = [[RgCamera alloc] init];
-    return [camera cameraVideoType:type barFontColor:fontColor barColor:barColor pushInParentController:parentController didFinishPickingVideoWithInfo:complete];
+    return [camera cameraVideoType:type barFontColor:fontColor barColor:barColor maxSecond:videoMaxSecond maxSize:videoMaxSize pushInParentController:parentController didFinishPickingVideoWithInfo:complete];
 
 }
 
@@ -88,8 +100,10 @@
     return self;
 }
 
-- (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *videoURL, UIImagePickerController *caremaEntity))complete {
+- (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor maxSecond:(CGFloat)videoMaxSecond maxSize:(CGFloat)videoMaxSize pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *videoURL, UIImagePickerController *caremaEntity))complete {
     
+    self.videoMaxSize = videoMaxSize;
+    self.videoMaxSecond = videoMaxSecond;
     self.didFinishPickingVideoWithInfo = complete;
     self.photoOrVideo = NO;
     self.delegate = self;
@@ -99,7 +113,7 @@
         case RgCameraPhotoShoot: {
             
             self.sourceType = UIImagePickerControllerSourceTypeCamera;
-            self.videoMaximumDuration = 30;
+            self.videoMaximumDuration = self.videoMaxSecond;
             self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
             self.videoQuality = UIImagePickerControllerQualityTypeMedium;
             self.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
@@ -160,7 +174,7 @@
     
     float fileSize = data.length / 1024.0 / 1024;
     
-    if (fileSize > 50.0) {
+    if (fileSize > self.videoMaxSize) {
         
         [self unloadMovieAndDismissImageviewController:picker alertMessage:@"视频过大，建议直接使用录像功能上传视频"];
         return;
