@@ -14,7 +14,6 @@
     
     self.navigationBar.tintColor = fontColor;
     self.navigationBar.barTintColor = barColor;
-    self.navigationItem.hidesBackButton = YES;
     
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : fontColor}];
     

@@ -27,7 +27,7 @@
 
 - (void)show {
 
-    [RgCamera cameraPhotoType:RgCameraPhotoLocalSource barFontColor:[UIColor whiteColor] barColor:[UIColor orangeColor] pushInParentController:self didFinishPickingPhotoWithInfo:^(NSDictionary *cameraInfo, UIImagePickerController *caremaEntity) {
+    [RgCamera cameraPhotoType:RgCameraPhotoShoot barFontColor:[UIColor whiteColor] barColor:[UIColor orangeColor] pushInParentController:self didFinishPickingPhotoWithInfo:^(NSDictionary *cameraInfo, UIImagePickerController *caremaEntity) {
         
         [caremaEntity dismissViewControllerAnimated:YES completion:^{
             NSLog(@"------- %@", cameraInfo);
