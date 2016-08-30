@@ -14,10 +14,13 @@
 		C1148BA21D7401CF00C804BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1148BA11D7401CF00C804BA /* Assets.xcassets */; };
 		C1148BA51D7401CF00C804BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1148BA31D7401CF00C804BA /* LaunchScreen.storyboard */; };
 		C1148BAF1D74031800C804BA /* RgLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BAE1D74031800C804BA /* RgLocation.m */; };
-		C1148BB21D74053700C804BA /* RgLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BB11D74053700C804BA /* RgLocationViewController.m */; };
 		C1148BB61D74083800C804BA /* RgCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BB51D74083800C804BA /* RgCamera.m */; };
-		C1148BB81D740A4200C804BA /* rg_camera_back.png in Resources */ = {isa = PBXBuildFile; fileRef = C1148BB71D740A4200C804BA /* rg_camera_back.png */; };
 		C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */; };
+		C1148BC21D75396C00C804BA /* RgScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BC11D75396C00C804BA /* RgScreenShot.m */; };
+		C1148BC91D75536100C804BA /* RgBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BC81D75536100C804BA /* RgBaseViewController.m */; };
+		C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BCA1D7553D400C804BA /* RgScreenShotViewController.m */; };
+		C1148BCF1D7553D400C804BA /* RgLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BCB1D7553D400C804BA /* RgLocationViewController.m */; };
+		C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BD11D75549700C804BA /* RgCaremaViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +36,20 @@
 		C1148BA61D7401CF00C804BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1148BAD1D74031800C804BA /* RgLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgLocation.h; sourceTree = "<group>"; };
 		C1148BAE1D74031800C804BA /* RgLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgLocation.m; sourceTree = "<group>"; };
-		C1148BB01D74053700C804BA /* RgLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgLocationViewController.h; sourceTree = "<group>"; };
-		C1148BB11D74053700C804BA /* RgLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgLocationViewController.m; sourceTree = "<group>"; };
 		C1148BB41D74083800C804BA /* RgCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCamera.h; sourceTree = "<group>"; };
 		C1148BB51D74083800C804BA /* RgCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCamera.m; sourceTree = "<group>"; };
-		C1148BB71D740A4200C804BA /* rg_camera_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rg_camera_back.png; sourceTree = "<group>"; };
 		C1148BBC1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+RgCameraNavigationController.h"; sourceTree = "<group>"; };
 		C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+RgCameraNavigationController.m"; sourceTree = "<group>"; };
+		C1148BC01D75396C00C804BA /* RgScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgScreenShot.h; sourceTree = "<group>"; };
+		C1148BC11D75396C00C804BA /* RgScreenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgScreenShot.m; sourceTree = "<group>"; };
+		C1148BC71D75536100C804BA /* RgBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgBaseViewController.h; sourceTree = "<group>"; };
+		C1148BC81D75536100C804BA /* RgBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgBaseViewController.m; sourceTree = "<group>"; };
+		C1148BCA1D7553D400C804BA /* RgScreenShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgScreenShotViewController.m; sourceTree = "<group>"; };
+		C1148BCB1D7553D400C804BA /* RgLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgLocationViewController.m; sourceTree = "<group>"; };
+		C1148BCC1D7553D400C804BA /* RgScreenShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgScreenShotViewController.h; sourceTree = "<group>"; };
+		C1148BCD1D7553D400C804BA /* RgLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgLocationViewController.h; sourceTree = "<group>"; };
+		C1148BD01D75549700C804BA /* RgCaremaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCaremaViewController.h; sourceTree = "<group>"; };
+		C1148BD11D75549700C804BA /* RgCaremaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCaremaViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,14 +82,14 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C1148BC61D75534800C804BA /* DemoViewController */,
+				C1148BBF1D75395D00C804BA /* RgScreenShot */,
 				C1148BB31D74081E00C804BA /* RgCamera */,
 				C1148BAC1D74025E00C804BA /* RgLocation */,
 				C1148B981D7401CF00C804BA /* AppDelegate.h */,
 				C1148B991D7401CF00C804BA /* AppDelegate.m */,
 				C1148B9B1D7401CF00C804BA /* ViewController.h */,
 				C1148B9C1D7401CF00C804BA /* ViewController.m */,
-				C1148BB01D74053700C804BA /* RgLocationViewController.h */,
-				C1148BB11D74053700C804BA /* RgLocationViewController.m */,
 				C1148B9E1D7401CF00C804BA /* Main.storyboard */,
 				C1148BA11D7401CF00C804BA /* Assets.xcassets */,
 				C1148BA31D7401CF00C804BA /* LaunchScreen.storyboard */,
@@ -109,13 +119,36 @@
 		C1148BB31D74081E00C804BA /* RgCamera */ = {
 			isa = PBXGroup;
 			children = (
-				C1148BB71D740A4200C804BA /* rg_camera_back.png */,
 				C1148BB41D74083800C804BA /* RgCamera.h */,
 				C1148BB51D74083800C804BA /* RgCamera.m */,
 				C1148BBC1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.h */,
 				C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */,
 			);
 			path = RgCamera;
+			sourceTree = "<group>";
+		};
+		C1148BBF1D75395D00C804BA /* RgScreenShot */ = {
+			isa = PBXGroup;
+			children = (
+				C1148BC01D75396C00C804BA /* RgScreenShot.h */,
+				C1148BC11D75396C00C804BA /* RgScreenShot.m */,
+			);
+			path = RgScreenShot;
+			sourceTree = "<group>";
+		};
+		C1148BC61D75534800C804BA /* DemoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C1148BC71D75536100C804BA /* RgBaseViewController.h */,
+				C1148BC81D75536100C804BA /* RgBaseViewController.m */,
+				C1148BCC1D7553D400C804BA /* RgScreenShotViewController.h */,
+				C1148BCA1D7553D400C804BA /* RgScreenShotViewController.m */,
+				C1148BCD1D7553D400C804BA /* RgLocationViewController.h */,
+				C1148BCB1D7553D400C804BA /* RgLocationViewController.m */,
+				C1148BD01D75549700C804BA /* RgCaremaViewController.h */,
+				C1148BD11D75549700C804BA /* RgCaremaViewController.m */,
+			);
+			path = DemoViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +211,6 @@
 			files = (
 				C1148BA51D7401CF00C804BA /* LaunchScreen.storyboard in Resources */,
 				C1148BA21D7401CF00C804BA /* Assets.xcassets in Resources */,
-				C1148BB81D740A4200C804BA /* rg_camera_back.png in Resources */,
 				C1148BA01D7401CF00C804BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,10 +222,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1148BC91D75536100C804BA /* RgBaseViewController.m in Sources */,
+				C1148BC21D75396C00C804BA /* RgScreenShot.m in Sources */,
+				C1148BCF1D7553D400C804BA /* RgLocationViewController.m in Sources */,
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
+				C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */,
+				C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */,
 				C1148BAF1D74031800C804BA /* RgLocation.m in Sources */,
 				C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */,
-				C1148BB21D74053700C804BA /* RgLocationViewController.m in Sources */,
 				C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */,
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
 				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
@@ -357,6 +393,7 @@
 				C1148BAB1D7401CF00C804BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

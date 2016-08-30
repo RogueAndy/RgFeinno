@@ -1,19 +1,19 @@
 //
-//  RgLocationViewController.m
+//  RgCaremaViewController.m
 //  RgFeinno
 //
-//  Created by Rogue Andy on 16/8/29.
+//  Created by Rogue Andy on 16/8/30.
 //  Copyright © 2016年 RogueAndy. All rights reserved.
 //
 
-#import "RgLocationViewController.h"
+#import "RgCaremaViewController.h"
 #import "RgLocation.h"
 #import "RgCamera.h"
 
-@implementation RgLocationViewController
+@implementation RgCaremaViewController
 
 - (void)viewDidLoad {
-
+    
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -26,23 +26,23 @@
 }
 
 - (void)show {
-
+    
     [RgCamera cameraPhotoType:RgCameraPhotoShoot barFontColor:[UIColor whiteColor] barColor:[UIColor orangeColor] pushInParentController:self didFinishPickingPhotoWithInfo:^(NSDictionary *cameraInfo, UIImagePickerController *caremaEntity) {
         
         [caremaEntity dismissViewControllerAnimated:YES completion:^{
             NSLog(@"------- %@", cameraInfo);
         }];
-
+        
     }];
     
-//    [RgCamera cameraVideoType:RgCameraVideoShoot barFontColor:[UIColor whiteColor] barColor:[UIColor blueColor] pushInParentController:self didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
-//        
-//        [caremaEntity dismissViewControllerAnimated:YES completion:^{
-//            NSLog(@"------- %@", videoURL);
-//        }];
-// 
-//    }];
-
+    //    [RgCamera cameraVideoType:RgCameraVideoShoot barFontColor:[UIColor whiteColor] barColor:[UIColor blueColor] pushInParentController:self didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
+    //
+    //        [caremaEntity dismissViewControllerAnimated:YES completion:^{
+    //            NSLog(@"------- %@", videoURL);
+    //        }];
+    // 
+    //    }];
+    
 }
 
 @end

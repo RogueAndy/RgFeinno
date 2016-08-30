@@ -6,8 +6,8 @@
 //  Copyright © 2016年 RogueAndy. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RgBaseViewController.h"
 
-@interface RgLocationViewController : UIViewController
+@interface RgLocationViewController : RgBaseViewController
 
 @end
