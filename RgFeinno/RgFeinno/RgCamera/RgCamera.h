@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, RgCameraVideo) {
  *  @param fontColor        导航栏字体颜色
  *  @param barColor         导航栏背景颜色
  *  @param parentController 使用 pushViewController 方法的主宰类
- *  @param complete         回调返回相片数据
+ *  @param complete         在存在回调方法的时候，需要手动设置让 UIImagePickerController 类消失，比如执行完回调，用 [caremaEntity dismissViewControllerAnimated: YES completion: nil] , 如果回调方法为 nil 则不用用户手动执行，程序会自动执行 dismissViewControllerAnimated 方法
  *
  *  @return 相机实体
  */
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, RgCameraVideo) {
  *  @param fontColor        导航栏字体颜色
  *  @param barColor         导航栏背景颜色
  *  @param parentController 使用 pushViewController 方法的主宰类
- *  @param complete         回调返回视频地址数据
+ *  @param complete         在存在回调方法的时候，需要手动设置让 UIImagePickerController 类消失，比如执行完回调，用 [caremaEntity dismissViewControllerAnimated: YES completion: nil] , 如果回调方法为 nil 则不用用户手动执行，程序会自动执行 dismissViewControllerAnimated 方法
  *
  *  @return 相机实体
  */
