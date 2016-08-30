@@ -21,6 +21,10 @@
 		C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BCA1D7553D400C804BA /* RgScreenShotViewController.m */; };
 		C1148BCF1D7553D400C804BA /* RgLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BCB1D7553D400C804BA /* RgLocationViewController.m */; };
 		C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BD11D75549700C804BA /* RgCaremaViewController.m */; };
+		C1148BE81D757FA400C804BA /* KRVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BD81D757FA400C804BA /* KRVideoPlayerController.m */; };
+		C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BDA1D757FA400C804BA /* KRVideoPlayerControlView.m */; };
+		C1148BF81D75801900C804BA /* RgVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BF71D75801900C804BA /* RgVideo.m */; };
+		C1148C5A1D7588C800C804BA /* KRResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1148C591D7588C800C804BA /* KRResouces.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,13 @@
 		C1148BCD1D7553D400C804BA /* RgLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgLocationViewController.h; sourceTree = "<group>"; };
 		C1148BD01D75549700C804BA /* RgCaremaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCaremaViewController.h; sourceTree = "<group>"; };
 		C1148BD11D75549700C804BA /* RgCaremaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCaremaViewController.m; sourceTree = "<group>"; };
+		C1148BD71D757FA400C804BA /* KRVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRVideoPlayerController.h; sourceTree = "<group>"; };
+		C1148BD81D757FA400C804BA /* KRVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRVideoPlayerController.m; sourceTree = "<group>"; };
+		C1148BD91D757FA400C804BA /* KRVideoPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRVideoPlayerControlView.h; sourceTree = "<group>"; };
+		C1148BDA1D757FA400C804BA /* KRVideoPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRVideoPlayerControlView.m; sourceTree = "<group>"; };
+		C1148BF61D75801900C804BA /* RgVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgVideo.h; sourceTree = "<group>"; };
+		C1148BF71D75801900C804BA /* RgVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgVideo.m; sourceTree = "<group>"; };
+		C1148C591D7588C800C804BA /* KRResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KRResouces.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +93,7 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C1148BD61D757BB200C804BA /* RgVideo */,
 				C1148BC61D75534800C804BA /* DemoViewController */,
 				C1148BBF1D75395D00C804BA /* RgScreenShot */,
 				C1148BB31D74081E00C804BA /* RgCamera */,
@@ -147,8 +159,22 @@
 				C1148BCB1D7553D400C804BA /* RgLocationViewController.m */,
 				C1148BD01D75549700C804BA /* RgCaremaViewController.h */,
 				C1148BD11D75549700C804BA /* RgCaremaViewController.m */,
+				C1148BF61D75801900C804BA /* RgVideo.h */,
+				C1148BF71D75801900C804BA /* RgVideo.m */,
 			);
 			path = DemoViewController;
+			sourceTree = "<group>";
+		};
+		C1148BD61D757BB200C804BA /* RgVideo */ = {
+			isa = PBXGroup;
+			children = (
+				C1148C591D7588C800C804BA /* KRResouces.bundle */,
+				C1148BD71D757FA400C804BA /* KRVideoPlayerController.h */,
+				C1148BD81D757FA400C804BA /* KRVideoPlayerController.m */,
+				C1148BD91D757FA400C804BA /* KRVideoPlayerControlView.h */,
+				C1148BDA1D757FA400C804BA /* KRVideoPlayerControlView.m */,
+			);
+			path = RgVideo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +238,7 @@
 				C1148BA51D7401CF00C804BA /* LaunchScreen.storyboard in Resources */,
 				C1148BA21D7401CF00C804BA /* Assets.xcassets in Resources */,
 				C1148BA01D7401CF00C804BA /* Main.storyboard in Resources */,
+				C1148C5A1D7588C800C804BA /* KRResouces.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1148BC91D75536100C804BA /* RgBaseViewController.m in Sources */,
+				C1148BE81D757FA400C804BA /* KRVideoPlayerController.m in Sources */,
 				C1148BC21D75396C00C804BA /* RgScreenShot.m in Sources */,
 				C1148BCF1D7553D400C804BA /* RgLocationViewController.m in Sources */,
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
@@ -231,7 +259,9 @@
 				C1148BAF1D74031800C804BA /* RgLocation.m in Sources */,
 				C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */,
 				C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */,
+				C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */,
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
+				C1148BF81D75801900C804BA /* RgVideo.m in Sources */,
 				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
