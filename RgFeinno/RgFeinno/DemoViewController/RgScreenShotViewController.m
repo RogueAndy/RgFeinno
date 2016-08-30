@@ -60,7 +60,7 @@
 
 - (void)left {
 
-    self.shotImage.image = [RgScreenShot imageWithView:self.view];
+    self.shotImage.image = [RgScreenShot imageWithScrollView:_webView.scrollView];
 
 }
 
