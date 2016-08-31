@@ -7,7 +7,6 @@
 //
 
 #import "RgAlipayViewController.h"
-#import <AlipaySDK/AlipaySDK.h>
 
 @implementation RgAlipayViewController
 
