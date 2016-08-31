@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface RgCutImage : NSObject
+
++ (UIImage *)cutoutImage:(UIImage *)cutoutImage cutoutFrame:(CGRect)cutoutFrame;
 
 @end

@@ -10,6 +10,7 @@
 #import "RgLocationViewController.h"
 #import "RgScreenShotViewController.h"
 #import "RgVideo.h"
+#import "RgCutoutImageViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgVideo *vc = [RgVideo new];
+    RgCutoutImageViewController *vc = [RgCutoutImageViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];

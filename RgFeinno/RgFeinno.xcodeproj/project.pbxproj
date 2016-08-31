@@ -25,10 +25,11 @@
 		C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BDA1D757FA400C804BA /* KRVideoPlayerControlView.m */; };
 		C1148BF81D75801900C804BA /* RgVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BF71D75801900C804BA /* RgVideo.m */; };
 		C1148C5A1D7588C800C804BA /* KRResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1148C591D7588C800C804BA /* KRResouces.bundle */; };
-		C1148C5E1D7673C500C804BA /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1148C5C1D7673C500C804BA /* AlipaySDK.bundle */; };
-		C1148C5F1D7673C500C804BA /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1148C5D1D7673C500C804BA /* AlipaySDK.framework */; };
 		C1148C621D76742000C804BA /* RgAlipayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148C611D76742000C804BA /* RgAlipayViewController.m */; };
 		C1148C691D76A42300C804BA /* RgCutImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148C681D76A42300C804BA /* RgCutImage.m */; };
+		C1148C6B1D76A4F200C804BA /* 1111111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C1148C6A1D76A4F200C804BA /* 1111111.jpg */; };
+		C1148C6D1D76A58500C804BA /* banner.png in Resources */ = {isa = PBXBuildFile; fileRef = C1148C6C1D76A58500C804BA /* banner.png */; };
+		C1148C701D76A68E00C804BA /* RgCutoutImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148C6F1D76A68E00C804BA /* RgCutoutImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,12 +66,14 @@
 		C1148BF61D75801900C804BA /* RgVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgVideo.h; sourceTree = "<group>"; };
 		C1148BF71D75801900C804BA /* RgVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgVideo.m; sourceTree = "<group>"; };
 		C1148C591D7588C800C804BA /* KRResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KRResouces.bundle; sourceTree = "<group>"; };
-		C1148C5C1D7673C500C804BA /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
-		C1148C5D1D7673C500C804BA /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		C1148C601D76742000C804BA /* RgAlipayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgAlipayViewController.h; sourceTree = "<group>"; };
 		C1148C611D76742000C804BA /* RgAlipayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgAlipayViewController.m; sourceTree = "<group>"; };
 		C1148C671D76A42300C804BA /* RgCutImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCutImage.h; sourceTree = "<group>"; };
 		C1148C681D76A42300C804BA /* RgCutImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCutImage.m; sourceTree = "<group>"; };
+		C1148C6A1D76A4F200C804BA /* 1111111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1111111.jpg; sourceTree = "<group>"; };
+		C1148C6C1D76A58500C804BA /* banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = banner.png; sourceTree = "<group>"; };
+		C1148C6E1D76A68E00C804BA /* RgCutoutImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCutoutImageViewController.h; sourceTree = "<group>"; };
+		C1148C6F1D76A68E00C804BA /* RgCutoutImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCutoutImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1148C5F1D7673C500C804BA /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +166,8 @@
 		C1148BC61D75534800C804BA /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C1148C6C1D76A58500C804BA /* banner.png */,
+				C1148C6A1D76A4F200C804BA /* 1111111.jpg */,
 				C1148BC71D75536100C804BA /* RgBaseViewController.h */,
 				C1148BC81D75536100C804BA /* RgBaseViewController.m */,
 				C1148BCC1D7553D400C804BA /* RgScreenShotViewController.h */,
@@ -174,6 +178,8 @@
 				C1148BD11D75549700C804BA /* RgCaremaViewController.m */,
 				C1148C601D76742000C804BA /* RgAlipayViewController.h */,
 				C1148C611D76742000C804BA /* RgAlipayViewController.m */,
+				C1148C6E1D76A68E00C804BA /* RgCutoutImageViewController.h */,
+				C1148C6F1D76A68E00C804BA /* RgCutoutImageViewController.m */,
 				C1148BF61D75801900C804BA /* RgVideo.h */,
 				C1148BF71D75801900C804BA /* RgVideo.m */,
 			);
@@ -195,8 +201,6 @@
 		C1148C5B1D76731B00C804BA /* RgAlipay */ = {
 			isa = PBXGroup;
 			children = (
-				C1148C5C1D7673C500C804BA /* AlipaySDK.bundle */,
-				C1148C5D1D7673C500C804BA /* AlipaySDK.framework */,
 			);
 			path = RgAlipay;
 			sourceTree = "<group>";
@@ -268,7 +272,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1148C5E1D7673C500C804BA /* AlipaySDK.bundle in Resources */,
+				C1148C6D1D76A58500C804BA /* banner.png in Resources */,
+				C1148C6B1D76A4F200C804BA /* 1111111.jpg in Resources */,
 				C1148BA51D7401CF00C804BA /* LaunchScreen.storyboard in Resources */,
 				C1148BA21D7401CF00C804BA /* Assets.xcassets in Resources */,
 				C1148BA01D7401CF00C804BA /* Main.storyboard in Resources */,
@@ -289,6 +294,7 @@
 				C1148BCF1D7553D400C804BA /* RgLocationViewController.m in Sources */,
 				C1148C621D76742000C804BA /* RgAlipayViewController.m in Sources */,
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
+				C1148C701D76A68E00C804BA /* RgCutoutImageViewController.m in Sources */,
 				C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */,
 				C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */,
 				C1148BAF1D74031800C804BA /* RgLocation.m in Sources */,

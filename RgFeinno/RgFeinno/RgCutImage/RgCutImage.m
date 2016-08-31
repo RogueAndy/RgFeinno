@@ -10,4 +10,12 @@
 
 @implementation RgCutImage
 
++ (UIImage *)cutoutImage:(UIImage *)cutoutImage cutoutFrame:(CGRect)cutoutFrame {
+
+    CGImageRef cutoutImageRef = cutoutImage.CGImage;
+    CGImageRef returnImageRef = CGImageCreateWithImageInRect(cutoutImageRef, cutoutFrame);
+    return [[UIImage alloc] initWithCGImage:returnImageRef];
+    
+}
+
 @end
