@@ -51,13 +51,13 @@
 
 - (void)left {
 
-    _showImageView.image = [RgCutImage cutoutImage:[UIImage imageNamed:@"1111111"] cutoutFrame:CGRectMake(0, 0, 50, 50)];
+    self.showImageView.image = [RgCutImage cutoutImage:[UIImage imageNamed:@"1111111.jpg"] cutoutFrame:CGRectMake(20, 20, 40, 40)];
 
 }
 
 - (void)right {
 
-    _showImageView.image = [RgCutImage cutoutImage:[UIImage imageNamed:@"banner"] cutoutFrame:CGRectMake(0, 0, 100, 100)];
+    self.showImageView.image = [RgCutImage cutoutImage:[UIImage imageNamed:@"banner"] cutoutFrame:CGRectMake(200, 80, 350, 200)];
 
 }
 
