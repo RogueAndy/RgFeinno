@@ -11,6 +11,8 @@
 #import "RgScreenShotViewController.h"
 #import "RgVideo.h"
 #import "RgCutoutImageViewController.h"
+#import "RgUMShare.h"
+#import "RgUMShareViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [RgUMShare setUMSocialAPPKey:@"57c69e7567e58ebb03003235" wxAppid:@"" wxAppSecret:@"" qqAppid:@"" qqAppkey:@""];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgCutoutImageViewController *vc = [RgCutoutImageViewController new];
+    RgUMShareViewController *vc = [RgUMShareViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
@@ -50,6 +54,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [RgUMShare handleOpenURL:url];
+    if (result == FALSE) {
+        //调用其他SDK，例如支付宝SDK等
+    }
+    return result;
 }
 
 @end
