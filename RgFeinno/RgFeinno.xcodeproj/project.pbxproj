@@ -25,6 +25,10 @@
 		C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BDA1D757FA400C804BA /* KRVideoPlayerControlView.m */; };
 		C1148BF81D75801900C804BA /* RgVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BF71D75801900C804BA /* RgVideo.m */; };
 		C1148C5A1D7588C800C804BA /* KRResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1148C591D7588C800C804BA /* KRResouces.bundle */; };
+		C1148C5E1D7673C500C804BA /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1148C5C1D7673C500C804BA /* AlipaySDK.bundle */; };
+		C1148C5F1D7673C500C804BA /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1148C5D1D7673C500C804BA /* AlipaySDK.framework */; };
+		C1148C621D76742000C804BA /* RgAlipayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148C611D76742000C804BA /* RgAlipayViewController.m */; };
+		C1148C691D76A42300C804BA /* RgCutImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148C681D76A42300C804BA /* RgCutImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,12 @@
 		C1148BF61D75801900C804BA /* RgVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgVideo.h; sourceTree = "<group>"; };
 		C1148BF71D75801900C804BA /* RgVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgVideo.m; sourceTree = "<group>"; };
 		C1148C591D7588C800C804BA /* KRResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KRResouces.bundle; sourceTree = "<group>"; };
+		C1148C5C1D7673C500C804BA /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		C1148C5D1D7673C500C804BA /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		C1148C601D76742000C804BA /* RgAlipayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgAlipayViewController.h; sourceTree = "<group>"; };
+		C1148C611D76742000C804BA /* RgAlipayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgAlipayViewController.m; sourceTree = "<group>"; };
+		C1148C671D76A42300C804BA /* RgCutImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCutImage.h; sourceTree = "<group>"; };
+		C1148C681D76A42300C804BA /* RgCutImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCutImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1148C5F1D7673C500C804BA /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +104,8 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C1148C661D76A40700C804BA /* RgCutImage */,
+				C1148C5B1D76731B00C804BA /* RgAlipay */,
 				C1148BD61D757BB200C804BA /* RgVideo */,
 				C1148BC61D75534800C804BA /* DemoViewController */,
 				C1148BBF1D75395D00C804BA /* RgScreenShot */,
@@ -159,6 +172,8 @@
 				C1148BCB1D7553D400C804BA /* RgLocationViewController.m */,
 				C1148BD01D75549700C804BA /* RgCaremaViewController.h */,
 				C1148BD11D75549700C804BA /* RgCaremaViewController.m */,
+				C1148C601D76742000C804BA /* RgAlipayViewController.h */,
+				C1148C611D76742000C804BA /* RgAlipayViewController.m */,
 				C1148BF61D75801900C804BA /* RgVideo.h */,
 				C1148BF71D75801900C804BA /* RgVideo.m */,
 			);
@@ -175,6 +190,24 @@
 				C1148BDA1D757FA400C804BA /* KRVideoPlayerControlView.m */,
 			);
 			path = RgVideo;
+			sourceTree = "<group>";
+		};
+		C1148C5B1D76731B00C804BA /* RgAlipay */ = {
+			isa = PBXGroup;
+			children = (
+				C1148C5C1D7673C500C804BA /* AlipaySDK.bundle */,
+				C1148C5D1D7673C500C804BA /* AlipaySDK.framework */,
+			);
+			path = RgAlipay;
+			sourceTree = "<group>";
+		};
+		C1148C661D76A40700C804BA /* RgCutImage */ = {
+			isa = PBXGroup;
+			children = (
+				C1148C671D76A42300C804BA /* RgCutImage.h */,
+				C1148C681D76A42300C804BA /* RgCutImage.m */,
+			);
+			path = RgCutImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1148C5E1D7673C500C804BA /* AlipaySDK.bundle in Resources */,
 				C1148BA51D7401CF00C804BA /* LaunchScreen.storyboard in Resources */,
 				C1148BA21D7401CF00C804BA /* Assets.xcassets in Resources */,
 				C1148BA01D7401CF00C804BA /* Main.storyboard in Resources */,
@@ -253,6 +287,7 @@
 				C1148BE81D757FA400C804BA /* KRVideoPlayerController.m in Sources */,
 				C1148BC21D75396C00C804BA /* RgScreenShot.m in Sources */,
 				C1148BCF1D7553D400C804BA /* RgLocationViewController.m in Sources */,
+				C1148C621D76742000C804BA /* RgAlipayViewController.m in Sources */,
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
 				C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */,
 				C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */,
@@ -263,6 +298,7 @@
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
 				C1148BF81D75801900C804BA /* RgVideo.m in Sources */,
 				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
+				C1148C691D76A42300C804BA /* RgCutImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +415,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RgFeinno/RgAlipay",
+				);
 				INFOPLIST_FILE = RgFeinno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -395,6 +435,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RgFeinno/RgAlipay",
+				);
 				INFOPLIST_FILE = RgFeinno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
