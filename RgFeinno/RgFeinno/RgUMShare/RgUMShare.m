@@ -57,9 +57,9 @@ static RgUMShare *share = nil;
 
 #pragma mark - 外部调用的静态方法
 
-+ (void)setUMSocialAPPKey:(NSString *)appkey wxAppid:(NSString *)wxAppid wxAppSecret:(NSString *)wxSecret qqAppid:(NSString *)qqAppid qqAppkey:(NSString *)qqKey {
++ (void)setUMSocialAPPKey:(NSString *)appkey wxAppid:(NSString *)wxAppid wxAppSecret:(NSString *)wxSecret qqAppid:(NSString *)qqAppid qqAppkey:(NSString *)qqKey sinaAppkey:(NSString *)sinaAppkey sinaSecret:(NSString *)sinaSecret {
 
-    [[RgUMShare shareInstance] setUMSocialAPPKey:appkey wxAppid:wxAppid wxAppSecret:wxSecret qqAppid:qqAppid qqAppkey:qqKey];
+    [[RgUMShare shareInstance] setUMSocialAPPKey:appkey wxAppid:wxAppid wxAppSecret:wxSecret qqAppid:qqAppid qqAppkey:qqKey sinaAppkey:sinaAppkey sinaSecret:sinaSecret];
 
 }
 
@@ -72,6 +72,12 @@ static RgUMShare *share = nil;
 + (void)shareWithUmengType:(RgUMShareType)type title:(NSString *)title content:(NSString *)content shareUrl:(NSString *)url presentInViewController:(UIViewController *)presentController shareImage:(UIImage *)image {
 
     [[RgUMShare shareInstance] shareWithUmengType:type title:title content:content shareUrl:url presentInViewController:presentController shareImage:image];
+
+}
+
++ (void)shareWithUmengTitle:(NSString *)title content:(NSString *)content shareUrl:(NSString *)url presentInViewController:(UIViewController *)presentController shareImage:(UIImage *)image {
+
+    [[RgUMShare shareInstance] shareWithUmengType:RgQQ title:title content:content shareUrl:url presentInViewController:presentController shareImage:image];
 
 }
 
@@ -113,14 +119,19 @@ static RgUMShare *share = nil;
 
 }
 
-- (void)setUMSocialAPPKey:(NSString *)appkey wxAppid:(NSString *)wxAppid wxAppSecret:(NSString *)wxSecret qqAppid:(NSString *)qqAppid qqAppkey:(NSString *)qqKey {
+- (void)setUMSocialAPPKey:(NSString *)appkey wxAppid:(NSString *)wxAppid wxAppSecret:(NSString *)wxSecret qqAppid:(NSString *)qqAppid qqAppkey:(NSString *)qqKey sinaAppkey:(NSString *)sinaAppkey sinaSecret:(NSString *)sinaSecret {
 
     self.wxAppid = wxAppid;
     self.wxAppSecret = wxSecret;
     self.qqAppid = qqAppid;
     self.qqAppKey = qqKey;
+    self.sinaAppkey = sinaAppkey;
+    self.sinaSecret = sinaSecret;
     self.umengAppkey = appkey;
     [UMSocialData setAppKey:appkey];
+    [UMSocialQQHandler setQQWithAppId:self.qqAppid appKey:self.qqAppKey url:self.qqUrl];
+    [UMSocialWechatHandler setWXAppId:self.wxAppid appSecret:self.wxAppSecret url:self.wxUrl];
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:self.sinaAppkey secret:self.sinaSecret RedirectURL:self.sinaUrl];
 
 }
 
@@ -133,63 +144,29 @@ static RgUMShare *share = nil;
                                 shareToSnsNames:@[UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina, UMShareToSms]
                                        delegate:self];
     
+    [UMSocialQQHandler setQQWithAppId:self.qqAppid appKey:self.qqAppKey url:self.qqUrl];
+    [UMSocialData defaultData].extConfig.qqData.qqMessageType = UMSocialQQMessageTypeDefault;
+    [UMSocialData defaultData].extConfig.qqData.title = title;
+    [UMSocialData defaultData].extConfig.qqData.url = url;
+    [UMSocialData defaultData].extConfig.qzoneData.title = title;
+    [UMSocialData defaultData].extConfig.qzoneData.url = url;
     
-    switch (type) {
-        case RgQQ: {
-            
-            [UMSocialQQHandler setQQWithAppId:self.qqAppid appKey:self.qqAppKey url:self.qqUrl];
-            
-            [UMSocialData defaultData].extConfig.title = title;
-            [UMSocialData defaultData].extConfig.qzoneData.url = url;
-            
-            break;
-        }
-        case RgQQZone: {
-            
-            [UMSocialQQHandler setQQWithAppId:self.qqAppid appKey:self.qqAppKey url:self.qqUrl];
-            
-            [UMSocialData defaultData].extConfig.title = title;
-            [UMSocialData defaultData].extConfig.qqData.url = url;
-            
-            break;
-        }
-        case RgWeiXin: {
-            
-            [UMSocialWechatHandler setWXAppId:self.wxAppid appSecret:self.wxAppSecret url:self.wxUrl];
-            
-            [UMSocialData defaultData].extConfig.title = title;
-            [UMSocialData defaultData].extConfig.wechatSessionData.url = url;
-            
-            break;
-        }
-        case RgWeiXinZone: {
-            
-            [UMSocialWechatHandler setWXAppId:self.wxAppid appSecret:self.wxAppSecret url:self.wxUrl];
-            
-            [UMSocialData defaultData].extConfig.title = title;
-            [UMSocialData defaultData].extConfig.wechatTimelineData.url = url;
-            
-            break;
-        }
-        case RgSina: {
-            
-            [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:self.sinaAppkey secret:self.sinaSecret RedirectURL:self.sinaUrl];
-            
-            [UMSocialData defaultData].extConfig.sinaData.urlResource.url = url;
-            [UMSocialData defaultData].extConfig.sinaData.shareText = [NSString stringWithFormat:@"%@,%@", title, url];
-            [UMSocialData defaultData].extConfig.sinaData.urlResource.resourceType = UMSocialUrlResourceTypeDefault;
-            
-            break;
-        }
-        case RgMessage: {
-            
-            [UMSocialData defaultData].extConfig.smsData.shareText = content;
-            [UMSocialData defaultData].extConfig.smsData.shareImage = image;
-            [UMSocialData defaultData].extConfig.smsData.snsName = title;
-            
-            break;
-        }
-    }
+    [UMSocialWechatHandler setWXAppId:self.wxAppid appSecret:self.wxAppSecret url:self.wxUrl];
+    [UMSocialData defaultData].extConfig.wechatSessionData.wxMessageType = UMSocialWXMessageTypeWeb;
+    [UMSocialData defaultData].extConfig.wechatSessionData.title = title;
+    [UMSocialData defaultData].extConfig.wechatSessionData.url = url;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.wxMessageType = UMSocialWXMessageTypeWeb;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;
+    [UMSocialData defaultData].extConfig.wechatTimelineData.url = url;
+    
+    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:self.sinaAppkey secret:self.sinaSecret RedirectURL:self.sinaUrl];
+    [UMSocialData defaultData].extConfig.sinaData.urlResource.url = url;
+    [UMSocialData defaultData].extConfig.sinaData.shareText = [NSString stringWithFormat:@"%@,%@", title, url];
+    [UMSocialData defaultData].extConfig.sinaData.urlResource.resourceType = UMSocialUrlResourceTypeDefault;
+    
+    [UMSocialData defaultData].extConfig.smsData.shareText = content;
+    [UMSocialData defaultData].extConfig.smsData.shareImage = image;
+    [UMSocialData defaultData].extConfig.smsData.snsName = title;
 
 }
 

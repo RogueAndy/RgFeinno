@@ -9,6 +9,10 @@
 #import "RgUMShareViewController.h"
 #import "RgUMShare.h"
 
+@interface RgUMShareViewController()
+
+@end
+
 @implementation RgUMShareViewController
 
 - (void)viewDidLoad {
@@ -26,8 +30,8 @@
 
 - (void)show {
 
-    [RgUMShare shareWithUmengType:RgMessage title:@"测试" content:@"测试一下短信发送" shareUrl:@"" presentInViewController:self shareImage:[UIImage imageNamed:@"dd"]];
-
+    [RgUMShare shareWithUmengType:RgQQ title:@"测试" content:@"测试一下短信发送" shareUrl:@"http://baidu.com" presentInViewController:self shareImage:[UIImage imageNamed:@"banner"]];
+    
 }
 
 @end

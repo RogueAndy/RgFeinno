@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [RgUMShare setUMSocialAPPKey:@"57c69e7567e58ebb03003235" wxAppid:@"" wxAppSecret:@"" qqAppid:@"" qqAppkey:@""];
+    [RgUMShare setUMSocialAPPKey:@"57c69e7567e58ebb03003235" wxAppid:@"1111" wxAppSecret:@"11111" qqAppid:@"1105589115" qqAppkey:@"ufjVdIdDTCnmlrlr" sinaAppkey:@"11111" sinaSecret:@"1111"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     RgUMShareViewController *vc = [RgUMShareViewController new];

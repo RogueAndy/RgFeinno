@@ -60,6 +60,7 @@
 		C1148CD01D76B1D200C804BA /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1148CCF1D76B1D200C804BA /* libstdc++.tbd */; };
 		C1148CD21D76B1DB00C804BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1148CD11D76B1DB00C804BA /* libz.tbd */; };
 		C1148CD61D76B25700C804BA /* RgUMShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148CD51D76B25700C804BA /* RgUMShare.m */; };
+		C152AFF11D77D319000EE3E7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF01D77D319000EE3E7 /* ImageIO.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +166,7 @@
 		C1148CD11D76B1DB00C804BA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C1148CD41D76B25700C804BA /* RgUMShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUMShare.h; sourceTree = "<group>"; };
 		C1148CD51D76B25700C804BA /* RgUMShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUMShare.m; sourceTree = "<group>"; };
+		C152AFF01D77D319000EE3E7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,9 +174,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1148CD21D76B1DB00C804BA /* libz.tbd in Frameworks */,
+				C152AFF11D77D319000EE3E7 /* ImageIO.framework in Frameworks */,
 				C1148CD01D76B1D200C804BA /* libstdc++.tbd in Frameworks */,
 				C1148CCE1D76B1C800C804BA /* CoreTelephony.framework in Frameworks */,
+				C1148CD21D76B1DB00C804BA /* libz.tbd in Frameworks */,
 				C1148CCC1D76B1C100C804BA /* libiconv.tbd in Frameworks */,
 				C1148CCA1D76B1B700C804BA /* libsqlite3.tbd in Frameworks */,
 				C1148CC81D76B1AA00C804BA /* CoreGraphics.framework in Frameworks */,
@@ -448,6 +451,7 @@
 		C1148CD31D76B21C00C804BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C152AFF01D77D319000EE3E7 /* ImageIO.framework */,
 				C1148CD11D76B1DB00C804BA /* libz.tbd */,
 				C1148CCF1D76B1D200C804BA /* libstdc++.tbd */,
 				C1148CCD1D76B1C800C804BA /* CoreTelephony.framework */,
@@ -707,6 +711,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -735,6 +740,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
