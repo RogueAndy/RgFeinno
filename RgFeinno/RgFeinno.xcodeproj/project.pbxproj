@@ -63,6 +63,7 @@
 		C152AFF11D77D319000EE3E7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF01D77D319000EE3E7 /* ImageIO.framework */; };
 		C152AFF61D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF41D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a */; };
 		C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */ = {isa = PBXBuildFile; fileRef = C152AFF81D77FE0B000EE3E7 /* RgUMPush.m */; };
+		C152AFFD1D781481000EE3E7 /* RgSound.m in Sources */ = {isa = PBXBuildFile; fileRef = C152AFFC1D781481000EE3E7 /* RgSound.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +174,8 @@
 		C152AFF51D77FD84000EE3E7 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		C152AFF71D77FE0B000EE3E7 /* RgUMPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUMPush.h; sourceTree = "<group>"; };
 		C152AFF81D77FE0B000EE3E7 /* RgUMPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUMPush.m; sourceTree = "<group>"; };
+		C152AFFB1D781481000EE3E7 /* RgSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSound.h; sourceTree = "<group>"; };
+		C152AFFC1D781481000EE3E7 /* RgSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSound.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +225,7 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C152AFFA1D781474000EE3E7 /* RgSound */,
 				C152AFF21D77FD84000EE3E7 /* RgUMPush */,
 				C1148CD31D76B21C00C804BA /* Frameworks */,
 				C1148C711D76B0E600C804BA /* RgUMShare */,
@@ -491,6 +495,15 @@
 			path = UMessage_Sdk_1.3.0;
 			sourceTree = "<group>";
 		};
+		C152AFFA1D781474000EE3E7 /* RgSound */ = {
+			isa = PBXGroup;
+			children = (
+				C152AFFB1D781481000EE3E7 /* RgSound.h */,
+				C152AFFC1D781481000EE3E7 /* RgSound.m */,
+			);
+			path = RgSound;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -593,6 +606,7 @@
 				C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */,
 				C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */,
 				C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */,
+				C152AFFD1D781481000EE3E7 /* RgSound.m in Sources */,
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
 				C1148BF81D75801900C804BA /* RgVideo.m in Sources */,
 				C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */,
