@@ -13,6 +13,7 @@
 #import "RgCutoutImageViewController.h"
 #import "RgUMShare.h"
 #import "RgUMShareViewController.h"
+#import "RgUMPush.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [RgUMShare setUMSocialAPPKey:@"57c69e7567e58ebb03003235" wxAppid:@"1111" wxAppSecret:@"11111" qqAppid:@"1105589115" qqAppkey:@"ufjVdIdDTCnmlrlr" sinaAppkey:@"11111" sinaSecret:@"1111"];
+    
+    [RgUMPush startWithAppkey:@"57c7c36e67e58ec1280037a3" launchOptions:launchOptions printLogs:NO];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     RgUMShareViewController *vc = [RgUMShareViewController new];
@@ -59,6 +62,16 @@
 
 
 
+/**
+ *  分享的系统回调方法
+ *
+ *  @param application       应用
+ *  @param url               地址
+ *  @param sourceApplication 资源
+ *  @param annotation
+ *
+ *  @return
+ */
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
@@ -67,6 +80,32 @@
         //调用其他SDK，例如支付宝SDK等
     }
     return result;
+}
+
+/**
+ *  开发环境下，此处获取 deviceToken
+ *
+ *  @param application 应用
+ *  @param deviceToken deviceToken
+ */
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+
+    NSLog(@"------------------------- \n%@\n-------------------------", [RgUMPush deviceTokenByData:deviceToken]);
+
+}
+
+/**
+ *  接收推送的消息，在前台主动执行此方法，后台推送之后，点击进入前台可执行此方法
+ *
+ *  @param application 应用
+ *  @param userInfo    推送信息
+ */
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+
+    NSLog(@"%@", userInfo);
+
 }
 
 @end

@@ -61,6 +61,8 @@
 		C1148CD21D76B1DB00C804BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1148CD11D76B1DB00C804BA /* libz.tbd */; };
 		C1148CD61D76B25700C804BA /* RgUMShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148CD51D76B25700C804BA /* RgUMShare.m */; };
 		C152AFF11D77D319000EE3E7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF01D77D319000EE3E7 /* ImageIO.framework */; };
+		C152AFF61D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF41D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a */; };
+		C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */ = {isa = PBXBuildFile; fileRef = C152AFF81D77FE0B000EE3E7 /* RgUMPush.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +169,10 @@
 		C1148CD41D76B25700C804BA /* RgUMShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUMShare.h; sourceTree = "<group>"; };
 		C1148CD51D76B25700C804BA /* RgUMShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUMShare.m; sourceTree = "<group>"; };
 		C152AFF01D77D319000EE3E7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		C152AFF41D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.3.0.a; sourceTree = "<group>"; };
+		C152AFF51D77FD84000EE3E7 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		C152AFF71D77FE0B000EE3E7 /* RgUMPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUMPush.h; sourceTree = "<group>"; };
+		C152AFF81D77FE0B000EE3E7 /* RgUMPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUMPush.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,7 @@
 				C1148CCA1D76B1B700C804BA /* libsqlite3.tbd in Frameworks */,
 				C1148CC81D76B1AA00C804BA /* CoreGraphics.framework in Frameworks */,
 				C1148CC61D76B1A200C804BA /* SystemConfiguration.framework in Frameworks */,
+				C152AFF61D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a in Frameworks */,
 				C1148CC41D76B18700C804BA /* Security.framework in Frameworks */,
 				C1148CBE1D76B0E600C804BA /* libWeChatSDK.a in Frameworks */,
 				C1148CBB1D76B0E600C804BA /* TencentOpenAPI.framework in Frameworks */,
@@ -215,6 +222,7 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C152AFF21D77FD84000EE3E7 /* RgUMPush */,
 				C1148CD31D76B21C00C804BA /* Frameworks */,
 				C1148C711D76B0E600C804BA /* RgUMShare */,
 				C1148C661D76A40700C804BA /* RgCutImage */,
@@ -464,6 +472,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C152AFF21D77FD84000EE3E7 /* RgUMPush */ = {
+			isa = PBXGroup;
+			children = (
+				C152AFF71D77FE0B000EE3E7 /* RgUMPush.h */,
+				C152AFF81D77FE0B000EE3E7 /* RgUMPush.m */,
+				C152AFF31D77FD84000EE3E7 /* UMessage_Sdk_1.3.0 */,
+			);
+			path = RgUMPush;
+			sourceTree = "<group>";
+		};
+		C152AFF31D77FD84000EE3E7 /* UMessage_Sdk_1.3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				C152AFF41D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a */,
+				C152AFF51D77FD84000EE3E7 /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.3.0;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -568,6 +595,7 @@
 				C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */,
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
 				C1148BF81D75801900C804BA /* RgVideo.m in Sources */,
+				C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */,
 				C1148CC21D76B10F00C804BA /* RgUMShareViewController.m in Sources */,
 				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
 				C1148C691D76A42300C804BA /* RgCutImage.m in Sources */,
@@ -710,6 +738,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/RgFeinno/RgUMPush/UMessage_Sdk_1.3.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;
@@ -739,6 +768,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/SinaSSO",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
+					"$(PROJECT_DIR)/RgFeinno/RgUMPush/UMessage_Sdk_1.3.0",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;
