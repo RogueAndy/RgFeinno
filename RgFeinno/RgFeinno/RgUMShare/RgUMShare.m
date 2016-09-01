@@ -119,6 +119,8 @@ static RgUMShare *share = nil;
 
 }
 
+#pragma mark - 底层动态设置方法
+
 - (void)setUMSocialAPPKey:(NSString *)appkey wxAppid:(NSString *)wxAppid wxAppSecret:(NSString *)wxSecret qqAppid:(NSString *)qqAppid qqAppkey:(NSString *)qqKey sinaAppkey:(NSString *)sinaAppkey sinaSecret:(NSString *)sinaSecret {
 
     self.wxAppid = wxAppid;
