@@ -64,6 +64,7 @@
 		C152AFF61D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF41D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a */; };
 		C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */ = {isa = PBXBuildFile; fileRef = C152AFF81D77FE0B000EE3E7 /* RgUMPush.m */; };
 		C152B0001D795470000EE3E7 /* RgSoundRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C152AFFF1D795470000EE3E7 /* RgSoundRecord.m */; };
+		C152B0031D7954BC000EE3E7 /* RgSoundPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = C152B0021D7954BC000EE3E7 /* RgSoundPlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,8 @@
 		C152AFF81D77FE0B000EE3E7 /* RgUMPush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUMPush.m; sourceTree = "<group>"; };
 		C152AFFE1D795470000EE3E7 /* RgSoundRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSoundRecord.h; sourceTree = "<group>"; };
 		C152AFFF1D795470000EE3E7 /* RgSoundRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSoundRecord.m; sourceTree = "<group>"; };
+		C152B0011D7954BC000EE3E7 /* RgSoundPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSoundPlay.h; sourceTree = "<group>"; };
+		C152B0021D7954BC000EE3E7 /* RgSoundPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSoundPlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +503,8 @@
 			children = (
 				C152AFFE1D795470000EE3E7 /* RgSoundRecord.h */,
 				C152AFFF1D795470000EE3E7 /* RgSoundRecord.m */,
+				C152B0011D7954BC000EE3E7 /* RgSoundPlay.h */,
+				C152B0021D7954BC000EE3E7 /* RgSoundPlay.m */,
 			);
 			path = RgSound;
 			sourceTree = "<group>";
@@ -602,6 +607,7 @@
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
 				C1148C701D76A68E00C804BA /* RgCutoutImageViewController.m in Sources */,
 				C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */,
+				C152B0031D7954BC000EE3E7 /* RgSoundPlay.m in Sources */,
 				C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */,
 				C1148BAF1D74031800C804BA /* RgLocation.m in Sources */,
 				C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */,
