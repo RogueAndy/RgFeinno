@@ -24,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [RgUMShare setUMSocialAPPKey:@"57c69e7567e58ebb03003235" wxAppid:@"wx239499fa72bc417f" wxAppSecret:@"70d377a37a1d4c9a87a130c6b27e97be" qqAppid:@"1105589115" qqAppkey:@"ufjVdIdDTCnmlrlr" sinaAppkey:@"11111" sinaSecret:@"1111"];
+    [RgUMShare setUMSocialAPPKey:@"57c69e7567e58ebb03003235" wxAppid:@"wx239499fa72bc417f" wxAppSecret:@"70d377a37a1d4c9a87a130c6b27e97be" qqAppid:@"1105589115" qqAppkey:@"ufjVdIdDTCnmlrlr" sinaAppkey:@"3611028083" sinaSecret:@"cf1f371b1beaf33042e1132c8d1d863f"];
     
     [RgUMPush startWithAppkey:@"57c7c36e67e58ec1280037a3" launchOptions:launchOptions printLogs:NO];
     
