@@ -7,7 +7,6 @@
 //
 
 #import "RgSoundPlay.h"
-#import "FSAudioStream.h"
 
 @interface RgSoundPlay()
 

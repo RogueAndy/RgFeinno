@@ -1,0 +1,1 @@
+在手动导入该项目的时候，确保在项目的 Targets -> Build Phases -> Link Binary with Libraries 里添加 libz 库

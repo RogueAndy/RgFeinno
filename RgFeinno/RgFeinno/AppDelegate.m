@@ -14,6 +14,7 @@
 #import "RgUMShare.h"
 #import "RgUMShareViewController.h"
 #import "RgUMPush.h"
+#import "RgZipViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,7 +30,7 @@
     [RgUMPush startWithAppkey:@"57c7c36e67e58ec1280037a3" launchOptions:launchOptions printLogs:NO];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgUMShareViewController *vc = [RgUMShareViewController new];
+    RgZipViewController *vc = [RgZipViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
