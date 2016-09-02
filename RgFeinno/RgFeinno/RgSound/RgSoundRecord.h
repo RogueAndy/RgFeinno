@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RgSound : NSObject
+@interface RgSoundRecord : NSObject
 
+- (void)beginRecord;
 
+- (void)pause;
+
+- (void)endRecord;
 
 @end
