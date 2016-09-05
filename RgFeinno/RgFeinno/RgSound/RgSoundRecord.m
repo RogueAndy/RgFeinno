@@ -17,9 +17,22 @@
 
 @property (nonatomic, strong) NSString *audioFileName;
 
+@property (nonatomic, strong) NSTimer *timer;
+
+@property (nonatomic, strong) void (^monitorChange)(CGFloat);
+
 @end
 
 @implementation RgSoundRecord
+
++ (instancetype)soundRecordWithName:(NSString *)fileName {
+
+    RgSoundRecord *sound = [[RgSoundRecord alloc] init];
+    [sound setAudioSession];
+    [sound setAudioFileName:fileName];
+    return sound;
+
+}
 
 #pragma mark - 设置音频会话
 
@@ -124,15 +137,18 @@
 
 }
 
+- (void)invalidate {
+
+    [self.timer invalidate];
+    self.timer = nil;
+
+}
+
 #pragma mark - Audio Delegate 
 
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
 
-    if(![self.audioPlayer isPlaying]) {
-    
-        [self.audioPlayer play];
-    
-    }
+    [self invalidate];
 
 }
 
@@ -167,6 +183,39 @@
 - (void)endRecord {
 
     [self.audioRecorder stop];
+    [self invalidate];
+
+}
+
+#pragma mark - read record
+
+- (void)readRecord {
+
+    [self invalidate];
+    
+    if(![self.audioPlayer isPlaying]) {
+    
+        [self.audioPlayer play];
+    
+    }
+
+}
+
+#pragma mark - 启动监测声波变化
+
+- (void)startMonitorAndChangeBlock:(void (^)(CGFloat progress))changeBlock {
+
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(audioPowerChange:) userInfo:nil repeats:YES];
+    self.monitorChange = changeBlock;
+    
+}
+
+- (void)audioPowerChange:(NSTimer *)timer {
+
+    [self.audioRecorder updateMeters];
+    float power = [self.audioRecorder averagePowerForChannel:0]; //取得第一个通道的音频，注意音频强度范围时-160到0
+    CGFloat progress = (1.0 / 160.0) * (power + 160.0);
+    self.monitorChange(progress);
 
 }
 

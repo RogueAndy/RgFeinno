@@ -83,6 +83,7 @@
 		C152B0391D795A9C000EE3E7 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = C152B0251D795A9C000EE3E7 /* zip.c */; };
 		C152B03B1D795A9C000EE3E7 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C152B0291D795A9C000EE3E7 /* SSZipArchive.m */; };
 		C152B03D1D795AF0000EE3E7 /* RgZipArchive.txt in Resources */ = {isa = PBXBuildFile; fileRef = C152B03C1D795AF0000EE3E7 /* RgZipArchive.txt */; };
+		C16E71141D7CFEBD00CCAD79 /* RgSoundRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71131D7CFEBD00CCAD79 /* RgSoundRecordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -237,6 +238,8 @@
 		C152B02A1D795A9C000EE3E7 /* SSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
 		C152B02B1D795A9C000EE3E7 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		C152B03C1D795AF0000EE3E7 /* RgZipArchive.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RgZipArchive.txt; sourceTree = "<group>"; };
+		C16E71121D7CFEBD00CCAD79 /* RgSoundRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSoundRecordViewController.h; sourceTree = "<group>"; };
+		C16E71131D7CFEBD00CCAD79 /* RgSoundRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSoundRecordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +374,8 @@
 				C1148CC11D76B10F00C804BA /* RgUMShareViewController.m */,
 				C14DD9781D7963ED000E940D /* RgZipViewController.h */,
 				C14DD9791D7963ED000E940D /* RgZipViewController.m */,
+				C16E71121D7CFEBD00CCAD79 /* RgSoundRecordViewController.h */,
+				C16E71131D7CFEBD00CCAD79 /* RgSoundRecordViewController.m */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -757,6 +762,7 @@
 				C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */,
 				C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */,
 				C152B02C1D795A9C000EE3E7 /* aescrypt.c in Sources */,
+				C16E71141D7CFEBD00CCAD79 /* RgSoundRecordViewController.m in Sources */,
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
 				C152B0301D795A9C000EE3E7 /* fileenc.c in Sources */,
 				C1148BF81D75801900C804BA /* RgVideo.m in Sources */,
