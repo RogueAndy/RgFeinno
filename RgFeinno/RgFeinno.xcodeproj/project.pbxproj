@@ -104,6 +104,7 @@
 		C16E71591D7D178B00CCAD79 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71531D7D178B00CCAD79 /* GTMBase64.m */; };
 		C16E715A1D7D178B00CCAD79 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71561D7D178B00CCAD79 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C16E715B1D7D178B00CCAD79 /* Security3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71581D7D178B00CCAD79 /* Security3DES.m */; };
+		C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -304,6 +305,8 @@
 		C16E71561D7D178B00CCAD79 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		C16E71571D7D178B00CCAD79 /* Security3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Security3DES.h; sourceTree = "<group>"; };
 		C16E71581D7D178B00CCAD79 /* Security3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Security3DES.m; sourceTree = "<group>"; };
+		C1982B8E1D7D510E0023ADFB /* RgUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUserDefaults.h; sourceTree = "<group>"; };
+		C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUserDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +356,7 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C1982B8B1D7D50A60023ADFB /* RgSession */,
 				C16E714F1D7D178B00CCAD79 /* Rg3Des */,
 				C16E71151D7D0CFD00CCAD79 /* RgHttpRequest */,
 				C152B0041D795A9C000EE3E7 /* RgZipArchive */,
@@ -808,6 +812,31 @@
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
+		C1982B8B1D7D50A60023ADFB /* RgSession */ = {
+			isa = PBXGroup;
+			children = (
+				C1982B8C1D7D50E10023ADFB /* RgPlist */,
+				C1982B8D1D7D50E10023ADFB /* RgUserDefaults */,
+			);
+			path = RgSession;
+			sourceTree = "<group>";
+		};
+		C1982B8C1D7D50E10023ADFB /* RgPlist */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RgPlist;
+			sourceTree = "<group>";
+		};
+		C1982B8D1D7D50E10023ADFB /* RgUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				C1982B8E1D7D510E0023ADFB /* RgUserDefaults.h */,
+				C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */,
+			);
+			path = RgUserDefaults;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -901,6 +930,7 @@
 				C16E713F1D7D0CFD00CCAD79 /* AFURLSessionManager.m in Sources */,
 				C16E71591D7D178B00CCAD79 /* GTMBase64.m in Sources */,
 				C16E71451D7D0CFD00CCAD79 /* UIImageView+AFNetworking.m in Sources */,
+				C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */,
 				C152B0001D795470000EE3E7 /* RgSoundRecord.m in Sources */,
 				C1148BC91D75536100C804BA /* RgBaseViewController.m in Sources */,
 				C1148CD61D76B25700C804BA /* RgUMShare.m in Sources */,
