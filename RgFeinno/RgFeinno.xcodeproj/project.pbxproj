@@ -60,6 +60,9 @@
 		C1148CD01D76B1D200C804BA /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1148CCF1D76B1D200C804BA /* libstdc++.tbd */; };
 		C1148CD21D76B1DB00C804BA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C1148CD11D76B1DB00C804BA /* libz.tbd */; };
 		C1148CD61D76B25700C804BA /* RgUMShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148CD51D76B25700C804BA /* RgUMShare.m */; };
+		C11F38631D7E7605003692D2 /* RgArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F38621D7E7605003692D2 /* RgArchive.m */; };
+		C11F38661D7E8DC9003692D2 /* RgArchiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F38651D7E8DC9003692D2 /* RgArchiveViewController.m */; };
+		C11F38691D7E92D2003692D2 /* RgSampleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F38681D7E92D2003692D2 /* RgSampleEntity.m */; };
 		C14DD97A1D7963ED000E940D /* RgZipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C14DD9791D7963ED000E940D /* RgZipViewController.m */; };
 		C14DD97D1D79682B000E940D /* RgZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C14DD97C1D79682B000E940D /* RgZipArchive.m */; };
 		C152AFF11D77D319000EE3E7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF01D77D319000EE3E7 /* ImageIO.framework */; };
@@ -227,6 +230,12 @@
 		C1148CD11D76B1DB00C804BA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C1148CD41D76B25700C804BA /* RgUMShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUMShare.h; sourceTree = "<group>"; };
 		C1148CD51D76B25700C804BA /* RgUMShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUMShare.m; sourceTree = "<group>"; };
+		C11F38611D7E7605003692D2 /* RgArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgArchive.h; sourceTree = "<group>"; };
+		C11F38621D7E7605003692D2 /* RgArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgArchive.m; sourceTree = "<group>"; };
+		C11F38641D7E8DC9003692D2 /* RgArchiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgArchiveViewController.h; sourceTree = "<group>"; };
+		C11F38651D7E8DC9003692D2 /* RgArchiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgArchiveViewController.m; sourceTree = "<group>"; };
+		C11F38671D7E92D2003692D2 /* RgSampleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSampleEntity.h; sourceTree = "<group>"; };
+		C11F38681D7E92D2003692D2 /* RgSampleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSampleEntity.m; sourceTree = "<group>"; };
 		C14DD9781D7963ED000E940D /* RgZipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgZipViewController.h; sourceTree = "<group>"; };
 		C14DD9791D7963ED000E940D /* RgZipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgZipViewController.m; sourceTree = "<group>"; };
 		C14DD97B1D79682B000E940D /* RgZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgZipArchive.h; sourceTree = "<group>"; };
@@ -497,6 +506,8 @@
 				C16E71131D7CFEBD00CCAD79 /* RgSoundRecordViewController.m */,
 				C1982B911D7D5C770023ADFB /* RgMapViewController.h */,
 				C1982B921D7D5C770023ADFB /* RgMapViewController.m */,
+				C11F38641D7E8DC9003692D2 /* RgArchiveViewController.h */,
+				C11F38651D7E8DC9003692D2 /* RgArchiveViewController.m */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -662,6 +673,17 @@
 				C1148CC31D76B18600C804BA /* Security.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C11F38601D7E75C0003692D2 /* RgArchive */ = {
+			isa = PBXGroup;
+			children = (
+				C11F38611D7E7605003692D2 /* RgArchive.h */,
+				C11F38621D7E7605003692D2 /* RgArchive.m */,
+				C11F38671D7E92D2003692D2 /* RgSampleEntity.h */,
+				C11F38681D7E92D2003692D2 /* RgSampleEntity.m */,
+			);
+			path = RgArchive;
 			sourceTree = "<group>";
 		};
 		C152AFF21D77FD84000EE3E7 /* RgUMPush */ = {
@@ -864,6 +886,7 @@
 		C1982B8B1D7D50A60023ADFB /* RgSession */ = {
 			isa = PBXGroup;
 			children = (
+				C11F38601D7E75C0003692D2 /* RgArchive */,
 				C1982B8C1D7D50E10023ADFB /* RgPlist */,
 				C1982B8D1D7D50E10023ADFB /* RgUserDefaults */,
 			);
@@ -1028,6 +1051,7 @@
 				C1148BCF1D7553D400C804BA /* RgLocationViewController.m in Sources */,
 				C152B0311D795A9C000EE3E7 /* hmac.c in Sources */,
 				C1148C621D76742000C804BA /* RgAlipayViewController.m in Sources */,
+				C11F38661D7E8DC9003692D2 /* RgArchiveViewController.m in Sources */,
 				C16E714D1D7D0DFC00CCAD79 /* RgHttpDealParameters.m in Sources */,
 				C152B0361D795A9C000EE3E7 /* ioapi.c in Sources */,
 				C14DD97D1D79682B000E940D /* RgZipArchive.m in Sources */,
@@ -1039,6 +1063,7 @@
 				C152B02E1D795A9C000EE3E7 /* aestab.c in Sources */,
 				C152B0031D7954BC000EE3E7 /* RgSoundPlay.m in Sources */,
 				C152B0391D795A9C000EE3E7 /* zip.c in Sources */,
+				C11F38631D7E7605003692D2 /* RgArchive.m in Sources */,
 				C16E71441D7D0CFD00CCAD79 /* UIButton+AFNetworking.m in Sources */,
 				C152B0331D795A9C000EE3E7 /* pwd2key.c in Sources */,
 				C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */,
@@ -1067,6 +1092,7 @@
 				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
 				C1148C691D76A42300C804BA /* RgCutImage.m in Sources */,
 				C152B0341D795A9C000EE3E7 /* sha1.c in Sources */,
+				C11F38691D7E92D2003692D2 /* RgSampleEntity.m in Sources */,
 				C152B03B1D795A9C000EE3E7 /* SSZipArchive.m in Sources */,
 				C16E71431D7D0CFD00CCAD79 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 			);

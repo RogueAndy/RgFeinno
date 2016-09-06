@@ -17,6 +17,7 @@
 #import "RgZipViewController.h"
 #import "RgSoundRecordViewController.h"
 #import "RgMapViewController.h"
+#import "RgArchiveViewController.h"
 #import <BaiduMapAPI_Base/BMKMapManager.h>
 
 @interface AppDelegate ()
@@ -36,9 +37,14 @@
     
     self.bmkManager = [[BMKMapManager alloc] init];
     BOOL ret = [self.bmkManager start:@"gWVph4WasA4hUXQ3pDBZ3tc4ZTtQk2uZ" generalDelegate:nil];
+    if(!ret) {
+    
+        NSLog(@"启动百度地图失败");
+    
+    }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgMapViewController *vc = [RgMapViewController new];
+    RgArchiveViewController *vc = [RgArchiveViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
