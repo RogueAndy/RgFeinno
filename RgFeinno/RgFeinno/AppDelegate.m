@@ -16,8 +16,12 @@
 #import "RgUMPush.h"
 #import "RgZipViewController.h"
 #import "RgSoundRecordViewController.h"
+#import "RgMapViewController.h"
+#import <BaiduMapAPI_Base/BMKMapManager.h>
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) BMKMapManager *bmkManager;
 
 @end
 
@@ -30,8 +34,11 @@
     
     [RgUMPush startWithAppkey:@"57c7c36e67e58ec1280037a3" launchOptions:launchOptions printLogs:NO];
     
+    self.bmkManager = [[BMKMapManager alloc] init];
+    BOOL ret = [self.bmkManager start:@"gWVph4WasA4hUXQ3pDBZ3tc4ZTtQk2uZ" generalDelegate:nil];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgSoundRecordViewController *vc = [RgSoundRecordViewController new];
+    RgMapViewController *vc = [RgMapViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
