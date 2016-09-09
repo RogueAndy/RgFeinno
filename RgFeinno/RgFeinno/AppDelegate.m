@@ -18,6 +18,8 @@
 #import "RgSoundRecordViewController.h"
 #import "RgMapViewController.h"
 #import "RgArchiveViewController.h"
+#import "RgPlistViewController.h"
+#import "RgSpeechViewController.h"
 #import <BaiduMapAPI_Base/BMKMapManager.h>
 
 @interface AppDelegate ()
@@ -44,7 +46,7 @@
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgArchiveViewController *vc = [RgArchiveViewController new];
+    RgSpeechViewController *vc = [RgSpeechViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];

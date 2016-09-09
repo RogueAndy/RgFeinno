@@ -63,6 +63,8 @@
 		C11F38631D7E7605003692D2 /* RgArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F38621D7E7605003692D2 /* RgArchive.m */; };
 		C11F38661D7E8DC9003692D2 /* RgArchiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F38651D7E8DC9003692D2 /* RgArchiveViewController.m */; };
 		C11F38691D7E92D2003692D2 /* RgSampleEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F38681D7E92D2003692D2 /* RgSampleEntity.m */; };
+		C11F386C1D7EBCF2003692D2 /* RgPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F386B1D7EBCF2003692D2 /* RgPlist.m */; };
+		C11F386F1D7EC174003692D2 /* RgPlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11F386E1D7EC174003692D2 /* RgPlistViewController.m */; };
 		C14DD97A1D7963ED000E940D /* RgZipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C14DD9791D7963ED000E940D /* RgZipViewController.m */; };
 		C14DD97D1D79682B000E940D /* RgZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = C14DD97C1D79682B000E940D /* RgZipArchive.m */; };
 		C152AFF11D77D319000EE3E7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C152AFF01D77D319000EE3E7 /* ImageIO.framework */; };
@@ -107,6 +109,10 @@
 		C16E71591D7D178B00CCAD79 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71531D7D178B00CCAD79 /* GTMBase64.m */; };
 		C16E715A1D7D178B00CCAD79 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71561D7D178B00CCAD79 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C16E715B1D7D178B00CCAD79 /* Security3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71581D7D178B00CCAD79 /* Security3DES.m */; };
+		C18D36E51D82460700604B24 /* RgSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D36E41D82460700604B24 /* RgSpeech.m */; };
+		C18D36E91D82463100604B24 /* RgSpeechTip.txt in Resources */ = {isa = PBXBuildFile; fileRef = C18D36E81D82463100604B24 /* RgSpeechTip.txt */; };
+		C18D36EB1D82465C00604B24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D36EA1D82465C00604B24 /* AVFoundation.framework */; };
+		C18D36EE1D824F9900604B24 /* RgSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */; };
 		C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */; };
 		C1982B931D7D5C770023ADFB /* RgMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B921D7D5C770023ADFB /* RgMapViewController.m */; };
 		C1982B9D1D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1982B961D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework */; };
@@ -236,6 +242,10 @@
 		C11F38651D7E8DC9003692D2 /* RgArchiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgArchiveViewController.m; sourceTree = "<group>"; };
 		C11F38671D7E92D2003692D2 /* RgSampleEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSampleEntity.h; sourceTree = "<group>"; };
 		C11F38681D7E92D2003692D2 /* RgSampleEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSampleEntity.m; sourceTree = "<group>"; };
+		C11F386A1D7EBCF2003692D2 /* RgPlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgPlist.h; sourceTree = "<group>"; };
+		C11F386B1D7EBCF2003692D2 /* RgPlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgPlist.m; sourceTree = "<group>"; };
+		C11F386D1D7EC174003692D2 /* RgPlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgPlistViewController.h; sourceTree = "<group>"; };
+		C11F386E1D7EC174003692D2 /* RgPlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgPlistViewController.m; sourceTree = "<group>"; };
 		C14DD9781D7963ED000E940D /* RgZipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgZipViewController.h; sourceTree = "<group>"; };
 		C14DD9791D7963ED000E940D /* RgZipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgZipViewController.m; sourceTree = "<group>"; };
 		C14DD97B1D79682B000E940D /* RgZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgZipArchive.h; sourceTree = "<group>"; };
@@ -331,6 +341,12 @@
 		C16E71561D7D178B00CCAD79 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		C16E71571D7D178B00CCAD79 /* Security3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Security3DES.h; sourceTree = "<group>"; };
 		C16E71581D7D178B00CCAD79 /* Security3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Security3DES.m; sourceTree = "<group>"; };
+		C18D36E31D82460700604B24 /* RgSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSpeech.h; sourceTree = "<group>"; };
+		C18D36E41D82460700604B24 /* RgSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSpeech.m; sourceTree = "<group>"; };
+		C18D36E81D82463100604B24 /* RgSpeechTip.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RgSpeechTip.txt; sourceTree = "<group>"; };
+		C18D36EA1D82465C00604B24 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C18D36EC1D824F9900604B24 /* RgSpeechViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSpeechViewController.h; sourceTree = "<group>"; };
+		C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSpeechViewController.m; sourceTree = "<group>"; };
 		C1982B8E1D7D510E0023ADFB /* RgUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUserDefaults.h; sourceTree = "<group>"; };
 		C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUserDefaults.m; sourceTree = "<group>"; };
 		C1982B911D7D5C770023ADFB /* RgMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgMapViewController.h; sourceTree = "<group>"; };
@@ -360,6 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18D36EB1D82465C00604B24 /* AVFoundation.framework in Frameworks */,
 				C1982BB11D7E52FD0023ADFB /* libstdc++.6.0.9.tbd in Frameworks */,
 				C1148CCE1D76B1C800C804BA /* CoreTelephony.framework in Frameworks */,
 				C1982BAF1D7E52EA0023ADFB /* libsqlite3.0.tbd in Frameworks */,
@@ -398,6 +415,7 @@
 		C1148B891D7401CE00C804BA = {
 			isa = PBXGroup;
 			children = (
+				C18D36EA1D82465C00604B24 /* AVFoundation.framework */,
 				C1148B941D7401CF00C804BA /* RgFeinno */,
 				C1148B931D7401CE00C804BA /* Products */,
 			);
@@ -414,6 +432,7 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C18D36E21D8245F900604B24 /* RgSpeech */,
 				C1982B941D7E4F8A0023ADFB /* RgMapKit */,
 				C1982B8B1D7D50A60023ADFB /* RgSession */,
 				C16E714F1D7D178B00CCAD79 /* Rg3Des */,
@@ -508,6 +527,10 @@
 				C1982B921D7D5C770023ADFB /* RgMapViewController.m */,
 				C11F38641D7E8DC9003692D2 /* RgArchiveViewController.h */,
 				C11F38651D7E8DC9003692D2 /* RgArchiveViewController.m */,
+				C11F386D1D7EC174003692D2 /* RgPlistViewController.h */,
+				C11F386E1D7EC174003692D2 /* RgPlistViewController.m */,
+				C18D36EC1D824F9900604B24 /* RgSpeechViewController.h */,
+				C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -883,6 +906,16 @@
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
+		C18D36E21D8245F900604B24 /* RgSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				C18D36E31D82460700604B24 /* RgSpeech.h */,
+				C18D36E41D82460700604B24 /* RgSpeech.m */,
+				C18D36E81D82463100604B24 /* RgSpeechTip.txt */,
+			);
+			path = RgSpeech;
+			sourceTree = "<group>";
+		};
 		C1982B8B1D7D50A60023ADFB /* RgSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,6 +929,8 @@
 		C1982B8C1D7D50E10023ADFB /* RgPlist */ = {
 			isa = PBXGroup;
 			children = (
+				C11F386A1D7EBCF2003692D2 /* RgPlist.h */,
+				C11F386B1D7EBCF2003692D2 /* RgPlist.m */,
 			);
 			path = RgPlist;
 			sourceTree = "<group>";
@@ -1007,6 +1042,7 @@
 				C1982BA51D7E51D40023ADFB /* RgMapKitTip.txt in Resources */,
 				C1148CBC1D76B0E600C804BA /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				C1148CB31D76B0E600C804BA /* UMSLoginViewController.xib in Resources */,
+				C18D36E91D82463100604B24 /* RgSpeechTip.txt in Resources */,
 				C152B0351D795A9C000EE3E7 /* Info.plist in Resources */,
 				C1148BA01D7401CF00C804BA /* Main.storyboard in Resources */,
 				C1148C5A1D7588C800C804BA /* KRResouces.bundle in Resources */,
@@ -1033,6 +1069,7 @@
 				C16E71591D7D178B00CCAD79 /* GTMBase64.m in Sources */,
 				C16E71451D7D0CFD00CCAD79 /* UIImageView+AFNetworking.m in Sources */,
 				C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */,
+				C18D36E51D82460700604B24 /* RgSpeech.m in Sources */,
 				C152B0001D795470000EE3E7 /* RgSoundRecord.m in Sources */,
 				C1148BC91D75536100C804BA /* RgBaseViewController.m in Sources */,
 				C1148CD61D76B25700C804BA /* RgUMShare.m in Sources */,
@@ -1059,6 +1096,7 @@
 				C1148C701D76A68E00C804BA /* RgCutoutImageViewController.m in Sources */,
 				C16E71421D7D0CFD00CCAD79 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */,
+				C11F386C1D7EBCF2003692D2 /* RgPlist.m in Sources */,
 				C152B0321D795A9C000EE3E7 /* prng.c in Sources */,
 				C152B02E1D795A9C000EE3E7 /* aestab.c in Sources */,
 				C152B0031D7954BC000EE3E7 /* RgSoundPlay.m in Sources */,
@@ -1078,6 +1116,7 @@
 				C152B02C1D795A9C000EE3E7 /* aescrypt.c in Sources */,
 				C1982BB91D7E68550023ADFB /* RgMapView.m in Sources */,
 				C16E71141D7CFEBD00CCAD79 /* RgSoundRecordViewController.m in Sources */,
+				C18D36EE1D824F9900604B24 /* RgSpeechViewController.m in Sources */,
 				C1148B971D7401CF00C804BA /* main.m in Sources */,
 				C152B0301D795A9C000EE3E7 /* fileenc.c in Sources */,
 				C1982B931D7D5C770023ADFB /* RgMapViewController.m in Sources */,
@@ -1094,6 +1133,7 @@
 				C152B0341D795A9C000EE3E7 /* sha1.c in Sources */,
 				C11F38691D7E92D2003692D2 /* RgSampleEntity.m in Sources */,
 				C152B03B1D795A9C000EE3E7 /* SSZipArchive.m in Sources */,
+				C11F386F1D7EC174003692D2 /* RgPlistViewController.m in Sources */,
 				C16E71431D7D0CFD00CCAD79 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
