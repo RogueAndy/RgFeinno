@@ -21,6 +21,7 @@
 #import "RgPlistViewController.h"
 #import "RgSpeechViewController.h"
 #import "RgBugly.h"
+#import "RgCameraAfterViewController.h"
 #import <BaiduMapAPI_Base/BMKMapManager.h>
 
 @interface AppDelegate ()
@@ -49,7 +50,7 @@
     [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgSpeechViewController *vc = [RgSpeechViewController new];
+    RgCameraAfterViewController *vc = [RgCameraAfterViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];

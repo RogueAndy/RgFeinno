@@ -116,6 +116,7 @@
 		C18D37391D8257F300604B24 /* RgBuglyTip.txt in Resources */ = {isa = PBXBuildFile; fileRef = C18D37381D8257F300604B24 /* RgBuglyTip.txt */; };
 		C18D373C1D82587C00604B24 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D373B1D82587C00604B24 /* Bugly.framework */; };
 		C18D373F1D82588C00604B24 /* RgBugly.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D373E1D82588C00604B24 /* RgBugly.m */; };
+		C18D37481D82A2AA00604B24 /* RgCameraAfterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D37471D82A2AA00604B24 /* RgCameraAfterViewController.m */; };
 		C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */; };
 		C1982B931D7D5C770023ADFB /* RgMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B921D7D5C770023ADFB /* RgMapViewController.m */; };
 		C1982B9D1D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1982B961D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework */; };
@@ -354,6 +355,8 @@
 		C18D373B1D82587C00604B24 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		C18D373D1D82588C00604B24 /* RgBugly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgBugly.h; sourceTree = "<group>"; };
 		C18D373E1D82588C00604B24 /* RgBugly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgBugly.m; sourceTree = "<group>"; };
+		C18D37461D82A2AA00604B24 /* RgCameraAfterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCameraAfterViewController.h; sourceTree = "<group>"; };
+		C18D37471D82A2AA00604B24 /* RgCameraAfterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCameraAfterViewController.m; sourceTree = "<group>"; };
 		C1982B8E1D7D510E0023ADFB /* RgUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUserDefaults.h; sourceTree = "<group>"; };
 		C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUserDefaults.m; sourceTree = "<group>"; };
 		C1982B911D7D5C770023ADFB /* RgMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgMapViewController.h; sourceTree = "<group>"; };
@@ -539,6 +542,8 @@
 				C11F386E1D7EC174003692D2 /* RgPlistViewController.m */,
 				C18D36EC1D824F9900604B24 /* RgSpeechViewController.h */,
 				C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */,
+				C18D37461D82A2AA00604B24 /* RgCameraAfterViewController.h */,
+				C18D37471D82A2AA00604B24 /* RgCameraAfterViewController.m */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -1128,6 +1133,7 @@
 				C11F386C1D7EBCF2003692D2 /* RgPlist.m in Sources */,
 				C152B0321D795A9C000EE3E7 /* prng.c in Sources */,
 				C152B02E1D795A9C000EE3E7 /* aestab.c in Sources */,
+				C18D37481D82A2AA00604B24 /* RgCameraAfterViewController.m in Sources */,
 				C152B0031D7954BC000EE3E7 /* RgSoundPlay.m in Sources */,
 				C152B0391D795A9C000EE3E7 /* zip.c in Sources */,
 				C11F38631D7E7605003692D2 /* RgArchive.m in Sources */,
