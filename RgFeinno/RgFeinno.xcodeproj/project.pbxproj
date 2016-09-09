@@ -113,6 +113,9 @@
 		C18D36E91D82463100604B24 /* RgSpeechTip.txt in Resources */ = {isa = PBXBuildFile; fileRef = C18D36E81D82463100604B24 /* RgSpeechTip.txt */; };
 		C18D36EB1D82465C00604B24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D36EA1D82465C00604B24 /* AVFoundation.framework */; };
 		C18D36EE1D824F9900604B24 /* RgSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */; };
+		C18D37391D8257F300604B24 /* RgBuglyTip.txt in Resources */ = {isa = PBXBuildFile; fileRef = C18D37381D8257F300604B24 /* RgBuglyTip.txt */; };
+		C18D373C1D82587C00604B24 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D373B1D82587C00604B24 /* Bugly.framework */; };
+		C18D373F1D82588C00604B24 /* RgBugly.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D373E1D82588C00604B24 /* RgBugly.m */; };
 		C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */; };
 		C1982B931D7D5C770023ADFB /* RgMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B921D7D5C770023ADFB /* RgMapViewController.m */; };
 		C1982B9D1D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1982B961D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework */; };
@@ -347,6 +350,10 @@
 		C18D36EA1D82465C00604B24 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C18D36EC1D824F9900604B24 /* RgSpeechViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSpeechViewController.h; sourceTree = "<group>"; };
 		C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSpeechViewController.m; sourceTree = "<group>"; };
+		C18D37381D8257F300604B24 /* RgBuglyTip.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RgBuglyTip.txt; sourceTree = "<group>"; };
+		C18D373B1D82587C00604B24 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		C18D373D1D82588C00604B24 /* RgBugly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgBugly.h; sourceTree = "<group>"; };
+		C18D373E1D82588C00604B24 /* RgBugly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgBugly.m; sourceTree = "<group>"; };
 		C1982B8E1D7D510E0023ADFB /* RgUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUserDefaults.h; sourceTree = "<group>"; };
 		C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUserDefaults.m; sourceTree = "<group>"; };
 		C1982B911D7D5C770023ADFB /* RgMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgMapViewController.h; sourceTree = "<group>"; };
@@ -405,6 +412,7 @@
 				C1982BA31D7E4F8A0023ADFB /* BaiduMapAPI_Utils.framework in Frameworks */,
 				C1148CBD1D76B0E600C804BA /* libSocialWechat.a in Frameworks */,
 				C1982B9E1D7E4F8A0023ADFB /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				C18D373C1D82587C00604B24 /* Bugly.framework in Frameworks */,
 				C1148CB71D76B0E600C804BA /* libSocialSinaSSO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,7 +423,6 @@
 		C1148B891D7401CE00C804BA = {
 			isa = PBXGroup;
 			children = (
-				C18D36EA1D82465C00604B24 /* AVFoundation.framework */,
 				C1148B941D7401CF00C804BA /* RgFeinno */,
 				C1148B931D7401CE00C804BA /* Products */,
 			);
@@ -432,6 +439,7 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C18D36EF1D8257E600604B24 /* RgBugly */,
 				C18D36E21D8245F900604B24 /* RgSpeech */,
 				C1982B941D7E4F8A0023ADFB /* RgMapKit */,
 				C1982B8B1D7D50A60023ADFB /* RgSession */,
@@ -680,6 +688,7 @@
 		C1148CD31D76B21C00C804BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C18D36EA1D82465C00604B24 /* AVFoundation.framework */,
 				C1982BB01D7E52FD0023ADFB /* libstdc++.6.0.9.tbd */,
 				C1982BAE1D7E52EA0023ADFB /* libsqlite3.0.tbd */,
 				C1982BAC1D7E52D50023ADFB /* OpenGLES.framework */,
@@ -916,6 +925,25 @@
 			path = RgSpeech;
 			sourceTree = "<group>";
 		};
+		C18D36EF1D8257E600604B24 /* RgBugly */ = {
+			isa = PBXGroup;
+			children = (
+				C18D37381D8257F300604B24 /* RgBuglyTip.txt */,
+				C18D373D1D82588C00604B24 /* RgBugly.h */,
+				C18D373E1D82588C00604B24 /* RgBugly.m */,
+				C18D373A1D82587C00604B24 /* QQBugly2.4 */,
+			);
+			path = RgBugly;
+			sourceTree = "<group>";
+		};
+		C18D373A1D82587C00604B24 /* QQBugly2.4 */ = {
+			isa = PBXGroup;
+			children = (
+				C18D373B1D82587C00604B24 /* Bugly.framework */,
+			);
+			path = QQBugly2.4;
+			sourceTree = "<group>";
+		};
 		C1982B8B1D7D50A60023ADFB /* RgSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -1037,6 +1065,7 @@
 				C1148C6B1D76A4F200C804BA /* 1111111.jpg in Resources */,
 				C1148CB21D76B0E600C804BA /* UMShareEditViewControlleriPad.xib in Resources */,
 				C1148BA51D7401CF00C804BA /* LaunchScreen.storyboard in Resources */,
+				C18D37391D8257F300604B24 /* RgBuglyTip.txt in Resources */,
 				C1148BA21D7401CF00C804BA /* Assets.xcassets in Resources */,
 				C1148CB51D76B0E600C804BA /* UMSShareListController.xib in Resources */,
 				C1982BA51D7E51D40023ADFB /* RgMapKitTip.txt in Resources */,
@@ -1135,6 +1164,7 @@
 				C152B03B1D795A9C000EE3E7 /* SSZipArchive.m in Sources */,
 				C11F386F1D7EC174003692D2 /* RgPlistViewController.m in Sources */,
 				C16E71431D7D0CFD00CCAD79 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				C18D373F1D82588C00604B24 /* RgBugly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1265,6 +1295,9 @@
 					"$(PROJECT_DIR)/RgFeinno/RgAlipay",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgMapKit/BaiDuMap3.0",
+					"$(PROJECT_DIR)/RgFeinno/RgBugly/Bugly-v2.4.0",
+					"$(PROJECT_DIR)/RgFeinno/RgBugly/Bugly-v2.4.0/BuglySDKDemo",
+					"$(PROJECT_DIR)/RgFeinno/RgBugly/QQBugly2.4",
 				);
 				INFOPLIST_FILE = RgFeinno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1296,6 +1329,9 @@
 					"$(PROJECT_DIR)/RgFeinno/RgAlipay",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgMapKit/BaiDuMap3.0",
+					"$(PROJECT_DIR)/RgFeinno/RgBugly/Bugly-v2.4.0",
+					"$(PROJECT_DIR)/RgFeinno/RgBugly/Bugly-v2.4.0/BuglySDKDemo",
+					"$(PROJECT_DIR)/RgFeinno/RgBugly/QQBugly2.4",
 				);
 				INFOPLIST_FILE = RgFeinno/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

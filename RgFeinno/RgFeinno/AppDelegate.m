@@ -20,6 +20,7 @@
 #import "RgArchiveViewController.h"
 #import "RgPlistViewController.h"
 #import "RgSpeechViewController.h"
+#import "RgBugly.h"
 #import <BaiduMapAPI_Base/BMKMapManager.h>
 
 @interface AppDelegate ()
@@ -44,6 +45,8 @@
         NSLog(@"启动百度地图失败");
     
     }
+    
+    [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     RgSpeechViewController *vc = [RgSpeechViewController new];
