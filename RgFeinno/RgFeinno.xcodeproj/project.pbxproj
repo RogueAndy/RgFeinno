@@ -117,6 +117,11 @@
 		C18D373C1D82587C00604B24 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D373B1D82587C00604B24 /* Bugly.framework */; };
 		C18D373F1D82588C00604B24 /* RgBugly.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D373E1D82588C00604B24 /* RgBugly.m */; };
 		C18D37481D82A2AA00604B24 /* RgCameraAfterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D37471D82A2AA00604B24 /* RgCameraAfterViewController.m */; };
+		C18D376B1D868A5500604B24 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18D37631D868A5500604B24 /* amrFileCodec.mm */; };
+		C18D376C1D868A5500604B24 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D37661D868A5500604B24 /* libopencore-amrnb.a */; };
+		C18D376D1D868A5500604B24 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D37671D868A5500604B24 /* libopencore-amrwb.a */; };
+		C18D376E1D868A5500604B24 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C18D37681D868A5500604B24 /* README.md */; };
+		C18D376F1D868A5500604B24 /* VoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18D376A1D868A5500604B24 /* VoiceConverter.mm */; };
 		C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */; };
 		C1982B931D7D5C770023ADFB /* RgMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B921D7D5C770023ADFB /* RgMapViewController.m */; };
 		C1982B9D1D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1982B961D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework */; };
@@ -357,6 +362,15 @@
 		C18D373E1D82588C00604B24 /* RgBugly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgBugly.m; sourceTree = "<group>"; };
 		C18D37461D82A2AA00604B24 /* RgCameraAfterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCameraAfterViewController.h; sourceTree = "<group>"; };
 		C18D37471D82A2AA00604B24 /* RgCameraAfterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCameraAfterViewController.m; sourceTree = "<group>"; };
+		C18D37621D868A5500604B24 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		C18D37631D868A5500604B24 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		C18D37641D868A5500604B24 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		C18D37651D868A5500604B24 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		C18D37661D868A5500604B24 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		C18D37671D868A5500604B24 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		C18D37681D868A5500604B24 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C18D37691D868A5500604B24 /* VoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceConverter.h; sourceTree = "<group>"; };
+		C18D376A1D868A5500604B24 /* VoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VoiceConverter.mm; sourceTree = "<group>"; };
 		C1982B8E1D7D510E0023ADFB /* RgUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUserDefaults.h; sourceTree = "<group>"; };
 		C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUserDefaults.m; sourceTree = "<group>"; };
 		C1982B911D7D5C770023ADFB /* RgMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgMapViewController.h; sourceTree = "<group>"; };
@@ -403,6 +417,7 @@
 				C1148CC81D76B1AA00C804BA /* CoreGraphics.framework in Frameworks */,
 				C1982BA01D7E4F8A0023ADFB /* BaiduMapAPI_Map.framework in Frameworks */,
 				C1148CC61D76B1A200C804BA /* SystemConfiguration.framework in Frameworks */,
+				C18D376C1D868A5500604B24 /* libopencore-amrnb.a in Frameworks */,
 				C152AFF61D77FD84000EE3E7 /* libUMessage_Sdk_1.3.0.a in Frameworks */,
 				C1148CC41D76B18700C804BA /* Security.framework in Frameworks */,
 				C1148CBE1D76B0E600C804BA /* libWeChatSDK.a in Frameworks */,
@@ -413,6 +428,7 @@
 				C1982B9D1D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework in Frameworks */,
 				C1982BA21D7E4F8A0023ADFB /* BaiduMapAPI_Search.framework in Frameworks */,
 				C1982BA31D7E4F8A0023ADFB /* BaiduMapAPI_Utils.framework in Frameworks */,
+				C18D376D1D868A5500604B24 /* libopencore-amrwb.a in Frameworks */,
 				C1148CBD1D76B0E600C804BA /* libSocialWechat.a in Frameworks */,
 				C1982B9E1D7E4F8A0023ADFB /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				C18D373C1D82587C00604B24 /* Bugly.framework in Frameworks */,
@@ -745,6 +761,7 @@
 		C152AFFA1D781474000EE3E7 /* RgSound */ = {
 			isa = PBXGroup;
 			children = (
+				C18D37611D868A5500604B24 /* RgLame */,
 				C152AFFE1D795470000EE3E7 /* RgSoundRecord.h */,
 				C152AFFF1D795470000EE3E7 /* RgSoundRecord.m */,
 				C152B0011D7954BC000EE3E7 /* RgSoundPlay.h */,
@@ -949,6 +966,22 @@
 			path = QQBugly2.4;
 			sourceTree = "<group>";
 		};
+		C18D37611D868A5500604B24 /* RgLame */ = {
+			isa = PBXGroup;
+			children = (
+				C18D37621D868A5500604B24 /* amrFileCodec.h */,
+				C18D37631D868A5500604B24 /* amrFileCodec.mm */,
+				C18D37641D868A5500604B24 /* interf_dec.h */,
+				C18D37651D868A5500604B24 /* interf_enc.h */,
+				C18D37661D868A5500604B24 /* libopencore-amrnb.a */,
+				C18D37671D868A5500604B24 /* libopencore-amrwb.a */,
+				C18D37681D868A5500604B24 /* README.md */,
+				C18D37691D868A5500604B24 /* VoiceConverter.h */,
+				C18D376A1D868A5500604B24 /* VoiceConverter.mm */,
+			);
+			path = RgLame;
+			sourceTree = "<group>";
+		};
 		C1982B8B1D7D50A60023ADFB /* RgSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -1143,6 +1176,7 @@
 				C16E713D1D7D0CFD00CCAD79 /* AFURLRequestSerialization.m in Sources */,
 				C1148BAF1D74031800C804BA /* RgLocation.m in Sources */,
 				C16E713E1D7D0CFD00CCAD79 /* AFURLResponseSerialization.m in Sources */,
+				C18D376B1D868A5500604B24 /* amrFileCodec.mm in Sources */,
 				C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */,
 				C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */,
 				C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */,
@@ -1158,12 +1192,14 @@
 				C16E714E1D7D0DFC00CCAD79 /* RgHttpServers.m in Sources */,
 				C16E715B1D7D178B00CCAD79 /* Security3DES.m in Sources */,
 				C1148BF81D75801900C804BA /* RgVideo.m in Sources */,
+				C18D376F1D868A5500604B24 /* VoiceConverter.mm in Sources */,
 				C16E713B1D7D0CFD00CCAD79 /* AFNetworkReachabilityManager.m in Sources */,
 				C152B0381D795A9C000EE3E7 /* unzip.c in Sources */,
 				C16E715A1D7D178B00CCAD79 /* NSString+MD5.m in Sources */,
 				C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */,
 				C1148CC21D76B10F00C804BA /* RgUMShareViewController.m in Sources */,
 				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
+				C18D376E1D868A5500604B24 /* README.md in Sources */,
 				C1148C691D76A42300C804BA /* RgCutImage.m in Sources */,
 				C152B0341D795A9C000EE3E7 /* sha1.c in Sources */,
 				C11F38691D7E92D2003692D2 /* RgSampleEntity.m in Sources */,
@@ -1315,6 +1351,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/RgFeinno/RgUMPush/UMessage_Sdk_1.3.0",
+					"$(PROJECT_DIR)/RgFeinno/RgSound/RgLame",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;
@@ -1349,6 +1386,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
 					"$(PROJECT_DIR)/RgFeinno/RgUMShare/UMShare5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 					"$(PROJECT_DIR)/RgFeinno/RgUMPush/UMessage_Sdk_1.3.0",
+					"$(PROJECT_DIR)/RgFeinno/RgSound/RgLame",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;

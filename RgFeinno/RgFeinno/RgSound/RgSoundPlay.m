@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
-@property (nonatomic, strong) NSString *audioFileName;
+@property (nonatomic, strong) NSURL *audioFileName;
 
 @property (nonatomic, strong) NSTimer *timer;
 
@@ -23,7 +23,7 @@
 
 @implementation RgSoundPlay
 
-+ (instancetype)soundWithFilePath:(NSString *)filePath {
++ (instancetype)soundWithFilePath:(NSURL *)filePath {
 
     RgSoundPlay *play = [[RgSoundPlay alloc] init];
     play.audioFileName = filePath;
@@ -63,9 +63,8 @@
     
     if(!_audioPlayer) {
         
-        NSURL *url = [NSURL URLWithString:self.audioFileName];
         NSError *error = nil;
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:self.audioFileName error:&error];
         _audioPlayer.numberOfLoops = 0;
         _audioPlayer.delegate = self;
         [_audioPlayer prepareToPlay];

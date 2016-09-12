@@ -8,10 +8,15 @@
 
 #import "RgSoundRecordViewController.h"
 #import "RgSoundRecord.h"
+#import "RgSoundPlay.h"
 
 @interface RgSoundRecordViewController ()
 
 @property (nonatomic, strong) RgSoundRecord *soundRecord;
+
+@property (nonatomic, strong) NSString *fileURL;
+
+@property (nonatomic, strong) RgSoundPlay *soundPlay;
 
 @end
 
@@ -40,7 +45,7 @@
     bb.frame = CGRectMake(20, 160, 100, 40);
     [self.view addSubview:bb];
     
-    self.soundRecord = [RgSoundRecord soundRecordWithName:@"20160905"];
+    self.soundRecord = [RgSoundRecord soundRecordWithName:@"audio3.wav"];
     
 }
 
@@ -56,13 +61,20 @@
 
 - (void)stop {
 
-    [self.soundRecord endRecord];
+    self.fileURL = [self.soundRecord endRecord];
 
 }
 
 - (void)read {
 
-    [self.soundRecord readRecord];
+//    [self.soundRecord readRecord];
+    
+    self.soundPlay = [RgSoundPlay soundWithFilePath:[NSURL URLWithString:self.fileURL]];
+    [self.soundPlay startMonitorAndChangeBlock:^(CGFloat progress) {
+        
+        NSLog(@"发出声音----- audio: %f", progress);
+        
+    }];
 
 }
 

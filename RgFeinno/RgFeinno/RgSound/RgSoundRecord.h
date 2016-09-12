@@ -34,10 +34,12 @@
 - (void)pause;
 
 /**
- *  结束录音
+ *  结束录音并且返回录音文件路径
+ *
+ *  @return 文件路径
  */
 
-- (void)endRecord;
+- (NSString *)endRecord;
 
 /**
  *  播放当前录音

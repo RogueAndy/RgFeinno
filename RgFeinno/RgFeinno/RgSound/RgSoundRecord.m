@@ -9,6 +9,8 @@
 #import "RgSoundRecord.h"
 #import <AVFoundation/AVFoundation.h>
 
+static NSString *Rg_Record_Audio_Name = @"RgAudioDocuments";
+
 @interface RgSoundRecord()<AVAudioRecorderDelegate>
 
 @property (nonatomic, strong) AVAudioRecorder *audioRecorder;
@@ -55,14 +57,8 @@
         NSError *error = nil;
         _audioRecorder = [[AVAudioRecorder alloc] initWithURL:url settings:setting error:&error];
         _audioRecorder.delegate = self;
+        [_audioRecorder record];
         _audioRecorder.meteringEnabled = YES;
-        if(error) {
-        
-            NSLog(@"create AudioRecorder error");
-            return nil;
-        
-        }
-    
     }
     
     return _audioRecorder;
@@ -73,7 +69,10 @@
 
     if(!_audioPlayer) {
     
-        NSURL *url = [self getAudioSavePath];
+        NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        path = [path stringByAppendingFormat:@"/%@", Rg_Record_Audio_Name];
+        path = [path stringByAppendingPathComponent:[self getAudioFileName]];
+        NSURL *url = [NSURL URLWithString:path];
         NSError *error = nil;
         _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
         _audioPlayer.numberOfLoops = 0;
@@ -96,6 +95,20 @@
 - (NSURL *)getAudioSavePath {
 
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    path = [path stringByAppendingFormat:@"/%@", Rg_Record_Audio_Name];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL is;
+    if(![fileManager fileExistsAtPath:path isDirectory:&is]) {
+        
+        BOOL isCreate = [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+        if(!isCreate) {
+            
+            return nil;
+            
+        }
+        
+    }
+    
     path = [path stringByAppendingPathComponent:[self getAudioFileName]];
     NSURL *fileURL = [NSURL fileURLWithPath:path];
     
@@ -110,7 +123,7 @@
     if(!self.audioFileName || [self.audioFileName length] == 0) {
     
         NSString *timeInterval = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-        path = [NSString stringWithFormat:@"%@.mp3", timeInterval];
+        path = [NSString stringWithFormat:@"%@.wav", timeInterval];
         
     } else {
     
@@ -180,10 +193,16 @@
 
 #pragma mark - 停止录音
 
-- (void)endRecord {
+- (NSString *)endRecord {
 
     [self.audioRecorder stop];
     [self invalidate];
+    
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    path = [path stringByAppendingFormat:@"/%@", Rg_Record_Audio_Name];
+    path = [path stringByAppendingPathComponent:[self getAudioFileName]];
+    
+    return path;
 
 }
 

@@ -11,7 +11,7 @@
 
 @interface RgSoundPlay : NSObject
 
-+ (instancetype)soundWithFilePath:(NSString *)filePath;
++ (instancetype)soundWithFilePath:(NSURL *)filePath;
 
 /**
  *  开始播放并且启动监测声波变化，此方法包含了 - (void)beginRecord 方法
