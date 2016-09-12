@@ -23,6 +23,8 @@
 #import "RgBugly.h"
 #import "RgCameraAfterViewController.h"
 #import <BaiduMapAPI_Base/BMKMapManager.h>
+#import "RgReachability.h"
+#import "RgReachabilityViewController.h"
 
 @interface AppDelegate ()
 
@@ -47,10 +49,15 @@
     
     }
     
+    [RgReachability startNotifier];
+    
+    /**
+     *  腾讯 bugly
+     */
     [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgSoundRecordViewController *vc = [RgSoundRecordViewController new];
+    RgReachabilityViewController *vc = [RgReachabilityViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
