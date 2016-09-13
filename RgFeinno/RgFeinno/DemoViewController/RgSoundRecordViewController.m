@@ -9,6 +9,7 @@
 #import "RgSoundRecordViewController.h"
 #import "RgSoundRecord.h"
 #import "RgSoundPlay.h"
+#import "RgWave.h"
 
 @interface RgSoundRecordViewController ()
 
@@ -18,9 +19,25 @@
 
 @property (nonatomic, strong) RgSoundPlay *soundPlay;
 
+@property (nonatomic, strong) RgWave *wave;
+
 @end
 
 @implementation RgSoundRecordViewController
+
+- (RgWave *)wave {
+
+    if(!_wave) {
+    
+        _wave = [[RgWave alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _wave.center = self.view.center;
+        [self.view addSubview:_wave];
+    
+    }
+    
+    return _wave;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,7 +70,7 @@
 
     [self.soundRecord startMonitorAndChangeBlock:^(CGFloat progress) {
         
-        NSLog(@"----- audio: %f", progress);
+        [self.wave progressFloat:progress];
         
     }];
 
@@ -62,12 +79,18 @@
 - (void)stop {
 
     self.fileURL = [self.soundRecord endRecord];
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.wave.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         [self.wave removeFromSuperview];
+                         self.wave = nil;
+                     }];
 
 }
 
 - (void)read {
-
-//    [self.soundRecord readRecord];
     
     self.soundPlay = [RgSoundPlay soundWithFilePath:[NSURL URLWithString:self.fileURL]];
     [self.soundPlay startMonitorAndChangeBlock:^(CGFloat progress) {

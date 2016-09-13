@@ -57,7 +57,7 @@
     [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgReachabilityViewController *vc = [RgReachabilityViewController new];
+    RgSoundRecordViewController *vc = [RgSoundRecordViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
