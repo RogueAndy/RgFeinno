@@ -11,6 +11,41 @@
 
 @implementation RgHttpServers
 
++ (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers parameters:(id)parameters completeHandle:(void (^)(NSURLSessionDataTask *, id, NSError *, NSString *, NSInteger))complete {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    if(headers && headers.allKeys > 0) {
+        
+        for(NSString *key in headers.allKeys) {
+            
+            [manager.requestSerializer setValue:[headers objectForKey:key] forHTTPHeaderField:key];
+            
+        }
+        
+    }
+    
+    manager.requestSerializer.timeoutInterval = 20;
+    
+    return [manager POST:URLString
+              parameters:parameters
+                progress:nil
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                     
+                     if(complete) {
+                         complete(task, responseObject, nil, @"", RgHTTPResponceSuccess);
+                     }
+                     
+                 }
+                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                     
+                     if (complete) {
+                         complete(task, nil, error, @"网络链接失败", RgHTTPResponceTimeOut);
+                     }
+                     
+                 }];
+    
+}
+
 + (NSURLSessionDataTask *)POST:(NSString *)URLString headers:(NSDictionary *)headers parameters:(id)parameters completeHandle:(void (^)(NSURLSessionDataTask *, id, NSError *, NSString *, NSInteger))complete {
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -95,6 +130,46 @@ constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
 
 }
 
++ (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers fileName:(NSString *)fileName mineType:(NSString *)mineType parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^)(NSURLSessionDataTask *, id, NSError *, NSString *, NSInteger))complete {
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    if(headers && headers.allKeys > 0) {
+        
+        for(NSString *key in headers.allKeys) {
+            
+            [manager.requestSerializer setValue:[headers objectForKey:key] forHTTPHeaderField:key];
+            
+        }
+        
+    }
+    
+    manager.requestSerializer.timeoutInterval = 20;
+    
+    return [manager POST:URLString
+              parameters:parameters
+constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    
+    [formData appendPartWithFileData:datas name:@"file" fileName:fileName mimeType:mineType];
+    
+}
+                progress:nil
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                     
+                     if(complete) {
+                         complete(task, responseObject, nil, @"", RgHTTPResponceSuccess);
+                     }
+                     
+                 }
+                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                     
+                     if (complete) {
+                         complete(task, nil, error, @"网络链接失败", RgHTTPResponceTimeOut);
+                     }
+                     
+                 }];
+    
+}
+
 + (NSURLSessionDataTask *)POST:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^)(NSURLSessionDataTask *, id, NSError *, NSString *, NSInteger))complete {
 
     if(!imageName || imageName.length == 0) {
@@ -106,6 +181,19 @@ constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
     
     return [self POST:URLString headers:headers fileName:imageName mineType:@"image/jpeg" parameters:parameters datas:datas completeHandle:complete];
 
+}
+
++ (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^)(NSURLSessionDataTask *, id, NSError *, NSString *, NSInteger))complete {
+    
+    if(!imageName || imageName.length == 0) {
+        
+        imageName = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
+        imageName = [imageName stringByAppendingString:@".jpg"];
+        
+    }
+    
+    return [self POSTWithAFN:URLString headers:headers fileName:imageName mineType:@"image/jpeg" parameters:parameters datas:datas completeHandle:complete];
+    
 }
 
 @end

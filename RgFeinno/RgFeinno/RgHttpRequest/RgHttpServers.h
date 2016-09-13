@@ -19,6 +19,19 @@ typedef NS_ENUM(NSInteger, RgHTTPResponceType) {
 @interface RgHttpServers : NSObject
 
 /**
+ *  普通接口地址,但是使用 afn 默认进行一些加密
+ *
+ *  @param headers    请求头参数设置，可以不设置即为默认
+ *  @param URLString  地址
+ *  @param parameters 参数
+ *  @param complete   回调函数
+ *
+ *  @return 任务
+ */
+
++ (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers parameters:(id)parameters completeHandle:(void (^)(NSURLSessionDataTask *, id, NSError *, NSString *, NSInteger))complete;
+
+/**
  *  普通接口地址
  *
  *  @param headers    请求头参数设置，可以不设置即为默认
@@ -47,6 +60,8 @@ typedef NS_ENUM(NSInteger, RgHTTPResponceType) {
 
 + (NSURLSessionDataTask *)POST:(NSString *)URLString headers:(NSDictionary *)headers fileName:(NSString *)fileName mineType:(NSString *)mineType parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
 
++ (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers fileName:(NSString *)fileName mineType:(NSString *)mineType parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
+
 /**
  *  上传图片
  *
@@ -61,5 +76,7 @@ typedef NS_ENUM(NSInteger, RgHTTPResponceType) {
  */
 
 + (NSURLSessionDataTask *)POST:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
+
++ (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
 
 @end

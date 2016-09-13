@@ -23,6 +23,15 @@
     
 }
 
++ (NSURLSessionDataTask *)POSTURL:(NSString *)URLString parameters:(id)parameters completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete {
+
+    return [RgHttpServers POSTWithAFN:URLString
+                              headers:@{@"accept": @"application/json"}
+                           parameters:parameters
+                       completeHandle:complete];
+
+}
+
 + (NSURLSessionDataTask *)POSTURLWith3Des:(NSString *)URLString parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete {
 
     NSString *parameterString = [self DataTOjsonString:parameters];
@@ -34,6 +43,17 @@
                     parameters:parameters
                          datas:datas
                 completeHandle:complete];
+
+}
+
++ (NSURLSessionDataTask *)POSTURL:(NSString *)URLString parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete {
+    
+    return [RgHttpServers POSTWithAFN:URLString
+                              headers:@{@"accept": @"application/json", @"Content-Type": @"application/json"}
+                            imageName:@"test.jpg"
+                           parameters:parameters
+                                datas:datas
+                       completeHandle:complete];
 
 }
 
