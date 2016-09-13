@@ -109,6 +109,7 @@
 		C16E71591D7D178B00CCAD79 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71531D7D178B00CCAD79 /* GTMBase64.m */; };
 		C16E715A1D7D178B00CCAD79 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71561D7D178B00CCAD79 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C16E715B1D7D178B00CCAD79 /* Security3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71581D7D178B00CCAD79 /* Security3DES.m */; };
+		C18CB81B1D87E0AE006331BF /* yiqifei.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18CB81A1D87E0AE006331BF /* yiqifei.mp3 */; };
 		C18D36E51D82460700604B24 /* RgSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D36E41D82460700604B24 /* RgSpeech.m */; };
 		C18D36E91D82463100604B24 /* RgSpeechTip.txt in Resources */ = {isa = PBXBuildFile; fileRef = C18D36E81D82463100604B24 /* RgSpeechTip.txt */; };
 		C18D36EB1D82465C00604B24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D36EA1D82465C00604B24 /* AVFoundation.framework */; };
@@ -367,6 +368,7 @@
 		C16E71561D7D178B00CCAD79 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		C16E71571D7D178B00CCAD79 /* Security3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Security3DES.h; sourceTree = "<group>"; };
 		C16E71581D7D178B00CCAD79 /* Security3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Security3DES.m; sourceTree = "<group>"; };
+		C18CB81A1D87E0AE006331BF /* yiqifei.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yiqifei.mp3; sourceTree = "<group>"; };
 		C18D36E31D82460700604B24 /* RgSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSpeech.h; sourceTree = "<group>"; };
 		C18D36E41D82460700604B24 /* RgSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSpeech.m; sourceTree = "<group>"; };
 		C18D36E81D82463100604B24 /* RgSpeechTip.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RgSpeechTip.txt; sourceTree = "<group>"; };
@@ -814,6 +816,7 @@
 		C152AFFA1D781474000EE3E7 /* RgSound */ = {
 			isa = PBXGroup;
 			children = (
+				C18CB81A1D87E0AE006331BF /* yiqifei.mp3 */,
 				C18D37611D868A5500604B24 /* RgLame */,
 				C152AFFE1D795470000EE3E7 /* RgSoundRecord.h */,
 				C152AFFF1D795470000EE3E7 /* RgSoundRecord.m */,
@@ -1233,6 +1236,7 @@
 				C1148CBC1D76B0E600C804BA /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				C1148CB31D76B0E600C804BA /* UMSLoginViewController.xib in Resources */,
 				C18D37991D8696EA00604B24 /* Info.plist in Resources */,
+				C18CB81B1D87E0AE006331BF /* yiqifei.mp3 in Resources */,
 				C18D36E91D82463100604B24 /* RgSpeechTip.txt in Resources */,
 				C152B0351D795A9C000EE3E7 /* Info.plist in Resources */,
 				C1148BA01D7401CF00C804BA /* Main.storyboard in Resources */,

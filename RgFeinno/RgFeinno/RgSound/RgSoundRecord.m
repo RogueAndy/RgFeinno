@@ -232,6 +232,7 @@ static NSString *Rg_Record_Audio_Name = @"RgAudioDocuments";
 - (void)audioPowerChange:(NSTimer *)timer {
 
     [self.audioRecorder updateMeters];
+    
     float power = [self.audioRecorder averagePowerForChannel:0]; //取得第一个通道的音频，注意音频强度范围时-160到0
     CGFloat progress = (1.0 / 160.0) * (power + 160.0);
     self.monitorChange(progress);

@@ -25,20 +25,6 @@
 
 @implementation RgSoundRecordViewController
 
-- (RgWave *)wave {
-
-    if(!_wave) {
-    
-        _wave = [[RgWave alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        _wave.center = self.view.center;
-        [self.view addSubview:_wave];
-    
-    }
-    
-    return _wave;
-
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -62,12 +48,13 @@
     bb.frame = CGRectMake(20, 160, 100, 40);
     [self.view addSubview:bb];
     
-    self.soundRecord = [RgSoundRecord soundRecordWithName:@"audio3.wav"];
-    
 }
 
 - (void)begin {
 
+    [self loadWave];
+    self.soundRecord = [RgSoundRecord soundRecordWithName:@"audio3.wav"];
+    
     [self.soundRecord startMonitorAndChangeBlock:^(CGFloat progress) {
         
         [self.wave progressFloat:progress];
@@ -86,18 +73,32 @@
                      completion:^(BOOL finished) {
                          [self.wave removeFromSuperview];
                          self.wave = nil;
+                         self.soundRecord = nil;
                      }];
 
 }
 
 - (void)read {
     
-    self.soundPlay = [RgSoundPlay soundWithFilePath:[NSURL URLWithString:self.fileURL]];
+    [self loadWave];
+    
+    NSString *mp3 = [[NSBundle mainBundle] pathForResource:@"yiqifei" ofType:@"mp3"];
+    
+    
+    self.soundPlay = [RgSoundPlay soundWithFilePath:[NSURL URLWithString:mp3]];
     [self.soundPlay startMonitorAndChangeBlock:^(CGFloat progress) {
         
-        NSLog(@"发出声音----- audio: %f", progress);
+        [self.wave progressFloat:progress];
         
     }];
+
+}
+
+- (void)loadWave {
+
+    _wave = [[RgWave alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    _wave.center = self.view.center;
+    [self.view addSubview:_wave];
 
 }
 

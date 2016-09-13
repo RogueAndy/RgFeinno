@@ -33,6 +33,7 @@
 
 - (void)startMonitorAndChangeBlock:(void (^)(CGFloat))changeBlock {
 
+    [self.audioPlayer play];
     self.monitorChange = changeBlock;
     
     if(self.monitorChange) {
