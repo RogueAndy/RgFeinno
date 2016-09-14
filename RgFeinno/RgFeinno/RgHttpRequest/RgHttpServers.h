@@ -60,6 +60,20 @@ typedef NS_ENUM(NSInteger, RgHTTPResponceType) {
 
 + (NSURLSessionDataTask *)POST:(NSString *)URLString headers:(NSDictionary *)headers fileName:(NSString *)fileName mineType:(NSString *)mineType parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
 
+/**
+ *  <#Description#>
+ *
+ *  @param URLString  <#URLString description#>
+ *  @param headers    <#headers description#>
+ *  @param fileName   <#fileName description#>
+ *  @param mineType   <#mineType description#>
+ *  @param parameters <#parameters description#>
+ *  @param datas      <#datas description#>
+ *  @param complete   <#complete description#>
+ *
+ *  @return <#return value description#>
+ */
+
 + (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers fileName:(NSString *)fileName mineType:(NSString *)mineType parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
 
 /**
@@ -77,6 +91,35 @@ typedef NS_ENUM(NSInteger, RgHTTPResponceType) {
 
 + (NSURLSessionDataTask *)POST:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
 
+/**
+ *  图片上传
+ *
+ *  @param URLString  地址
+ *  @param headers    http 头部描述
+ *  @param imageName  图片名字
+ *  @param parameters 参数
+ *  @param datas      图片
+ *  @param complete   回调函数
+ *
+ *  @return 任务
+ */
+
 + (NSURLSessionDataTask *)POSTWithAFN:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
+
+/**
+ *  新媒农信上传图片至服务器
+ *
+ *  @param URLString  地址
+ *  @param headers    http 头部描述
+ *  @param imageName  图片名字
+ *  @param parameters 参数
+ *  @param datas      图片
+ *  @param dictionary formData 添加的参数
+ *  @param complete   回调函数
+ *
+ *  @return 任务
+ */
+
++ (NSURLSessionDataTask *)POSTImageWithFeinno:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas formParameter:(NSDictionary *)dictionary completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
 
 @end

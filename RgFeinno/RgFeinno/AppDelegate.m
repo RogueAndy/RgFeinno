@@ -25,6 +25,7 @@
 #import <BaiduMapAPI_Base/BMKMapManager.h>
 #import "RgReachability.h"
 #import "RgReachabilityViewController.h"
+#import "RgUploadImageViewController.h"
 
 @interface AppDelegate ()
 
@@ -57,7 +58,7 @@
     [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgSoundRecordViewController *vc = [RgSoundRecordViewController new];
+    RgUploadImageViewController *vc = [RgUploadImageViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];

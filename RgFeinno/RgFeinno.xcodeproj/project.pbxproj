@@ -140,6 +140,8 @@
 		C18D37A01D86974100604B24 /* RgReachabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D379F1D86974100604B24 /* RgReachabilityViewController.m */; };
 		C18D37A31D86977100604B24 /* RgReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D37A21D86977100604B24 /* RgReachability.m */; };
 		C18D37A61D879CC700604B24 /* RgWave.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D37A51D879CC700604B24 /* RgWave.m */; };
+		C1913CDF1D88D9E30003A68D /* RgUploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1913CDE1D88D9E30003A68D /* RgUploadImageViewController.m */; };
+		C1913CE21D88DB5E0003A68D /* YRJSONAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C1913CE11D88DB5E0003A68D /* YRJSONAdapter.m */; };
 		C1982B901D7D510E0023ADFB /* RgUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */; };
 		C1982B931D7D5C770023ADFB /* RgMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1982B921D7D5C770023ADFB /* RgMapViewController.m */; };
 		C1982B9D1D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1982B961D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework */; };
@@ -423,6 +425,10 @@
 		C18D37A21D86977100604B24 /* RgReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgReachability.m; sourceTree = "<group>"; };
 		C18D37A41D879CC700604B24 /* RgWave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgWave.h; sourceTree = "<group>"; };
 		C18D37A51D879CC700604B24 /* RgWave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgWave.m; sourceTree = "<group>"; };
+		C1913CDD1D88D9E30003A68D /* RgUploadImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUploadImageViewController.h; sourceTree = "<group>"; };
+		C1913CDE1D88D9E30003A68D /* RgUploadImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUploadImageViewController.m; sourceTree = "<group>"; };
+		C1913CE01D88DB5E0003A68D /* YRJSONAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRJSONAdapter.h; sourceTree = "<group>"; };
+		C1913CE11D88DB5E0003A68D /* YRJSONAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRJSONAdapter.m; sourceTree = "<group>"; };
 		C1982B8E1D7D510E0023ADFB /* RgUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgUserDefaults.h; sourceTree = "<group>"; };
 		C1982B8F1D7D510E0023ADFB /* RgUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgUserDefaults.m; sourceTree = "<group>"; };
 		C1982B911D7D5C770023ADFB /* RgMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgMapViewController.h; sourceTree = "<group>"; };
@@ -581,6 +587,8 @@
 		C1148BC61D75534800C804BA /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C1913CE01D88DB5E0003A68D /* YRJSONAdapter.h */,
+				C1913CE11D88DB5E0003A68D /* YRJSONAdapter.m */,
 				C1148C6C1D76A58500C804BA /* banner.png */,
 				C1148C6A1D76A4F200C804BA /* 1111111.jpg */,
 				C1148BC71D75536100C804BA /* RgBaseViewController.h */,
@@ -615,6 +623,8 @@
 				C18D37471D82A2AA00604B24 /* RgCameraAfterViewController.m */,
 				C18D379E1D86974100604B24 /* RgReachabilityViewController.h */,
 				C18D379F1D86974100604B24 /* RgReachabilityViewController.m */,
+				C1913CDD1D88D9E30003A68D /* RgUploadImageViewController.h */,
+				C1913CDE1D88D9E30003A68D /* RgUploadImageViewController.m */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -1295,6 +1305,7 @@
 				C14DD97D1D79682B000E940D /* RgZipArchive.m in Sources */,
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
 				C1148C701D76A68E00C804BA /* RgCutoutImageViewController.m in Sources */,
+				C1913CE21D88DB5E0003A68D /* YRJSONAdapter.m in Sources */,
 				C16E71421D7D0CFD00CCAD79 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C1148BD21D75549700C804BA /* RgCaremaViewController.m in Sources */,
 				C11F386C1D7EBCF2003692D2 /* RgPlist.m in Sources */,
@@ -1340,6 +1351,7 @@
 				C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */,
 				C18D37961D8696EA00604B24 /* ReachStateUnReachable.m in Sources */,
 				C1148CC21D76B10F00C804BA /* RgUMShareViewController.m in Sources */,
+				C1913CDF1D88D9E30003A68D /* RgUploadImageViewController.m in Sources */,
 				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
 				C18D37901D8696EA00604B24 /* LocalConnection.m in Sources */,
 				C18D376E1D868A5500604B24 /* README.md in Sources */,

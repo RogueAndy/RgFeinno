@@ -23,4 +23,14 @@
 // 解密方法
 + (NSString*)decrypt:(NSString*)encryptText;
 
+/**
+ *  修改了内部方法，新媒 3des 加密
+ *
+ *  @param plainText 参数
+ *
+ *  @return 加密后的值
+ */
+
++ (NSString *)encryptFeinno:(NSString *)plainText;
+
 @end

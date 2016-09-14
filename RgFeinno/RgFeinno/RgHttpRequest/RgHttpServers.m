@@ -196,4 +196,51 @@ constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
     
 }
 
++ (NSURLSessionDataTask *)POSTImageWithFeinno:(NSString *)URLString headers:(NSDictionary *)headers imageName:(NSString *)imageName parameters:(id)parameters datas:(NSData *)datas formParameter:(NSDictionary *)dictionary completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete {
+
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    if(headers && headers.allKeys > 0) {
+        
+        for(NSString *key in headers.allKeys) {
+            
+            [manager.requestSerializer setValue:[headers objectForKey:key] forHTTPHeaderField:key];
+            
+        }
+        
+    }
+    
+    manager.requestSerializer.timeoutInterval = 20;
+    
+    return [manager POST:URLString
+              parameters:parameters
+constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    
+    NSArray *keys = dictionary.allKeys;
+    for(NSInteger i = 0; i < keys.count; i++) {
+    
+        [formData appendPartWithFormData:[dictionary objectForKey:[keys objectAtIndex:i]] name:[keys objectAtIndex:i]];
+    
+    }
+    
+    [formData appendPartWithFileData:datas name:@"file" fileName:@"shareImage.jpg" mimeType:@"jpg"];
+    
+}
+                progress:nil
+                 success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                     
+                     if(complete) {
+                         complete(task, responseObject, nil, @"", RgHTTPResponceSuccess);
+                     }
+                     
+                 }
+                 failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                     
+                     if (complete) {
+                         complete(task, nil, error, @"网络链接失败", RgHTTPResponceTimeOut);
+                     }
+                     
+                 }];
+
+}
+
 @end

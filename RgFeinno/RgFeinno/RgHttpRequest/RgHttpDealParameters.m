@@ -57,6 +57,18 @@
 
 }
 
++ (NSURLSessionDataTask *)POSTImageURLFeinno:(NSString *)URLString parameters:(id)parameters datas:(NSData *)datas formParameter:(NSDictionary *)formParameter completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete {
+
+    return [RgHttpServers POSTImageWithFeinno:URLString
+                                      headers:nil
+                                    imageName:@"filetestimage.jpg"
+                                   parameters:parameters
+                                        datas:datas
+                                formParameter:formParameter
+                               completeHandle:complete];
+
+}
+
 #pragma mark - 转化成 Json 格式，以便 3des 加密
 
 + (NSString *)DataTOjsonString:(id)object

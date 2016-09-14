@@ -60,4 +60,18 @@
 
 + (NSURLSessionDataTask *)POSTURL:(NSString *)URLString parameters:(id)parameters datas:(NSData *)datas completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
 
+/**
+ *  新媒农信上传图片至服务器
+ *
+ *  @param URLString     地址
+ *  @param parameters    参数
+ *  @param datas         图片
+ *  @param formParameter 添加到 AFN 的 formData 里面
+ *  @param complete      回调函数
+ *
+ *  @return 任务
+ */
+
++ (NSURLSessionDataTask *)POSTImageURLFeinno:(NSString *)URLString parameters:(id)parameters datas:(NSData *)datas formParameter:(NSDictionary *)formParameter completeHandle:(void (^) (NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType))complete;
+
 @end
