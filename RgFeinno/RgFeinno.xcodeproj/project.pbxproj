@@ -109,13 +109,13 @@
 		C16E71591D7D178B00CCAD79 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71531D7D178B00CCAD79 /* GTMBase64.m */; };
 		C16E715A1D7D178B00CCAD79 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71561D7D178B00CCAD79 /* NSString+MD5.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C16E715B1D7D178B00CCAD79 /* Security3DES.m in Sources */ = {isa = PBXBuildFile; fileRef = C16E71581D7D178B00CCAD79 /* Security3DES.m */; };
+		C18AB0D61D8E8D200086407F /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18AB0D51D8E8D200086407F /* Bugly.framework */; };
 		C18CB81B1D87E0AE006331BF /* yiqifei.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18CB81A1D87E0AE006331BF /* yiqifei.mp3 */; };
 		C18D36E51D82460700604B24 /* RgSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D36E41D82460700604B24 /* RgSpeech.m */; };
 		C18D36E91D82463100604B24 /* RgSpeechTip.txt in Resources */ = {isa = PBXBuildFile; fileRef = C18D36E81D82463100604B24 /* RgSpeechTip.txt */; };
 		C18D36EB1D82465C00604B24 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D36EA1D82465C00604B24 /* AVFoundation.framework */; };
 		C18D36EE1D824F9900604B24 /* RgSpeechViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */; };
 		C18D37391D8257F300604B24 /* RgBuglyTip.txt in Resources */ = {isa = PBXBuildFile; fileRef = C18D37381D8257F300604B24 /* RgBuglyTip.txt */; };
-		C18D373C1D82587C00604B24 /* Bugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18D373B1D82587C00604B24 /* Bugly.framework */; };
 		C18D373F1D82588C00604B24 /* RgBugly.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D373E1D82588C00604B24 /* RgBugly.m */; };
 		C18D37481D82A2AA00604B24 /* RgCameraAfterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18D37471D82A2AA00604B24 /* RgCameraAfterViewController.m */; };
 		C18D376B1D868A5500604B24 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18D37631D868A5500604B24 /* amrFileCodec.mm */; };
@@ -370,6 +370,8 @@
 		C16E71561D7D178B00CCAD79 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		C16E71571D7D178B00CCAD79 /* Security3DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Security3DES.h; sourceTree = "<group>"; };
 		C16E71581D7D178B00CCAD79 /* Security3DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Security3DES.m; sourceTree = "<group>"; };
+		C18AB0D51D8E8D200086407F /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
+		C18AB15D1D8FB0760086407F /* RgFeinno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RgFeinno.entitlements; sourceTree = "<group>"; };
 		C18CB81A1D87E0AE006331BF /* yiqifei.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yiqifei.mp3; sourceTree = "<group>"; };
 		C18D36E31D82460700604B24 /* RgSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSpeech.h; sourceTree = "<group>"; };
 		C18D36E41D82460700604B24 /* RgSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSpeech.m; sourceTree = "<group>"; };
@@ -378,7 +380,6 @@
 		C18D36EC1D824F9900604B24 /* RgSpeechViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgSpeechViewController.h; sourceTree = "<group>"; };
 		C18D36ED1D824F9900604B24 /* RgSpeechViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgSpeechViewController.m; sourceTree = "<group>"; };
 		C18D37381D8257F300604B24 /* RgBuglyTip.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RgBuglyTip.txt; sourceTree = "<group>"; };
-		C18D373B1D82587C00604B24 /* Bugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bugly.framework; sourceTree = "<group>"; };
 		C18D373D1D82588C00604B24 /* RgBugly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgBugly.h; sourceTree = "<group>"; };
 		C18D373E1D82588C00604B24 /* RgBugly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgBugly.m; sourceTree = "<group>"; };
 		C18D37461D82A2AA00604B24 /* RgCameraAfterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCameraAfterViewController.h; sourceTree = "<group>"; };
@@ -485,11 +486,11 @@
 				C1148CB81D76B0E600C804BA /* libWeiboSDK.a in Frameworks */,
 				C1982B9D1D7E4F8A0023ADFB /* BaiduMapAPI_Base.framework in Frameworks */,
 				C1982BA21D7E4F8A0023ADFB /* BaiduMapAPI_Search.framework in Frameworks */,
+				C18AB0D61D8E8D200086407F /* Bugly.framework in Frameworks */,
 				C1982BA31D7E4F8A0023ADFB /* BaiduMapAPI_Utils.framework in Frameworks */,
 				C18D376D1D868A5500604B24 /* libopencore-amrwb.a in Frameworks */,
 				C1148CBD1D76B0E600C804BA /* libSocialWechat.a in Frameworks */,
 				C1982B9E1D7E4F8A0023ADFB /* BaiduMapAPI_Cloud.framework in Frameworks */,
-				C18D373C1D82587C00604B24 /* Bugly.framework in Frameworks */,
 				C1148CB71D76B0E600C804BA /* libSocialSinaSSO.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +517,7 @@
 		C1148B941D7401CF00C804BA /* RgFeinno */ = {
 			isa = PBXGroup;
 			children = (
+				C18AB15D1D8FB0760086407F /* RgFeinno.entitlements */,
 				C18D37701D8696EA00604B24 /* RgReachability */,
 				C18D36EF1D8257E600604B24 /* RgBugly */,
 				C18D36E21D8245F900604B24 /* RgSpeech */,
@@ -1005,6 +1007,14 @@
 			path = GTMBase64;
 			sourceTree = "<group>";
 		};
+		C18AB0D41D8E8D200086407F /* QQBugly2.4 */ = {
+			isa = PBXGroup;
+			children = (
+				C18AB0D51D8E8D200086407F /* Bugly.framework */,
+			);
+			path = QQBugly2.4;
+			sourceTree = "<group>";
+		};
 		C18D36E21D8245F900604B24 /* RgSpeech */ = {
 			isa = PBXGroup;
 			children = (
@@ -1018,20 +1028,12 @@
 		C18D36EF1D8257E600604B24 /* RgBugly */ = {
 			isa = PBXGroup;
 			children = (
+				C18AB0D41D8E8D200086407F /* QQBugly2.4 */,
 				C18D37381D8257F300604B24 /* RgBuglyTip.txt */,
 				C18D373D1D82588C00604B24 /* RgBugly.h */,
 				C18D373E1D82588C00604B24 /* RgBugly.m */,
-				C18D373A1D82587C00604B24 /* QQBugly2.4 */,
 			);
 			path = RgBugly;
-			sourceTree = "<group>";
-		};
-		C18D373A1D82587C00604B24 /* QQBugly2.4 */ = {
-			isa = PBXGroup;
-			children = (
-				C18D373B1D82587C00604B24 /* Bugly.framework */,
-			);
-			path = QQBugly2.4;
 			sourceTree = "<group>";
 		};
 		C18D37611D868A5500604B24 /* RgLame */ = {
@@ -1205,7 +1207,13 @@
 				TargetAttributes = {
 					C1148B911D7401CE00C804BA = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = ZBB923YFHM;
+						DevelopmentTeam = 8VL929W5VS;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1485,8 +1493,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = RgFeinno/RgFeinno.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: gang li (S55DG727VF)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8VL929W5VS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1498,7 +1508,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgBugly/QQBugly2.4",
 				);
 				INFOPLIST_FILE = RgFeinno/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1510,9 +1520,10 @@
 					"$(PROJECT_DIR)/RgFeinno/RgSound/RgLame",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1520,8 +1531,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = RgFeinno/RgFeinno.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: gang li (8VL929W5VS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 8VL929W5VS;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1533,7 +1546,7 @@
 					"$(PROJECT_DIR)/RgFeinno/RgBugly/QQBugly2.4",
 				);
 				INFOPLIST_FILE = RgFeinno/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1545,9 +1558,10 @@
 					"$(PROJECT_DIR)/RgFeinno/RgSound/RgLame",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rogue.RgFeinno;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
