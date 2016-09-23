@@ -26,6 +26,7 @@
 #import "RgReachability.h"
 #import "RgReachabilityViewController.h"
 #import "RgUploadImageViewController.h"
+#import "RgCaremaViewController.h"
 
 @interface AppDelegate ()
 
@@ -58,7 +59,7 @@
     [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgSoundRecordViewController *vc = [RgSoundRecordViewController new];
+    RgCaremaViewController *vc = [RgCaremaViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
