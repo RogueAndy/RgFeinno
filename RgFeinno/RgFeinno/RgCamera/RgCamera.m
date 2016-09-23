@@ -9,7 +9,7 @@
 #import "RgCamera.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AVFoundation/AVFoundation.h>
-#import "UINavigationController+RgCameraNavigationController.h"
+#import "UIImagePickerController+RgCameraNavigationController.h"
 
 @interface RgCamera()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 

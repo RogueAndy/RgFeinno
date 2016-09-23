@@ -1,14 +1,14 @@
 //
-//  UINavigationController+RgCameraNavigationController.m
-//  RgFeinno
+//  UIImagePickerController+RgCameraNavigationController.m
+//  RgCameraKit
 //
-//  Created by Rogue Andy on 16/8/29.
+//  Created by Rogue Andy on 16/9/23.
 //  Copyright © 2016年 RogueAndy. All rights reserved.
 //
 
-#import "UINavigationController+RgCameraNavigationController.h"
+#import "UIImagePickerController+RgCameraNavigationController.h"
 
-@implementation UINavigationController (RgCameraNavigationController)
+@implementation UIImagePickerController (RgCameraNavigationController)
 
 - (void)setCameraBarWithFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor {
     

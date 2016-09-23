@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10E2D4F1D95106A008CBA89 /* RgCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C10E2D4C1D95106A008CBA89 /* RgCamera.m */; };
+		C10E2D501D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10E2D4E1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m */; };
 		C1148B971D7401CF00C804BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148B961D7401CF00C804BA /* main.m */; };
 		C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148B991D7401CF00C804BA /* AppDelegate.m */; };
 		C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148B9C1D7401CF00C804BA /* ViewController.m */; };
@@ -14,8 +16,6 @@
 		C1148BA21D7401CF00C804BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1148BA11D7401CF00C804BA /* Assets.xcassets */; };
 		C1148BA51D7401CF00C804BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1148BA31D7401CF00C804BA /* LaunchScreen.storyboard */; };
 		C1148BAF1D74031800C804BA /* RgLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BAE1D74031800C804BA /* RgLocation.m */; };
-		C1148BB61D74083800C804BA /* RgCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BB51D74083800C804BA /* RgCamera.m */; };
-		C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */; };
 		C1148BC21D75396C00C804BA /* RgScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BC11D75396C00C804BA /* RgScreenShot.m */; };
 		C1148BC91D75536100C804BA /* RgBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BC81D75536100C804BA /* RgBaseViewController.m */; };
 		C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148BCA1D7553D400C804BA /* RgScreenShotViewController.m */; };
@@ -163,6 +163,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C10E2D4B1D95106A008CBA89 /* RgCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCamera.h; sourceTree = "<group>"; };
+		C10E2D4C1D95106A008CBA89 /* RgCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCamera.m; sourceTree = "<group>"; };
+		C10E2D4D1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+RgCameraNavigationController.h"; sourceTree = "<group>"; };
+		C10E2D4E1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+RgCameraNavigationController.m"; sourceTree = "<group>"; };
 		C1148B921D7401CE00C804BA /* RgFeinno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RgFeinno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1148B961D7401CF00C804BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C1148B981D7401CF00C804BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -175,10 +179,6 @@
 		C1148BA61D7401CF00C804BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1148BAD1D74031800C804BA /* RgLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgLocation.h; sourceTree = "<group>"; };
 		C1148BAE1D74031800C804BA /* RgLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgLocation.m; sourceTree = "<group>"; };
-		C1148BB41D74083800C804BA /* RgCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCamera.h; sourceTree = "<group>"; };
-		C1148BB51D74083800C804BA /* RgCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCamera.m; sourceTree = "<group>"; };
-		C1148BBC1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+RgCameraNavigationController.h"; sourceTree = "<group>"; };
-		C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+RgCameraNavigationController.m"; sourceTree = "<group>"; };
 		C1148BC01D75396C00C804BA /* RgScreenShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgScreenShot.h; sourceTree = "<group>"; };
 		C1148BC11D75396C00C804BA /* RgScreenShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgScreenShot.m; sourceTree = "<group>"; };
 		C1148BC71D75536100C804BA /* RgBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgBaseViewController.h; sourceTree = "<group>"; };
@@ -569,10 +569,10 @@
 		C1148BB31D74081E00C804BA /* RgCamera */ = {
 			isa = PBXGroup;
 			children = (
-				C1148BB41D74083800C804BA /* RgCamera.h */,
-				C1148BB51D74083800C804BA /* RgCamera.m */,
-				C1148BBC1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.h */,
-				C1148BBD1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m */,
+				C10E2D4B1D95106A008CBA89 /* RgCamera.h */,
+				C10E2D4C1D95106A008CBA89 /* RgCamera.m */,
+				C10E2D4D1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.h */,
+				C10E2D4E1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m */,
 			);
 			path = RgCamera;
 			sourceTree = "<group>";
@@ -1332,7 +1332,6 @@
 				C16E713E1D7D0CFD00CCAD79 /* AFURLResponseSerialization.m in Sources */,
 				C18D376B1D868A5500604B24 /* amrFileCodec.mm in Sources */,
 				C18D37941D8696EA00604B24 /* ReachStateLoading.m in Sources */,
-				C1148BBE1D742C7E00C804BA /* UINavigationController+RgCameraNavigationController.m in Sources */,
 				C1148B9A1D7401CF00C804BA /* AppDelegate.m in Sources */,
 				C1148BE91D757FA400C804BA /* KRVideoPlayerControlView.m in Sources */,
 				C16E71481D7D0CFD00CCAD79 /* UIWebView+AFNetworking.m in Sources */,
@@ -1346,6 +1345,7 @@
 				C152B0301D795A9C000EE3E7 /* fileenc.c in Sources */,
 				C1982B931D7D5C770023ADFB /* RgMapViewController.m in Sources */,
 				C18D379B1D8696EA00604B24 /* PingHelper.m in Sources */,
+				C10E2D4F1D95106A008CBA89 /* RgCamera.m in Sources */,
 				C18D379A1D8696EA00604B24 /* PingFoundation.m in Sources */,
 				C18D379D1D8696EA00604B24 /* RealReachability.m in Sources */,
 				C16E714E1D7D0DFC00CCAD79 /* RgHttpServers.m in Sources */,
@@ -1355,12 +1355,12 @@
 				C18D376F1D868A5500604B24 /* VoiceConverter.mm in Sources */,
 				C16E713B1D7D0CFD00CCAD79 /* AFNetworkReachabilityManager.m in Sources */,
 				C152B0381D795A9C000EE3E7 /* unzip.c in Sources */,
+				C10E2D501D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m in Sources */,
 				C16E715A1D7D178B00CCAD79 /* NSString+MD5.m in Sources */,
 				C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */,
 				C18D37961D8696EA00604B24 /* ReachStateUnReachable.m in Sources */,
 				C1148CC21D76B10F00C804BA /* RgUMShareViewController.m in Sources */,
 				C1913CDF1D88D9E30003A68D /* RgUploadImageViewController.m in Sources */,
-				C1148BB61D74083800C804BA /* RgCamera.m in Sources */,
 				C18D37901D8696EA00604B24 /* LocalConnection.m in Sources */,
 				C18D376E1D868A5500604B24 /* README.md in Sources */,
 				C1148C691D76A42300C804BA /* RgCutImage.m in Sources */,
