@@ -26,7 +26,7 @@
  *  普通接口地址
  *
  *  @param URLString  地址
- *  @param parameters 需要 3des 加密的参数
+ *  @param parameters 不需要 3des 加密的参数
  *  @param complete   回调函数
  *
  *  @return 任务
@@ -51,7 +51,7 @@
  *  图片接口地址
  *
  *  @param URLString  地址
- *  @param parameters 需要 3des 加密的参数
+ *  @param parameters 不需要 3des 加密的参数
  *  @param datas      流文件
  *  @param complete   回调函数
  *

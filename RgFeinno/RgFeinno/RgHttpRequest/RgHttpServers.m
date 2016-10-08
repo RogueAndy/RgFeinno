@@ -98,11 +98,11 @@
         }
         
     }
-    [manager.requestSerializer setQueryStringSerializationWithBlock:^NSString * _Nonnull(NSURLRequest * _Nonnull request, id  _Nonnull parameters, NSError * _Nullable __autoreleasing * _Nullable error) {
-        
-        return parameters;
-        
-    }];
+//    [manager.requestSerializer setQueryStringSerializationWithBlock:^NSString * _Nonnull(NSURLRequest * _Nonnull request, id  _Nonnull parameters, NSError * _Nullable __autoreleasing * _Nullable error) {
+//        
+//        return parameters;
+//        
+//    }];
     manager.requestSerializer.timeoutInterval = 20;
     
     return [manager POST:URLString
