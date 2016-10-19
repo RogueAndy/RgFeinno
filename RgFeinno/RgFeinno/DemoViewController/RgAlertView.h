@@ -10,8 +10,29 @@
 
 @interface RgAlertView : UIView
 
+@property (nonatomic, strong) void (^linkAction)(NSString *linkString);
+
+@property (nonatomic, strong) void (^leftButtonAction)(void);
+
+@property (nonatomic, strong) void (^rightButtonAction)(void);
+
 + (instancetype)initWithFrame:(CGRect)frame style:(UIColor *)color;
 
-- (void)setTitle:(NSString *)title tip:(NSString *)tip content:(NSString *)content;
+- (void)setTitle:(NSString *)title tip:(NSString *)tip content:(NSString *)content linkAttributes:(nullable NSArray *)attributes;
+
+@end
+
+
+
+
+@interface RgAlertSingleView : UIView
+
+@property (nonatomic, strong) void (^linkAction)(NSString *linkString);
+
+@property (nonatomic, strong) void (^singleButtonAction)(void);
+
++ (instancetype)initWithFrame:(CGRect)frame style:(UIColor *)color;
+
+- (void)setTitle:(NSString *)title tip:(NSString *)tip content:(NSString *)content linkAttributes:(nullable NSArray *)attributes;
 
 @end

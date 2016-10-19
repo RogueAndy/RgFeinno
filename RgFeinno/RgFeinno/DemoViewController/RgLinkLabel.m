@@ -379,7 +379,7 @@ NSString * const RgDeleteEndKey = @"</a>";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         NSError *error = nil;
-        regex = [[NSRegularExpression alloc] initWithPattern:@"<a>([\\w\\_]+)?</a>" options:0 error:&error];
+        regex = [[NSRegularExpression alloc] initWithPattern:@"<a>([\\w\\_><]+)?</a>" options:0 error:&error];
     });
     
     // Run the expression and get matches
@@ -420,7 +420,7 @@ NSString * const RgDeleteEndKey = @"</a>";
     for (NSDictionary *dictionary in linkRanges)
     {
         NSRange range = [[dictionary objectForKey:RgLabelRangeKey] rangeValue];
-
+        
         [attributedString addAttributes:self.rg_linkAttributes[i] range:range];
         
         // Add an URL attribute if this is a URL
