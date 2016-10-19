@@ -21,13 +21,13 @@ NSString * const RgDeleteEndKey = @"</a>";
 @interface RgLinkLabel()
 
 // Used to control layout of glyphs and rendering
-@property (nonatomic, retain) NSLayoutManager *layoutManager;
+@property (nonatomic, strong) NSLayoutManager *layoutManager;
 
 // Specifies the space in which to render text
-@property (nonatomic, retain) NSTextContainer *textContainer;
+@property (nonatomic, strong) NSTextContainer *textContainer;
 
 // Backing storage for text that is rendered by the layout manager
-@property (nonatomic, retain) NSTextStorage *textStorage;
+@property (nonatomic, strong) NSTextStorage *textStorage;
 
 // Dictionary of detected links and their ranges in the text
 @property (nonatomic, copy) NSArray *linkRanges;
@@ -37,6 +37,10 @@ NSString * const RgDeleteEndKey = @"</a>";
 
 // During a touch, range of text that is displayed as selected
 @property (nonatomic, assign) NSRange selectedRange;
+
+// 标签的属性
+
+@property (nonatomic, strong) NSMutableArray *rg_linkAttributes;
 
 @end
 
@@ -71,10 +75,10 @@ NSString * const RgDeleteEndKey = @"</a>";
     return self;
 }
 
-// Common initialisation. Must be done once during construction.
+
 - (void)setupTextSystem
 {
-    // Create a text container and set it up to match our label properties
+    
     _textContainer = [[NSTextContainer alloc] init];
     _textContainer.lineFragmentPadding = 0;
     _textContainer.maximumNumberOfLines = self.numberOfLines;
@@ -208,7 +212,7 @@ NSString * const RgDeleteEndKey = @"</a>";
         text = @"";
     }
     
-    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:[self attributesFromProperties]];
+    NSAttributedString *attributedText = [[NSAttributedString alloc] initWithString:text attributes:@{NSForegroundColorAttributeName: [UIColor orangeColor]}];//[self attributesFromProperties]
     [self updateTextStoreWithAttributedString:attributedText];
 }
 
@@ -280,7 +284,9 @@ NSString * const RgDeleteEndKey = @"</a>";
 {
     NSString *current = [attributedString.string stringByReplacingOccurrencesOfString:RgDeleteBeginKey withString:@""];
     current = [current stringByReplacingOccurrencesOfString:RgDeleteEndKey withString:@""];
-    NSAttributedString *currentAtt = [[NSAttributedString alloc] initWithString:current];
+    NSMutableAttributedString *currentAtt = [[NSMutableAttributedString alloc] initWithString:current];
+    [currentAtt addAttribute:NSForegroundColorAttributeName value:self.textColor range:NSMakeRange(0, currentAtt.length)];
+    [currentAtt addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, currentAtt.length)];
     
     if (attributedString.length != 0)
     {
@@ -327,25 +333,17 @@ NSString * const RgDeleteEndKey = @"</a>";
         shadow.shadowOffset = CGSizeMake(0, -1);
         shadow.shadowColor = nil;
     }
-    
-    // Setup color attributes
-    UIColor *color = self.textColor;
-    if (!self.isEnabled)
-    {
-        color = [UIColor lightGrayColor];
-    }
-    else if (self.isHighlighted)
-    {
-        color = self.highlightedTextColor;
-    }
+
+    UIFont *currentFont = self.font;
+    UIColor *currentColor = self.textColor;
     
     // Setup paragraph attributes
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
     paragraph.alignment = self.textAlignment;
     
     // Create the dictionary
-    NSDictionary *attributes = @{NSFontAttributeName : self.font,
-                                 NSForegroundColorAttributeName : color,
+    NSDictionary *attributes = @{NSFontAttributeName : currentFont,
+                                 NSForegroundColorAttributeName : currentColor,
                                  NSShadowAttributeName : shadow,
                                  NSParagraphStyleAttributeName : paragraph,
                                  };
@@ -418,16 +416,12 @@ NSString * const RgDeleteEndKey = @"</a>";
 - (NSAttributedString *)addLinkAttributesToAttributedString:(NSAttributedString *)string linkRanges:(NSArray *)linkRanges
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:string];
-    
+    NSInteger i = 0;
     for (NSDictionary *dictionary in linkRanges)
     {
         NSRange range = [[dictionary objectForKey:RgLabelRangeKey] rangeValue];
-        RgLinkType linkType = [dictionary[RgLabelLinkTypeKey] unsignedIntegerValue];
-        
-        NSDictionary *attributes = [self attributesForLinkType:linkType];
-        
-        // Use our tint color to hilight the link
-        [attributedString addAttributes:attributes range:range];
+
+        [attributedString addAttributes:self.rg_linkAttributes[i] range:range];
         
         // Add an URL attribute if this is a URL
         if (_systemURLStyle)
@@ -435,6 +429,8 @@ NSString * const RgDeleteEndKey = @"</a>";
             // Add a link attribute using the stored link
             [attributedString addAttribute:NSLinkAttributeName value:dictionary[RgLabelLinkKey] range:range];
         }
+        
+        i++;
     }
     
     return attributedString;
@@ -661,6 +657,21 @@ NSString * const RgDeleteEndKey = @"</a>";
     [restyled addAttribute:NSParagraphStyleAttributeName value:mutableParagraphStyle range:NSMakeRange(0, restyled.length)];
     
     return restyled;
+}
+
+#pragma mark - 给每个标签设置对应的字体属性
+
+- (void)setLinkAttributes:(NSArray *)attributes {
+
+    if(!self.rg_linkAttributes) {
+    
+        self.rg_linkAttributes = [[NSMutableArray alloc] init];
+    
+    }
+    
+    [self.rg_linkAttributes removeAllObjects];
+    [self.rg_linkAttributes addObjectsFromArray:attributes];
+
 }
 
 @end

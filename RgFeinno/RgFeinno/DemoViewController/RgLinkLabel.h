@@ -138,22 +138,10 @@ IB_DESIGNABLE
  */
 @property (nullable, nonatomic, copy) RgLinkTapHandler urlLinkTapHandler;
 
-/** ****************************************************************************************** **
- * @name Geometry
- ** ****************************************************************************************** **/
-
-/**
- * Returns a dictionary of data about the link that it at the location. Returns nil if there is no link.
- *
- * A link dictionary contains the following keys:
- *
- * - **KILabelLinkTypeKey**, a TDLinkType that identifies the type of link.
- * - **KILabelRangeKey**, the range of the link within the label text.
- * - **KILabelLinkKey**, the link text. This could be an URL, handle or hashtag depending on the linkType value.
- *
- * @param point The point in the coordinates of the label view.
- * @return A dictionary containing the link.
- */
 - (nullable NSDictionary*)linkAtPoint:(CGPoint)point;
+
+// 给每个标签设置对应的字体属性
+
+- (void)setLinkAttributes:(nullable NSArray *)attributes;
 
 @end

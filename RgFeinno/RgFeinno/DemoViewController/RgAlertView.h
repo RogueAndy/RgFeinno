@@ -12,6 +12,6 @@
 
 + (instancetype)initWithFrame:(CGRect)frame style:(UIColor *)color;
 
-- (void)setTitle:(NSString *)title tip:(NSString *)tip content:(NSString *)content tapString:(NSString *)tapstring;
+- (void)setTitle:(NSString *)title tip:(NSString *)tip content:(NSString *)content;
 
 @end
