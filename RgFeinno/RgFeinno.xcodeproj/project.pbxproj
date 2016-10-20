@@ -10,6 +10,7 @@
 		8291D0FE1DB603AE00BD579F /* RgAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D0FD1DB603AE00BD579F /* RgAlertView.m */; };
 		8291D1011DB604B300BD579F /* RgAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1001DB604B300BD579F /* RgAlertViewController.m */; };
 		8291D1171DB75F8B00BD579F /* RgLinkLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1151DB75F8B00BD579F /* RgLinkLabel.m */; };
+		8291D11A1DB850BA00BD579F /* RgAlertViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1191DB850BA00BD579F /* RgAlertViewControl.m */; };
 		C10E2D4F1D95106A008CBA89 /* RgCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C10E2D4C1D95106A008CBA89 /* RgCamera.m */; };
 		C10E2D501D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10E2D4E1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m */; };
 		C1148B971D7401CF00C804BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148B961D7401CF00C804BA /* main.m */; };
@@ -172,6 +173,8 @@
 		8291D1001DB604B300BD579F /* RgAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgAlertViewController.m; sourceTree = "<group>"; };
 		8291D1151DB75F8B00BD579F /* RgLinkLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgLinkLabel.m; sourceTree = "<group>"; };
 		8291D1161DB75F8B00BD579F /* RgLinkLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgLinkLabel.h; sourceTree = "<group>"; };
+		8291D1181DB850BA00BD579F /* RgAlertViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgAlertViewControl.h; sourceTree = "<group>"; };
+		8291D1191DB850BA00BD579F /* RgAlertViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgAlertViewControl.m; sourceTree = "<group>"; };
 		C10E2D4B1D95106A008CBA89 /* RgCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCamera.h; sourceTree = "<group>"; };
 		C10E2D4C1D95106A008CBA89 /* RgCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCamera.m; sourceTree = "<group>"; };
 		C10E2D4D1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+RgCameraNavigationController.h"; sourceTree = "<group>"; };
@@ -640,6 +643,8 @@
 				C1913CDE1D88D9E30003A68D /* RgUploadImageViewController.m */,
 				8291D0FC1DB603AE00BD579F /* RgAlertView.h */,
 				8291D0FD1DB603AE00BD579F /* RgAlertView.m */,
+				8291D1181DB850BA00BD579F /* RgAlertViewControl.h */,
+				8291D1191DB850BA00BD579F /* RgAlertViewControl.m */,
 				8291D0FF1DB604B300BD579F /* RgAlertViewController.h */,
 				8291D1001DB604B300BD579F /* RgAlertViewController.m */,
 			);
@@ -1328,6 +1333,7 @@
 				C16E714D1D7D0DFC00CCAD79 /* RgHttpDealParameters.m in Sources */,
 				C152B0361D795A9C000EE3E7 /* ioapi.c in Sources */,
 				C14DD97D1D79682B000E940D /* RgZipArchive.m in Sources */,
+				8291D11A1DB850BA00BD579F /* RgAlertViewControl.m in Sources */,
 				C1148B9D1D7401CF00C804BA /* ViewController.m in Sources */,
 				C1148C701D76A68E00C804BA /* RgCutoutImageViewController.m in Sources */,
 				C1913CE21D88DB5E0003A68D /* YRJSONAdapter.m in Sources */,

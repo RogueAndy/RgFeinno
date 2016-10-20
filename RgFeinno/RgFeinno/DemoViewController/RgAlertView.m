@@ -13,8 +13,6 @@
 
 @property (nonatomic) CGRect alertFrame;
 
-@property (nonatomic, strong) UIColor *style;
-
 @property (nonatomic, strong) UILabel *alertTitleLabel;
 
 @property (nonatomic, strong) UILabel *tipLabel;
@@ -200,8 +198,6 @@
 @interface RgAlertSingleView()
 
 @property (nonatomic) CGRect alertFrame;
-
-@property (nonatomic, strong) UIColor *style;
 
 @property (nonatomic, strong) UILabel *alertTitleLabel;
 

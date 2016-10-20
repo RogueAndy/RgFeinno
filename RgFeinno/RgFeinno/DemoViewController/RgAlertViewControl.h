@@ -1,14 +1,14 @@
 //
-//  RgAlertView.h
+//  RgAlertViewControl.h
 //  RgFeinno
 //
-//  Created by rogue on 16/10/18.
+//  Created by rogue on 16/10/20.
 //  Copyright © 2016年 RogueAndy. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface RgAlertView : UIView
+@interface RgAlertViewControl : UIView
 
 @property (nonatomic, strong) void (^linkAction)(NSString *linkString);
 
@@ -16,8 +16,6 @@
 
 @property (nonatomic, strong) void (^rightButtonAction)(void);
 
-@property (nonatomic, strong) UIColor *style;
-
 + (instancetype)initWithFrame:(CGRect)frame style:(UIColor *)color;
 
 - (void)setTitle:(NSString *)title tip:(NSString *)tip content:(NSString *)content linkAttributes:(nullable NSArray *)attributes;
@@ -27,18 +25,15 @@
 
 
 
-@interface RgAlertSingleView : UIView
+@interface RgAlertSingleViewControl : UIView
 
 @property (nonatomic, strong) void (^linkAction)(NSString *linkString);
 
 @property (nonatomic, strong) void (^singleButtonAction)(void);
 
-@property (nonatomic, strong) UIColor *style;
-
 + (instancetype)initWithFrame:(CGRect)frame style:(UIColor *)color;
 
 - (void)setTitle:(NSString *)title tip:(NSString *)tip content:(NSString *)content linkAttributes:(nullable NSArray *)attributes;
 
+
 @end
-
-
