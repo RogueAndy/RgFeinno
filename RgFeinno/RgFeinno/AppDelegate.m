@@ -28,6 +28,7 @@
 #import "RgUploadImageViewController.h"
 #import "RgCaremaViewController.h"
 #import "RgAlertViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -60,7 +61,7 @@
     [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgAlertViewController *vc = [RgAlertViewController new];
+    RgCameraAfterViewController *vc = [RgCameraAfterViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];

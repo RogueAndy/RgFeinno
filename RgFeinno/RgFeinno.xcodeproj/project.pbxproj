@@ -601,8 +601,6 @@
 		C1148BC61D75534800C804BA /* DemoViewController */ = {
 			isa = PBXGroup;
 			children = (
-				8291D1161DB75F8B00BD579F /* RgLinkLabel.h */,
-				8291D1151DB75F8B00BD579F /* RgLinkLabel.m */,
 				C1913CE01D88DB5E0003A68D /* YRJSONAdapter.h */,
 				C1913CE11D88DB5E0003A68D /* YRJSONAdapter.m */,
 				C1148C6C1D76A58500C804BA /* banner.png */,
@@ -641,6 +639,8 @@
 				C18D379F1D86974100604B24 /* RgReachabilityViewController.m */,
 				C1913CDD1D88D9E30003A68D /* RgUploadImageViewController.h */,
 				C1913CDE1D88D9E30003A68D /* RgUploadImageViewController.m */,
+				8291D1161DB75F8B00BD579F /* RgLinkLabel.h */,
+				8291D1151DB75F8B00BD579F /* RgLinkLabel.m */,
 				8291D0FC1DB603AE00BD579F /* RgAlertView.h */,
 				8291D0FD1DB603AE00BD579F /* RgAlertView.m */,
 				8291D1181DB850BA00BD579F /* RgAlertViewControl.h */,

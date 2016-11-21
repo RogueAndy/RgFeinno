@@ -25,7 +25,9 @@
     
     UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
     [bt addTarget:self action:@selector(ac) forControlEvents:UIControlEventTouchUpInside];
-    bt.frame = CGRectMake(20, 200, 200, 40);
+    [bt setTitle:@"视频" forState:UIControlStateNormal];
+    bt.titleLabel.textColor = [UIColor whiteColor];
+    bt.frame = CGRectMake(20, 200, CGRectGetWidth(self.view.frame) - 40, 40);
     bt.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:bt];
     

@@ -32,22 +32,24 @@
     
     UIButton *bu = [UIButton buttonWithType:UIButtonTypeCustom];
     bu.backgroundColor = [UIColor orangeColor];
+    [bu setTitle:@"录制音频" forState:UIControlStateNormal];
+    bu.titleLabel.textColor = [UIColor whiteColor];
     [bu addTarget:self action:@selector(begin) forControlEvents:UIControlEventTouchUpInside];
-    bu.frame = CGRectMake(20, 100, 100, 40);
+    bu.frame = CGRectMake(20, 100, CGRectGetWidth(self.view.frame) - 40, 40);
     [self.view addSubview:bu];
-    
-    UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
-    bt.backgroundColor = [UIColor redColor];
-    [bt addTarget:self action:@selector(stop) forControlEvents:UIControlEventTouchUpInside];
-    bt.frame = CGRectMake(200, 100, 100, 40);
-    [self.view addSubview:bt];
-    
-    UIButton *bb = [UIButton buttonWithType:UIButtonTypeCustom];
-    bb.backgroundColor = [UIColor redColor];
-    [bb addTarget:self action:@selector(read) forControlEvents:UIControlEventTouchUpInside];
-    bb.frame = CGRectMake(20, 160, 100, 40);
-    [self.view addSubview:bb];
-    
+//    
+//    UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
+//    bt.backgroundColor = [UIColor redColor];
+//    [bt addTarget:self action:@selector(stop) forControlEvents:UIControlEventTouchUpInside];
+//    bt.frame = CGRectMake(200, 100, 100, 40);
+//    [self.view addSubview:bt];
+//    
+//    UIButton *bb = [UIButton buttonWithType:UIButtonTypeCustom];
+//    bb.backgroundColor = [UIColor redColor];
+//    [bb addTarget:self action:@selector(read) forControlEvents:UIControlEventTouchUpInside];
+//    bb.frame = CGRectMake(20, 160, 100, 40);
+//    [self.view addSubview:bb];
+//    
 }
 
 - (void)begin {
@@ -97,7 +99,7 @@
 - (void)loadWave {
 
     _wave = [[RgWave alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    _wave.center = self.view.center;
+    _wave.center = CGPointMake(self.view.center.x, self.view.center.y - 80);
     [self.view addSubview:_wave];
 
 }

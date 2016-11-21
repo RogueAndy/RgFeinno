@@ -116,11 +116,11 @@
 //    self.alertViewControl = [RgAlertViewControl initWithFrame:self.view.frame style:[UIColor orangeColor]];
 //    [self.view addSubview:self.alertViewControl];
 //    
-//    [self.alertViewControl setTitle:@"登陆成功"
-//                         tip:@"提示"
-//                     content:@"尊敬的用户，您当前的账号可以升级为12582通行证！12582通行证新增了更多功能<a>>></a><a>点击查看</a>\n点击立即升级后跳转到12582<a>密码重置</a>界面"
-//              linkAttributes:att];
-//    
+    [self.alertViewControl setTitle:@"登陆成功"
+                         tip:@"提示"
+                     content:@"尊敬的用户，您当前的账号可以升级为12582通行证！12582通行证新增了更多功能<a>>></a><a>点击查看</a>\n点击立即升级后跳转到12582<a>密码重置</a>界面"
+              linkAttributes:att];
+//
 //    self.alertViewControl.leftButtonAction = ^{
 //        
 //        NSLog(@"----马上升级");

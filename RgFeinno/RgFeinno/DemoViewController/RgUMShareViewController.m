@@ -23,7 +23,9 @@
     UIButton *bu = [UIButton buttonWithType:UIButtonTypeCustom];
     bu.backgroundColor = [UIColor orangeColor];
     [bu addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
-    bu.frame = CGRectMake(20, 200, 280, 40);
+    [bu setTitle:@"分享" forState:UIControlStateNormal];
+    bu.titleLabel.textColor = [UIColor whiteColor];
+    bu.frame = CGRectMake(20, 200, CGRectGetWidth(self.view.frame) - 40, 40);
     [self.view addSubview:bu];
     
 }

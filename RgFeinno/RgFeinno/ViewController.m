@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
+    UIButton *se = [UIButton buttonWithType:UIButtonTypeCustom];
+    se.backgroundColor = [UIColor orangeColor];
+    se.frame = CGRectMake(20, 200, 280, 40);
+    [se addTarget:self action:@selector(chan) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:se];
+    
+}
+
+- (void)chan {
+
+    NSString *name = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleNameKey];
+    NSLog(@"~~~~~~~~~~~~~~~~ %@", name);
+    [[[NSBundle mainBundle] infoDictionary] setValue:@"再一次" forKey:(NSString *)kCFBundleNameKey];
+
 }
 
 - (void)didReceiveMemoryWarning {

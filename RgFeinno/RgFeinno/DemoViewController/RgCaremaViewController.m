@@ -11,6 +11,10 @@
 #import "RgCamera.h"
 #import "RgHttpServers.h"
 
+@interface RgCaremaViewController()<UIActionSheetDelegate>
+
+@end
+
 @implementation RgCaremaViewController
 
 - (void)viewDidLoad {
@@ -20,13 +24,20 @@
     
     UIButton *bu = [UIButton buttonWithType:UIButtonTypeCustom];
     bu.backgroundColor = [UIColor orangeColor];
+    [bu setTitle:@"选择拍摄模式" forState:UIControlStateNormal];
+    bu.titleLabel.textColor = [UIColor whiteColor];
     [bu addTarget:self action:@selector(show) forControlEvents:UIControlEventTouchUpInside];
-    bu.frame = CGRectMake(20, 200, 280, 40);
+    bu.frame = CGRectMake(20, 200, CGRectGetWidth(self.view.frame) - 40, 40);
     [self.view addSubview:bu];
     
 }
 
 - (void)show {
+    
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"选择相册或拍摄" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍摄", @"本地相册", nil];
+    [action showInView:self.view];
+    
+    return;
     
 //    [RgCamera cameraPhotoType:RgCameraPhotoLocalSource barFontColor:[UIColor whiteColor] barColor:[UIColor orangeColor] pushInParentController:self didFinishPickingPhotoWithInfo:^(NSDictionary *cameraInfo, UIImagePickerController *caremaEntity) {
 //        
