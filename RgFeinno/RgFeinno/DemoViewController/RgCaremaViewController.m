@@ -36,42 +36,66 @@
     
     UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"选择相册或拍摄" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍摄", @"本地相册", nil];
     [action showInView:self.view];
-    
-    return;
-    
-//    [RgCamera cameraPhotoType:RgCameraPhotoLocalSource barFontColor:[UIColor whiteColor] barColor:[UIColor orangeColor] pushInParentController:self didFinishPickingPhotoWithInfo:^(NSDictionary *cameraInfo, UIImagePickerController *caremaEntity) {
-//        
-//        [caremaEntity dismissViewControllerAnimated:YES completion:^{
-//            NSLog(@"------- %@", cameraInfo);
-//        }];
-//        
-//    }];
-    
-        [RgCamera cameraVideoType:RgCameraVideoShoot
-                     barFontColor:[UIColor whiteColor]
-                         barColor:[UIColor orangeColor]
-                        maxSecond:10
-                          maxSize:200
-           pushInParentController:self
-    didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
-        
-        NSLog(@"%@", videoURL);
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:videoURL]];
-       //http://218.201.73.186:8777/upload/?path=nxt&type= http://218.201.73.49:6892/upload/?path=xm&type=image
-        [RgHttpServers POST:@"http://218.201.73.186:8777/upload/?path=nxt&type=video"
-                    headers:nil
-                   fileName:@"testvideo.mp4"
-                   mineType:@"video"
-                 parameters:nil
-                      datas:data
-             completeHandle:^(NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType) {
-                 
-                 NSLog(@"----%@", responceObject);
-                 
-             }];
-        
-    }];
+
+//    [RgHttpServers POST:@"http://218.201.73.186:8777/upload/?path=nxt&type=video"
+//                headers:nil
+//               fileName:@"testvideo.mp4"
+//               mineType:@"video"
+//             parameters:nil
+//                  datas:data
+//         completeHandle:^(NSURLSessionDataTask *task, id responceObject, NSError *error, NSString *message, NSInteger messageType) {
+//             
+//             NSLog(@"----%@", responceObject);
+//             
+//         }];
     
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    switch (buttonIndex) {
+        case 0:
+        {
+        
+            [RgCamera cameraVideoType:RgCameraVideoShoot
+                         barFontColor:[UIColor whiteColor]
+                             barColor:[UIColor orangeColor]
+                            maxSecond:15
+                              maxSize:100
+               pushInParentController:self
+        didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
+            NSLog(@"%@", videoURL);
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:videoURL]];
+            NSLog(@"%f", (data.length / 1024.0 / 1024.0));
+            
+            [caremaEntity dismissViewControllerAnimated:YES completion:nil];
+        }];
+        
+        }
+            break;
+            
+        case 1:
+        {
+        
+            [RgCamera cameraVideoType:RgCameraVideoLocalSource
+                         barFontColor:[UIColor whiteColor]
+                             barColor:[UIColor orangeColor]
+                            maxSecond:15
+                              maxSize:100
+               pushInParentController:self
+        didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
+            NSLog(@"%@", videoURL);
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:videoURL]];
+            NSLog(@"%f", (data.length / 1024.0 / 1024.0));
+            
+            [caremaEntity dismissViewControllerAnimated:YES completion:nil];
+        }];
+        
+        }
+            break;
+        default:
+            break;
+    }
+
+}
 @end

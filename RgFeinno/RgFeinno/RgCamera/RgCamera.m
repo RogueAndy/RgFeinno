@@ -110,7 +110,7 @@
     [self setCameraBarWithFontColor:fontColor barColor:barColor];
     
     switch (type) {
-        case RgCameraPhotoShoot: {
+        case RgCameraVideoShoot: {
             
             self.sourceType = UIImagePickerControllerSourceTypeCamera;
             self.videoMaximumDuration = self.videoMaxSecond;
@@ -120,7 +120,7 @@
             
             break;
         }
-        case RgCameraPhotoLocalSource: {
+        case RgCameraVideoLocalSource: {
             
             self.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
             self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
@@ -170,7 +170,7 @@
     /**
      *  接下来对视频大小进行判断，如果高于 150 M 则无法上传
      */
-    NSData *data=[NSData dataWithContentsOfURL:url];
+    NSData *data = [NSData dataWithContentsOfURL:url];
     
     float fileSize = data.length / 1024.0 / 1024;
     
