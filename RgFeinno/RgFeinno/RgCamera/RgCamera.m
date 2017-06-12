@@ -166,6 +166,13 @@
      *  首先判断视频的时间长度大小，不能超过 60 秒，否则不能执行下一步操作
      */
     AVURLAsset *avAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+    CGFloat avAssetDuration = CMTimeGetSeconds(avAsset.duration);
+    if(self.videoMaxSecond != 0 && avAssetDuration > self.videoMaxSecond) {
+        
+        [self unloadMovieAndDismissImageviewController:picker alertMessage:[NSString stringWithFormat:@"您所拍摄的视频时间超过了 %ld S", (NSInteger)self.videoMaxSecond]];
+        return;
+    
+    }
     
     /**
      *  接下来对视频大小进行判断，如果高于 150 M 则无法上传
@@ -174,9 +181,9 @@
     
     float fileSize = data.length / 1024.0 / 1024;
     
-    if (fileSize > self.videoMaxSize) {
+    if (self.videoMaxSize != 0 && fileSize > self.videoMaxSize) {
         
-        [self unloadMovieAndDismissImageviewController:picker alertMessage:@"视频过大，建议直接使用录像功能上传视频"];
+        [self unloadMovieAndDismissImageviewController:picker alertMessage:[NSString stringWithFormat:@"您所拍摄的视频大小超过了 %ld M", (NSInteger)self.videoMaxSize]];
         return;
         
     }
@@ -189,7 +196,7 @@
         self.exprotSession = exportSession;
         NSDateFormatter *formater = [[NSDateFormatter alloc] init];
         [formater setDateFormat:@"yyyy-MM-dd-HH:mm:ss"];
-        NSString *outputPath = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/hegongzuo_vedio_%@.mp4", [formater stringFromDate:[NSDate date]]];
+        NSString *outputPath = [NSHomeDirectory() stringByAppendingFormat:@"/Documents/rgCamera_vedio_%@.mp4", [formater stringFromDate:[NSDate date]]];
         
         exportSession.outputURL = [NSURL fileURLWithPath: outputPath];
         exportSession.shouldOptimizeForNetworkUse = YES;

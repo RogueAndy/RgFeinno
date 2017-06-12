@@ -34,7 +34,7 @@
 
 - (void)show {
     
-    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"选择相册或拍摄" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍摄", @"本地相册", nil];
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"选择相册或拍摄" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍摄", @"本地视频", nil];
     [action showInView:self.view];
 
 //    [RgHttpServers POST:@"http://218.201.73.186:8777/upload/?path=nxt&type=video"
