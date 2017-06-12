@@ -34,7 +34,9 @@ typedef NS_ENUM(NSInteger, RgCameraVideo) {
     /**
      *  本地视频
      */
-    RgCameraVideoLocalSource = 1
+    RgCameraVideoLocalSource = 1,
+    
+    RgCameraVideoShootCool   = 2
 };
 
 @interface RgCamera : UIImagePickerController

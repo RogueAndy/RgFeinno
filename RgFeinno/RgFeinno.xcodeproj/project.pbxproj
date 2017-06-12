@@ -11,6 +11,7 @@
 		8291D1011DB604B300BD579F /* RgAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1001DB604B300BD579F /* RgAlertViewController.m */; };
 		8291D1171DB75F8B00BD579F /* RgLinkLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1151DB75F8B00BD579F /* RgLinkLabel.m */; };
 		8291D11A1DB850BA00BD579F /* RgAlertViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1191DB850BA00BD579F /* RgAlertViewControl.m */; };
+		82CBB9661EEE928B004898FE /* ZProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 82CBB9651EEE928B004898FE /* ZProgressButton.m */; };
 		C10E2D4F1D95106A008CBA89 /* RgCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = C10E2D4C1D95106A008CBA89 /* RgCamera.m */; };
 		C10E2D501D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C10E2D4E1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.m */; };
 		C1148B971D7401CF00C804BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C1148B961D7401CF00C804BA /* main.m */; };
@@ -175,6 +176,8 @@
 		8291D1161DB75F8B00BD579F /* RgLinkLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgLinkLabel.h; sourceTree = "<group>"; };
 		8291D1181DB850BA00BD579F /* RgAlertViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgAlertViewControl.h; sourceTree = "<group>"; };
 		8291D1191DB850BA00BD579F /* RgAlertViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgAlertViewControl.m; sourceTree = "<group>"; };
+		82CBB9641EEE928B004898FE /* ZProgressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZProgressButton.h; sourceTree = "<group>"; };
+		82CBB9651EEE928B004898FE /* ZProgressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZProgressButton.m; sourceTree = "<group>"; };
 		C10E2D4B1D95106A008CBA89 /* RgCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgCamera.h; sourceTree = "<group>"; };
 		C10E2D4C1D95106A008CBA89 /* RgCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgCamera.m; sourceTree = "<group>"; };
 		C10E2D4D1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+RgCameraNavigationController.h"; sourceTree = "<group>"; };
@@ -581,6 +584,8 @@
 		C1148BB31D74081E00C804BA /* RgCamera */ = {
 			isa = PBXGroup;
 			children = (
+				82CBB9641EEE928B004898FE /* ZProgressButton.h */,
+				82CBB9651EEE928B004898FE /* ZProgressButton.m */,
 				C10E2D4B1D95106A008CBA89 /* RgCamera.h */,
 				C10E2D4C1D95106A008CBA89 /* RgCamera.m */,
 				C10E2D4D1D95106A008CBA89 /* UIImagePickerController+RgCameraNavigationController.h */,
@@ -1351,6 +1356,7 @@
 				C152B0331D795A9C000EE3E7 /* pwd2key.c in Sources */,
 				C1148BCE1D7553D400C804BA /* RgScreenShotViewController.m in Sources */,
 				C16E713D1D7D0CFD00CCAD79 /* AFURLRequestSerialization.m in Sources */,
+				82CBB9661EEE928B004898FE /* ZProgressButton.m in Sources */,
 				C1148BAF1D74031800C804BA /* RgLocation.m in Sources */,
 				C16E713E1D7D0CFD00CCAD79 /* AFURLResponseSerialization.m in Sources */,
 				C18D376B1D868A5500604B24 /* amrFileCodec.mm in Sources */,

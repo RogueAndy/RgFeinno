@@ -10,6 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AVFoundation/AVFoundation.h>
 #import "UIImagePickerController+RgCameraNavigationController.h"
+#import "ZProgressButton.h"
 
 @interface RgCamera()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -48,6 +49,15 @@
  */
 
 @property (nonatomic, assign) CGFloat videoMaxSize;
+
+/**
+ 记录视频的类型
+ */
+@property (nonatomic, assign) RgCameraVideo cameraVideoType;
+
+/** 以下为，自定义仿微信模式的拍摄控件 */
+
+@property (nonatomic, strong) ZProgressButton *recordButton;
 
 @end
 
@@ -100,8 +110,11 @@
     return self;
 }
 
+
+
 - (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor maxSecond:(CGFloat)videoMaxSecond maxSize:(CGFloat)videoMaxSize pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *videoURL, UIImagePickerController *caremaEntity))complete {
     
+    self.cameraVideoType = type;
     self.videoMaxSize = videoMaxSize;
     self.videoMaxSecond = videoMaxSecond;
     self.didFinishPickingVideoWithInfo = complete;
@@ -111,27 +124,83 @@
     
     switch (type) {
         case RgCameraVideoShoot: {
-            
+        
             self.sourceType = UIImagePickerControllerSourceTypeCamera;
             self.videoMaximumDuration = self.videoMaxSecond;
             self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
             self.videoQuality = UIImagePickerControllerQualityTypeMedium;
             self.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
-            
-            break;
+        
         }
+            break;
         case RgCameraVideoLocalSource: {
-            
+        
             self.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
             self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
-            
-            break;
+        
         }
+            break;
+            
+        case RgCameraVideoShootCool: {
+        
+            self.sourceType = UIImagePickerControllerSourceTypeCamera;
+            self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
+            self.videoQuality = UIImagePickerControllerQualityTypeMedium;
+        
+        }
+            break;
     }
     
     [parentController presentViewController:self animated:YES completion:nil];
     
     return self;
+}
+
+#pragma mark - viewDidLoad
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    if(self.cameraVideoType == RgCameraVideoShootCool) {
+    
+        self.recordButton = [ZProgressButton initWithFrame:CGRectMake(0, 0, 80, 80) circleFrame:CGRectMake(0, 0, 70, 70) strokeColor:[UIColor greenColor] backgroundColor:[UIColor whiteColor] duration:10];
+        self.recordButton.center = CGPointMake(CGRectGetWidth(self.view.frame) / 2.0, CGRectGetHeight(self.view.frame) - 70);
+        [self.recordButton addTarget:self action:@selector(recordAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.recordButton];
+    
+    }
+    
+}
+
+- (void)recordAction:(ZProgressButton *)sender {
+
+    switch (sender.zpstatus) {
+        case ZPNoBeginAnimation:
+        {
+        
+            [self.recordButton beginAnimation];
+        
+        }
+            break;
+            
+        case ZPBeginAnimation:
+        {
+            
+            [self.recordButton endAnimation];
+            
+        }
+            break;
+            
+        case ZPEndAnimation:
+        {
+            
+            
+            
+        }
+            break;
+    }
+
 }
 
 #pragma mark - Image PickerViewController Delegate

@@ -34,7 +34,7 @@
 
 - (void)show {
     
-    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"选择相册或拍摄" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍摄", @"本地视频", nil];
+    UIActionSheet *action = [[UIActionSheet alloc] initWithTitle:@"选择相册或拍摄" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍摄", @"本地视频", @"炫酷的拍摄", nil];
     [action showInView:self.view];
 
 //    [RgHttpServers POST:@"http://218.201.73.186:8777/upload/?path=nxt&type=video"
@@ -93,7 +93,25 @@
         
         }
             break;
-        default:
+            
+        case 2:
+        {
+            
+            [[RgCamera cameraVideoType:RgCameraVideoShootCool
+                         barFontColor:[UIColor whiteColor]
+                             barColor:[UIColor orangeColor]
+                            maxSecond:15
+                              maxSize:100
+               pushInParentController:self
+        didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
+            NSLog(@"%@", videoURL);
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:videoURL]];
+            NSLog(@"%f", (data.length / 1024.0 / 1024.0));
+            
+            [caremaEntity dismissViewControllerAnimated:YES completion:nil];
+        }] setShowsCameraControls:NO];
+            
+        }
             break;
     }
 
