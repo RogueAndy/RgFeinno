@@ -166,7 +166,11 @@
     NSLog(@"======= 动画暂停完毕");
     if(self.zpstatus == ZPBeginAnimation) { // 如果动画是通过自动执行完毕，才会调用该方法，否则，不会调用该方法
     
-        [_delegate progressAnimationOver];
+        if([_delegate performSelector:@selector(progressAnimationOver)]) {
+        
+            [_delegate progressAnimationOver];
+        
+        }
     
     }
     

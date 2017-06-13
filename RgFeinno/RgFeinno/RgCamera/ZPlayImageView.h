@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <AVKit/AVKit.h>
 
+@protocol ZPlayImageDelegate <NSObject>
+
+@optional
+
+- (void)finishPlay;
+
+@end
+
 @interface ZPlayImageView : UIImageView
+
+@property (nonatomic, weak) id<ZPlayImageDelegate> delegate;
 
 /**
  视频的临时存储地址
@@ -27,6 +37,16 @@
  开始播放
  */
 - (void)playVideo;
+
+/**
+ 重新播放
+ */
+- (void)replayer;
+
+/**
+ 停止播放
+ */
+- (void)stopVideo;
 
 /**
  重置

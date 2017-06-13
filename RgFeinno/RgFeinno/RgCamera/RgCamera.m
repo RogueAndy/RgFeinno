@@ -14,7 +14,7 @@
 #import "ZPlayImageView.h"
 #import "ZCameraControlButton.h"
 
-@interface RgCamera()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZProgressButtonDelegate>
+@interface RgCamera()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZProgressButtonDelegate, ZPlayImageDelegate>
 
 /**
  *  选中相片之后回调方法
@@ -68,6 +68,10 @@
 @property (nonatomic, strong) ZCameraControlButton *rightButton;
 
 @property (nonatomic, strong) ZCameraControlButton *playButton;
+
+@property (nonatomic, strong) ZCameraControlButton *wayButton;
+
+@property (nonatomic, strong) ZCameraControlButton *cancelPlayButton;
 
 @property (nonatomic, strong) ZPlayImageView *snapshot;
 
@@ -186,12 +190,20 @@
         self.snapshot = [[ZPlayImageView alloc] init];
         self.snapshot.frame = self.view.bounds;
         self.snapshot.hidden = YES;
+        self.snapshot.delegate = self;
         self.cameraOverlayView = self.snapshot;
         
         self.downButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseDownButton frame:CGRectMake(0, 0, 40, 40) drawRect:nil];
         [self.downButton addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
         self.downButton.center = CGPointMake(40, 42);
         [self.view addSubview:self.downButton];
+        
+        self.wayButton = [ZCameraControlButton initWithCameraButtonType:ZCCustomButton frame:CGRectMake(0, 0, 40, 40) drawRect:nil];
+        [self.wayButton addTarget:self action:@selector(wayAction) forControlEvents:UIControlEventTouchUpInside];
+        self.wayButton.center = CGPointMake(CGRectGetWidth(self.view.frame) - 40, 42);
+        [self.wayButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [self.wayButton setTitle:@"切换" forState:UIControlStateNormal];
+        [self.view addSubview:self.wayButton];
         
         self.recordButton = [ZProgressButton initWithFrame:CGRectMake(0, 0, 80, 80) circleFrame:CGRectMake(0, 0, 70, 70) strokeColor:[UIColor orangeColor] backgroundColor:[UIColor whiteColor] duration:10 countdown:YES countdownAttribution:self.countdownAttribution];
         self.recordButton.delegate = self;
@@ -244,6 +256,7 @@
 
     _downButton.hidden = YES;
     _recordButton.hidden = YES;
+    _wayButton.hidden = YES;
 
 }
 
@@ -251,6 +264,7 @@
 
     _downButton.hidden = NO;
     _recordButton.hidden = NO;
+    _wayButton.hidden = NO;
     [_recordButton reset];
 
 }
@@ -276,11 +290,63 @@
 
 }
 
+#pragma mark - ZPlayImageDelegate
+
+- (void)finishPlay {
+    
+    [self.snapshot stopVideo];
+    _cancelPlayButton.hidden = YES;
+    _xButton.hidden = NO;
+    _playButton.hidden = NO;
+    _rightButton.hidden = NO;
+
+}
+
 #pragma mark - button Action
+
+- (void)wayAction {
+
+    if(self.cameraDevice == UIImagePickerControllerCameraDeviceFront) {
+    
+        self.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+    
+    } else {
+    
+        self.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+    
+    }
+
+}
 
 - (void)playAction {
 
-    [self.snapshot playVideo];
+    [self.snapshot replayer];
+    self.snapshot.hidden = NO;
+    if(!_cancelPlayButton) {
+    
+        _cancelPlayButton = [ZCameraControlButton initWithCameraButtonType:ZCCustomButton frame:CGRectMake(0, 0, 60, 60) drawRect:nil];
+        [_cancelPlayButton addTarget:self action:@selector(stopAction) forControlEvents:UIControlEventTouchUpInside];
+        _cancelPlayButton.center = CGPointMake(CGRectGetWidth(self.view.frame) / 2.0, CGRectGetHeight(self.view.frame) - 25 - 30);
+        [_cancelPlayButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_cancelPlayButton setTitle:@"取消" forState:UIControlStateNormal];
+        [self.view addSubview:_cancelPlayButton];
+    
+    }
+    
+    _xButton.hidden = YES;
+    _playButton.hidden = YES;
+    _rightButton.hidden = YES;
+    _cancelPlayButton.hidden = NO;
+
+}
+
+- (void)stopAction {
+
+    [self.snapshot stopVideo];
+    _cancelPlayButton.hidden = YES;
+    _xButton.hidden = NO;
+    _playButton.hidden = NO;
+    _rightButton.hidden = NO;
 
 }
 
@@ -500,6 +566,10 @@
 //视频保存后的回调
 - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     
+    [self.recordButton endAnimation];
+    [self.recordButton reset];
+    self.snapshot.hidden = YES;
+    [self.snapshot reset];
     [self imagePickerController:self didFinishPickingMediaWithURL:[NSURL fileURLWithPath:videoPath]];
     
 }
@@ -536,6 +606,7 @@
 
 - (void)dealloc {
 
+    self.snapshot.delegate = nil;
     self.recordButton.delegate = nil;
     self.recordButton = nil;
     self.downButton = nil;
