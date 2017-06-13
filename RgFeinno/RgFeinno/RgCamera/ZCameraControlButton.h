@@ -18,6 +18,13 @@ typedef NS_ENUM(NSInteger, ZCameraButtonType) {
 
 @interface ZCameraControlButton : UIButton
 
+/**
+ 按钮
+
+ @param type 类型
+ @param frame 大小设置，圆形
+ @return 实例
+ */
 + (instancetype)initWithCameraButtonType:(ZCameraButtonType)type frame:(CGRect)frame;
 
 @end

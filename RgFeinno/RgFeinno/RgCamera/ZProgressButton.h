@@ -37,12 +37,33 @@ typedef NS_ENUM(NSInteger, ZPStatus) {
 
 @property (nonatomic, assign, readonly) ZPStatus zpstatus;
 
-+ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration countdown:(BOOL)isShow;
+/**
+ new 对象
 
+ @param frame 按钮大小
+ @param circleFrame 按钮环状大小
+ @param strokeColor 填充环内颜色
+ @param backgroundColor 背景色
+ @param duration 总时间设置
+ @param isShow 是否显示倒计时
+ @param attribution 倒计时字体颜色大小设置
+ @return 实例
+ */
++ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration countdown:(BOOL)isShow countdownAttribution:(NSDictionary *)attribution;
+
+/**
+ 开始动画
+ */
 - (void)beginAnimation;
 
+/**
+ 结束动画
+ */
 - (void)endAnimation;
 
+/**
+ 重置动画
+ */
 - (void)reset;
 
 @end

@@ -28,15 +28,18 @@
 
 @property (nonatomic, strong) NSTimer *countdownTimer;
 
+@property (nonatomic, strong) NSDictionary *countdownAttribution;
+
 @end
 
 @implementation ZProgressButton
 
-+ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration countdown:(BOOL)isShow {
++ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration countdown:(BOOL)isShow countdownAttribution:(NSDictionary *)attribution {
 
     ZProgressButton *button = [ZProgressButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = backgroundColor;
     button.frame = frame;
+    button.countdownAttribution = attribution;
     button.countdown = isShow;
     button.zpstatus = ZPNoBeginAnimation;
     button.strokeColor = strokeColor;
@@ -114,8 +117,8 @@
         self.countdownLabel.layer.masksToBounds = YES;
         self.countdownLabel.textAlignment = NSTextAlignmentCenter;
         self.countdownLabel.backgroundColor = [UIColor whiteColor];
-        self.countdownLabel.textColor = [UIColor colorWithRed:150/255.f green:150/255.f blue:150/255.f alpha:1];
-        self.countdownLabel.font = [UIFont systemFontOfSize:20];
+        self.countdownLabel.textColor = [self.countdownAttribution objectForKey:NSForegroundColorAttributeName];
+        self.countdownLabel.font = [self.countdownAttribution objectForKey:NSFontAttributeName];
         [self addSubview:self.countdownLabel];
     
     }

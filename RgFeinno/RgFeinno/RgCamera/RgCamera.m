@@ -66,6 +66,8 @@
 
 @property (nonatomic, strong) ZCameraControlButton *rightButton;
 
+@property (nonatomic, strong) NSDictionary *countdownAttribution;
+
 @end
 
 @implementation RgCamera
@@ -81,10 +83,10 @@
 
 #pragma mark - Video
 
-+ (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor maxSecond:(CGFloat)videoMaxSecond maxSize:(CGFloat)videoMaxSize pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *, UIImagePickerController *))complete {
++ (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor maxSecond:(CGFloat)videoMaxSecond maxSize:(CGFloat)videoMaxSize countdownAttribution:(NSDictionary *)attribution pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *, UIImagePickerController *))complete {
 
     RgCamera *camera = [[RgCamera alloc] init];
-    return [camera cameraVideoType:type barFontColor:fontColor barColor:barColor maxSecond:videoMaxSecond maxSize:videoMaxSize pushInParentController:parentController didFinishPickingVideoWithInfo:complete];
+    return [camera cameraVideoType:type barFontColor:fontColor barColor:barColor maxSecond:videoMaxSecond maxSize:videoMaxSize countdownAttribution:(NSDictionary *)attribution pushInParentController:parentController didFinishPickingVideoWithInfo:complete];
 
 }
 
@@ -119,8 +121,9 @@
 
 
 
-- (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor maxSecond:(CGFloat)videoMaxSecond maxSize:(CGFloat)videoMaxSize pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *videoURL, UIImagePickerController *caremaEntity))complete {
+- (instancetype)cameraVideoType:(RgCameraVideo)type barFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor maxSecond:(CGFloat)videoMaxSecond maxSize:(CGFloat)videoMaxSize countdownAttribution:(NSDictionary *)attribution pushInParentController:(UIViewController *)parentController didFinishPickingVideoWithInfo:(void (^)(NSString *videoURL, UIImagePickerController *caremaEntity))complete {
     
+    self.countdownAttribution = attribution;
     self.cameraVideoType = type;
     self.videoMaxSize = videoMaxSize;
     self.videoMaxSecond = videoMaxSecond;
@@ -176,7 +179,7 @@
         self.downButton.center = CGPointMake(40, 42);
         [self.view addSubview:self.downButton];
         
-        self.recordButton = [ZProgressButton initWithFrame:CGRectMake(0, 0, 80, 80) circleFrame:CGRectMake(0, 0, 70, 70) strokeColor:[UIColor orangeColor] backgroundColor:[UIColor whiteColor] duration:10 countdown:YES];
+        self.recordButton = [ZProgressButton initWithFrame:CGRectMake(0, 0, 80, 80) circleFrame:CGRectMake(0, 0, 70, 70) strokeColor:[UIColor orangeColor] backgroundColor:[UIColor whiteColor] duration:10 countdown:YES countdownAttribution:self.countdownAttribution];
         self.recordButton.delegate = self;
         self.recordButton.center = CGPointMake(CGRectGetWidth(self.view.frame) / 2.0, CGRectGetHeight(self.view.frame) - 70);
         [self.recordButton addTarget:self action:@selector(recordAction:) forControlEvents:UIControlEventTouchUpInside];

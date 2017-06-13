@@ -62,6 +62,7 @@
                              barColor:[UIColor orangeColor]
                             maxSecond:15
                               maxSize:100
+             countdownAttribution:@{NSFontAttributeName: [UIFont systemFontOfSize:20], NSForegroundColorAttributeName: [UIColor orangeColor]}
                pushInParentController:self
         didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
             NSLog(@"%@", videoURL);
@@ -82,6 +83,7 @@
                              barColor:[UIColor orangeColor]
                             maxSecond:15
                               maxSize:100
+                 countdownAttribution:@{NSFontAttributeName: [UIFont systemFontOfSize:20], NSForegroundColorAttributeName: [UIColor orangeColor]}
                pushInParentController:self
         didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
             NSLog(@"%@", videoURL);
@@ -102,6 +104,7 @@
                              barColor:[UIColor orangeColor]
                             maxSecond:15
                               maxSize:100
+              countdownAttribution:@{NSFontAttributeName: [UIFont systemFontOfSize:20], NSForegroundColorAttributeName: [UIColor orangeColor]}
                pushInParentController:self
         didFinishPickingVideoWithInfo:^(NSString *videoURL, UIImagePickerController *caremaEntity) {
             NSLog(@"%@", videoURL);

@@ -28,6 +28,11 @@
 
 }
 
+/**
+ 绘图设置原型类型
+
+ @param rect super
+ */
 - (void)drawRect:(CGRect)rect {
 
     [super drawRect:rect];
