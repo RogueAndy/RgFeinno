@@ -11,8 +11,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "UIImagePickerController+RgCameraNavigationController.h"
 #import "ZProgressButton.h"
+#import "ZCameraControlButton.h"
 
-@interface RgCamera()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface RgCamera()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZProgressButtonDelegate>
 
 /**
  *  选中相片之后回调方法
@@ -58,6 +59,12 @@
 /** 以下为，自定义仿微信模式的拍摄控件 */
 
 @property (nonatomic, strong) ZProgressButton *recordButton;
+
+@property (nonatomic, strong) ZCameraControlButton *downButton;
+
+@property (nonatomic, strong) ZCameraControlButton *xButton;
+
+@property (nonatomic, strong) ZCameraControlButton *rightButton;
 
 @end
 
@@ -164,13 +171,100 @@
     
     if(self.cameraVideoType == RgCameraVideoShootCool) {
     
-        self.recordButton = [ZProgressButton initWithFrame:CGRectMake(0, 0, 80, 80) circleFrame:CGRectMake(0, 0, 70, 70) strokeColor:[UIColor greenColor] backgroundColor:[UIColor whiteColor] duration:10];
+        self.downButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseDownButton frame:CGRectMake(0, 0, 40, 40)];
+        [self.downButton addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
+        self.downButton.center = CGPointMake(40, 42);
+        [self.view addSubview:self.downButton];
+        
+        self.recordButton = [ZProgressButton initWithFrame:CGRectMake(0, 0, 80, 80) circleFrame:CGRectMake(0, 0, 70, 70) strokeColor:[UIColor orangeColor] backgroundColor:[UIColor whiteColor] duration:10 countdown:YES];
+        self.recordButton.delegate = self;
         self.recordButton.center = CGPointMake(CGRectGetWidth(self.view.frame) / 2.0, CGRectGetHeight(self.view.frame) - 70);
         [self.recordButton addTarget:self action:@selector(recordAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:self.recordButton];
     
     }
     
+}
+
+#pragma mark - control buttons
+
+- (void)readyShowRecordOver {
+
+    if(!_xButton) {
+    
+        _xButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseXButton frame:CGRectMake(0, 0, 50, 50)];
+        [_xButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+        _xButton.center = CGPointMake(25 + 30, CGRectGetHeight(self.view.frame) - 25 - 30);
+        [self.view addSubview:_xButton];
+    
+    }
+    
+    if(!_rightButton) {
+        
+        _rightButton = [ZCameraControlButton initWithCameraButtonType:ZCRightButton frame:CGRectMake(0, 0, 50, 50)];
+        [_rightButton addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
+        _rightButton.center = CGPointMake(CGRectGetWidth(self.view.frame) - 25 - 30, CGRectGetHeight(self.view.frame) - 25 - 30);
+        [self.view addSubview:_rightButton];
+        
+    }
+    
+    _xButton.hidden = NO;
+    _rightButton.hidden = NO;
+
+}
+
+- (void)readyHideRecordOver {
+
+    _downButton.hidden = YES;
+    _recordButton.hidden = YES;
+
+}
+
+- (void)readyShowRecordBefore {
+
+    _downButton.hidden = NO;
+    _recordButton.hidden = NO;
+    [_recordButton reset];
+
+}
+
+- (void)readyHideRecordBefore {
+
+    _xButton.hidden = YES;
+    _rightButton.hidden = YES;
+
+}
+
+#pragma mark - ZProgressButtonDelegate
+
+- (void)progressAnimationOver {
+
+    [self readyShowRecordOver];
+    [self readyHideRecordOver];
+
+}
+
+#pragma mark - button Action
+
+- (void)sureAction {
+
+    NSLog(@"选择了");
+
+}
+
+- (void)backAction {
+
+    [self readyHideRecordBefore];
+    [self readyShowRecordBefore];
+
+}
+
+- (void)closeAction {
+
+    [self.recordButton endAnimation];
+    [self.recordButton reset];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (void)recordAction:(ZProgressButton *)sender {
@@ -188,6 +282,9 @@
         {
             
             [self.recordButton endAnimation];
+            
+            [self readyShowRecordOver];
+            [self readyHideRecordOver];
             
         }
             break;
@@ -356,6 +453,11 @@
 
 - (void)dealloc {
 
+    self.recordButton.delegate = nil;
+    self.recordButton = nil;
+    self.downButton = nil;
+    self.xButton = nil;
+    self.rightButton = nil;
     NSLog(@"--------- the RgCamera is dismissing----------");
 
 }

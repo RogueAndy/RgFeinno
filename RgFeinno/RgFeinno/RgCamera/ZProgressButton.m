@@ -8,7 +8,9 @@
 
 #import "ZProgressButton.h"
 
-@interface ZProgressButton()
+@interface ZProgressButton()<CAAnimationDelegate>
+
+@property (nonatomic, strong) UILabel *countdownLabel;
 
 @property (nonatomic, strong) CAShapeLayer *circleLayer;
 
@@ -18,17 +20,24 @@
 
 @property (nonatomic, assign) CGFloat animationDuration;
 
+@property (nonatomic, assign) CGFloat countTimeNumber;
+
 @property (nonatomic, assign, readwrite) ZPStatus zpstatus;
+
+@property (nonatomic, assign) BOOL countdown;
+
+@property (nonatomic, strong) NSTimer *countdownTimer;
 
 @end
 
 @implementation ZProgressButton
 
-+ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration {
++ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration countdown:(BOOL)isShow {
 
     ZProgressButton *button = [ZProgressButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = backgroundColor;
     button.frame = frame;
+    button.countdown = isShow;
     button.zpstatus = ZPNoBeginAnimation;
     button.strokeColor = strokeColor;
     button.circleFrame = circleFrame;
@@ -39,10 +48,19 @@
 
 }
 
+#pragma mark - 外部可调用方法
+
 - (void)beginAnimation {
 
+    self.countTimeNumber = self.animationDuration - 1;
+    self.countdownLabel.text = [NSString stringWithFormat:@"%lds", (NSInteger)self.animationDuration];
+    self.countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDownAction:) userInfo:nil repeats:YES];
+    self.circleLayer.strokeStart = 0.0;
+    self.circleLayer.strokeEnd = 0.0;
+    self.circleLayer.speed = 1;
     self.zpstatus = ZPBeginAnimation;
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation.delegate = self;
     animation.removedOnCompletion = NO;
     animation.duration = self.animationDuration;
     animation.fromValue = @(0);
@@ -55,12 +73,24 @@
 
 - (void)endAnimation {
 
+    [self.countdownTimer invalidate];
+    self.countdownTimer = nil;
     self.zpstatus = ZPEndAnimation;
     CFTimeInterval pauseTime = [self.circleLayer convertTime:CACurrentMediaTime() fromLayer:nil];
     self.circleLayer.timeOffset = pauseTime;
     self.circleLayer.speed = 0;
 
 }
+
+- (void)reset {
+
+    self.countdownLabel.text = @"";
+    self.zpstatus = ZPNoBeginAnimation;
+    [self.circleLayer removeAllAnimations];
+
+}
+
+#pragma mark - 组装控件
 
 - (void)loadViews {
     
@@ -77,6 +107,18 @@
     [self.layer addSublayer:self.circleLayer];
     self.circleLayer.strokeStart = 0.0;
     self.circleLayer.strokeEnd = 0.0;
+    
+    if(self.countdown) {
+    
+        self.countdownLabel = [[UILabel alloc] init];
+        self.countdownLabel.layer.masksToBounds = YES;
+        self.countdownLabel.textAlignment = NSTextAlignmentCenter;
+        self.countdownLabel.backgroundColor = [UIColor whiteColor];
+        self.countdownLabel.textColor = [UIColor colorWithRed:150/255.f green:150/255.f blue:150/255.f alpha:1];
+        self.countdownLabel.font = [UIFont systemFontOfSize:20];
+        [self addSubview:self.countdownLabel];
+    
+    }
 
 }
 
@@ -85,6 +127,52 @@
     self.circleLayer.frame = CGRectMake(0, 0, self.circleFrame.size.width, self.circleFrame.size.height);
     self.circleLayer.position = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
     
+    if(self.countdown) {
+        self.countdownLabel.frame = CGRectMake(0, 0, self.circleFrame.size.width - self.circleLayer.lineWidth / 2.0, self.circleFrame.size.height - self.circleLayer.lineWidth / 2.0);
+        self.countdownLabel.center = CGPointMake(self.frame.size.width / 2.0, self.frame.size.height / 2.0);
+        self.countdownLabel.layer.cornerRadius = CGRectGetWidth(self.countdownLabel.frame) / 2.0;
+        
+    }
+    
+}
+
+#pragma mark - 计时器
+
+- (void)countDownAction:(NSTimer *)timer {
+
+    if(_countTimeNumber == 0) {
+    
+        [self.countdownTimer invalidate];
+        self.countdownTimer = nil;
+        self.countdownLabel.text = [NSString stringWithFormat:@"%lds", (NSInteger)self.countTimeNumber];
+        return;
+    
+    }
+    
+    self.countdownLabel.text = [NSString stringWithFormat:@"%lds", (NSInteger)self.countTimeNumber];
+    self.countTimeNumber--;
+
+}
+
+#pragma mark 实现动画结束调用函数
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+
+{
+    
+    NSLog(@"======= 动画暂停完毕");
+    if(self.zpstatus == ZPBeginAnimation) { // 如果动画是通过自动执行完毕，才会调用该方法，否则，不会调用该方法
+    
+        [_delegate progressAnimationOver];
+    
+    }
+    
+}
+
+- (void)dealloc {
+
+    NSLog(@"~~~~~ %@ is dealloc ", [self class]);
+
 }
 
 @end

@@ -23,14 +23,26 @@ typedef NS_ENUM(NSInteger, ZPStatus) {
 
 };
 
+@protocol ZProgressButtonDelegate <NSObject>
+
+@optional
+
+- (void)progressAnimationOver;
+
+@end
+
 @interface ZProgressButton : UIButton
+
+@property (nonatomic, weak) id<ZProgressButtonDelegate> delegate;
 
 @property (nonatomic, assign, readonly) ZPStatus zpstatus;
 
-+ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration;
++ (instancetype)initWithFrame:(CGRect)frame circleFrame:(CGRect)circleFrame strokeColor:(UIColor *)strokeColor backgroundColor:(UIColor *)backgroundColor duration:(CGFloat)duration countdown:(BOOL)isShow;
 
 - (void)beginAnimation;
 
 - (void)endAnimation;
+
+- (void)reset;
 
 @end
