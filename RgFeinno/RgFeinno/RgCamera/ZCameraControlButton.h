@@ -13,7 +13,8 @@ typedef NS_ENUM(NSInteger, ZCameraButtonType) {
     ZCCloseDownButton = 0,
     ZCCloseXButton    = 1,
     ZCRightButton     = 2,
-    ZCCustomButton    = 3
+    ZCPlayButton      = 3,
+    ZCCustomButton    = 4
 
 };
 

@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "UIImagePickerController+RgCameraNavigationController.h"
 #import "ZProgressButton.h"
+#import "ZPlayImageView.h"
 #import "ZCameraControlButton.h"
 
 @interface RgCamera()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, ZProgressButtonDelegate>
@@ -65,6 +66,12 @@
 @property (nonatomic, strong) ZCameraControlButton *xButton;
 
 @property (nonatomic, strong) ZCameraControlButton *rightButton;
+
+@property (nonatomic, strong) ZCameraControlButton *playButton;
+
+@property (nonatomic, strong) ZPlayImageView *snapshot;
+
+@property (nonatomic, assign) BOOL record_over;
 
 @property (nonatomic, strong) NSDictionary *countdownAttribution;
 
@@ -138,7 +145,7 @@
             self.sourceType = UIImagePickerControllerSourceTypeCamera;
             self.videoMaximumDuration = self.videoMaxSecond;
             self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
-            self.videoQuality = UIImagePickerControllerQualityTypeMedium;
+            self.videoQuality = UIImagePickerControllerQualityTypeHigh;
             self.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
         
         }
@@ -155,7 +162,8 @@
         
             self.sourceType = UIImagePickerControllerSourceTypeCamera;
             self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
-            self.videoQuality = UIImagePickerControllerQualityTypeMedium;
+            self.videoQuality = UIImagePickerControllerQualityTypeHigh;
+            self.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
             [self setShowsCameraControls:NO];
         
         }
@@ -175,6 +183,11 @@
     
     if(self.cameraVideoType == RgCameraVideoShootCool) {
     
+        self.snapshot = [[ZPlayImageView alloc] init];
+        self.snapshot.frame = self.view.bounds;
+        self.snapshot.hidden = YES;
+        self.cameraOverlayView = self.snapshot;
+        
         self.downButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseDownButton frame:CGRectMake(0, 0, 40, 40) drawRect:nil];
         [self.downButton addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
         self.downButton.center = CGPointMake(40, 42);
@@ -212,8 +225,18 @@
         
     }
     
+    if(!_playButton) {
+    
+        _playButton = [ZCameraControlButton initWithCameraButtonType:ZCPlayButton frame:CGRectMake(0, 0, 60, 60) drawRect:nil];
+        [_playButton addTarget:self action:@selector(playAction) forControlEvents:UIControlEventTouchUpInside];
+        _playButton.center = CGPointMake(CGRectGetWidth(self.view.frame) / 2.0, CGRectGetHeight(self.view.frame) - 25 - 30);
+        [self.view addSubview:_playButton];
+    
+    }
+    
     _xButton.hidden = NO;
     _rightButton.hidden = NO;
+    _playButton.hidden = NO;
 
 }
 
@@ -236,6 +259,7 @@
 
     _xButton.hidden = YES;
     _rightButton.hidden = YES;
+    _playButton.hidden = YES;
 
 }
 
@@ -243,15 +267,29 @@
 
 - (void)progressAnimationOver {
 
+    [self.recordButton endAnimation];
+    
     [self readyShowRecordOver];
     [self readyHideRecordOver];
+    [self stopVideoCapture];
+    self.record_over = YES;
 
 }
 
 #pragma mark - button Action
 
+- (void)playAction {
+
+    [self.snapshot playVideo];
+
+}
+
 - (void)sureAction {
 
+    if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(self.snapshot.video_url)) {
+        
+        UISaveVideoAtPathToSavedPhotosAlbum(self.snapshot.video_url, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);//保存视频到相簿
+    }
 
 }
 
@@ -259,6 +297,8 @@
 
     [self readyHideRecordBefore];
     [self readyShowRecordBefore];
+    self.snapshot.hidden = YES;
+    [self.snapshot reset];
 
 }
 
@@ -266,6 +306,8 @@
 
     [self.recordButton endAnimation];
     [self.recordButton reset];
+    self.snapshot.hidden = YES;
+    [self.snapshot reset];
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
@@ -277,6 +319,9 @@
         {
         
             [self.recordButton beginAnimation];
+            [self takePicture];
+            [self startVideoCapture];
+            self.record_over = NO;
         
         }
             break;
@@ -288,6 +333,8 @@
             
             [self readyShowRecordOver];
             [self readyHideRecordOver];
+            [self stopVideoCapture];
+            self.record_over = YES;
             
         }
             break;
@@ -306,7 +353,29 @@
 #pragma mark - Image PickerViewController Delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-
+    
+    /**
+     * 若是自定义录制模式，且正在播放，截取第一帧的图片
+     */
+    if(self.cameraVideoType == RgCameraVideoShootCool && self.recordButton.zpstatus == ZPBeginAnimation) {
+    
+        self.snapshot.image = info[UIImagePickerControllerOriginalImage];
+        return;
+    
+    }
+    
+    /**
+     * 若是自定义录制模式，且已经录制完毕，显示出第一帧图片的 imageview
+     */
+    if(self.cameraVideoType == RgCameraVideoShootCool && self.recordButton.zpstatus == ZPEndAnimation) {
+        
+        self.snapshot.hidden = NO;
+        NSURL *videoUrl = [info valueForKey:UIImagePickerControllerMediaURL];
+        [self.snapshot setVideoUrl:videoUrl];
+        return;
+        
+    }
+    
     if(self.photoOrVideo) {
     
         if(self.didFinishPickingPhotoWithInfo) {
@@ -324,6 +393,12 @@
     }
     
     NSURL *url = [info objectForKey:UIImagePickerControllerMediaURL];
+    [self imagePickerController:picker didFinishPickingMediaWithURL:url];
+
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithURL:(NSURL *)url {
+
     if(!url) { // 地址不存在，则提示无法上传，重新选取，这种事系统错误
         
         [self unloadMovieAndDismissImageviewController:picker alertMessage:@"系统没有找到该视频地址"];
@@ -340,7 +415,7 @@
         
         [self unloadMovieAndDismissImageviewController:picker alertMessage:[NSString stringWithFormat:@"您所拍摄的视频时间超过了 %ld S", (NSInteger)self.videoMaxSecond]];
         return;
-    
+        
     }
     
     /**
@@ -370,12 +445,12 @@
         exportSession.outputURL = [NSURL fileURLWithPath: outputPath];
         exportSession.shouldOptimizeForNetworkUse = YES;
         exportSession.outputFileType = AVFileTypeMPEG4;
-
+        
         __weak RgCamera *weakSelf = self;
         void (^convertFinish)(NSURL *path) = ^(NSURL *path) {
-        
-            if(weakSelf.didFinishPickingVideoWithInfo) {
             
+            if(weakSelf.didFinishPickingVideoWithInfo) {
+                
                 weakSelf.didFinishPickingVideoWithInfo(path.absoluteString, picker);
                 return;
                 
@@ -422,7 +497,12 @@
 
 }
 
-
+//视频保存后的回调
+- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    
+    [self imagePickerController:self didFinishPickingMediaWithURL:[NSURL fileURLWithPath:videoPath]];
+    
+}
 
 
 

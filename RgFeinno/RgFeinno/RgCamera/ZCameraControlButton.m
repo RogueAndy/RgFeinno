@@ -94,6 +94,23 @@
         }
             break;
             
+        case ZCPlayButton:
+        {
+            
+            UIColor *color = [UIColor colorWithRed:150/255.f green:150/255.f blue:150/255.f alpha:1];
+            [color set];
+            
+            UIBezierPath *path = [UIBezierPath bezierPath];
+            [path moveToPoint:CGPointMake(CGRectGetWidth(self.frame) / 4.0, CGRectGetWidth(self.frame) / 4.0)];
+            [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame) / 4.0, CGRectGetWidth(self.frame) * 3 / 4.0)];
+            [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame) * 4 / 5.0, CGRectGetWidth(self.frame) / 2.0)];
+            [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame) / 4.0, CGRectGetWidth(self.frame) / 4.0)];
+            [path stroke];
+            [path fill];
+            
+        }
+            break;
+            
         case ZCCustomButton:
         {
         
