@@ -12,7 +12,8 @@ typedef NS_ENUM(NSInteger, ZCameraButtonType) {
 
     ZCCloseDownButton = 0,
     ZCCloseXButton    = 1,
-    ZCRightButton     = 2
+    ZCRightButton     = 2,
+    ZCCustomButton    = 3
 
 };
 
@@ -25,6 +26,6 @@ typedef NS_ENUM(NSInteger, ZCameraButtonType) {
  @param frame 大小设置，圆形
  @return 实例
  */
-+ (instancetype)initWithCameraButtonType:(ZCameraButtonType)type frame:(CGRect)frame;
++ (instancetype)initWithCameraButtonType:(ZCameraButtonType)type frame:(CGRect)frame drawRect:(void (^)(void))drawRect;
 
 @end

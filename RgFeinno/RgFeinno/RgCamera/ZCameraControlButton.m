@@ -10,16 +10,19 @@
 
 @interface ZCameraControlButton()
 
+@property (nonatomic, strong) void (^custom_drawRect)(void);
+
 @property (nonatomic, assign) ZCameraButtonType zcButtonType;
 
 @end
 
 @implementation ZCameraControlButton
 
-+ (instancetype)initWithCameraButtonType:(ZCameraButtonType)type frame:(CGRect)frame {
++ (instancetype)initWithCameraButtonType:(ZCameraButtonType)type frame:(CGRect)frame drawRect:(void (^)(void))drawRect {
 
     ZCameraControlButton *button = [ZCameraControlButton buttonWithType:UIButtonTypeCustom];
     button.zcButtonType = type;
+    button.custom_drawRect = drawRect;
     button.frame = frame;
     button.layer.masksToBounds = YES;
     button.layer.cornerRadius = CGRectGetWidth(frame) / 2.0;
@@ -88,6 +91,18 @@
             [path addLineToPoint:CGPointMake(CGRectGetWidth(self.frame) * 4 / 5.0, CGRectGetWidth(self.frame) / 5.0 + CGRectGetWidth(self.frame) / 20.0)];
             [path stroke];
             
+        }
+            break;
+            
+        case ZCCustomButton:
+        {
+        
+            if(self.custom_drawRect) {
+            
+                self.custom_drawRect();
+            
+            }
+        
         }
             break;
     

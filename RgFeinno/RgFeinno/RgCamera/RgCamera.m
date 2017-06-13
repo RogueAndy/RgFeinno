@@ -174,7 +174,7 @@
     
     if(self.cameraVideoType == RgCameraVideoShootCool) {
     
-        self.downButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseDownButton frame:CGRectMake(0, 0, 40, 40)];
+        self.downButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseDownButton frame:CGRectMake(0, 0, 40, 40) drawRect:nil];
         [self.downButton addTarget:self action:@selector(closeAction) forControlEvents:UIControlEventTouchUpInside];
         self.downButton.center = CGPointMake(40, 42);
         [self.view addSubview:self.downButton];
@@ -195,7 +195,7 @@
 
     if(!_xButton) {
     
-        _xButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseXButton frame:CGRectMake(0, 0, 50, 50)];
+        _xButton = [ZCameraControlButton initWithCameraButtonType:ZCCloseXButton frame:CGRectMake(0, 0, 50, 50) drawRect:nil];
         [_xButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
         _xButton.center = CGPointMake(25 + 30, CGRectGetHeight(self.view.frame) - 25 - 30);
         [self.view addSubview:_xButton];
@@ -204,7 +204,7 @@
     
     if(!_rightButton) {
         
-        _rightButton = [ZCameraControlButton initWithCameraButtonType:ZCRightButton frame:CGRectMake(0, 0, 50, 50)];
+        _rightButton = [ZCameraControlButton initWithCameraButtonType:ZCRightButton frame:CGRectMake(0, 0, 50, 50) drawRect:nil];
         [_rightButton addTarget:self action:@selector(sureAction) forControlEvents:UIControlEventTouchUpInside];
         _rightButton.center = CGPointMake(CGRectGetWidth(self.view.frame) - 25 - 30, CGRectGetHeight(self.view.frame) - 25 - 30);
         [self.view addSubview:_rightButton];
