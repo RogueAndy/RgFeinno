@@ -99,7 +99,7 @@
         case 2:
         {
             
-            [[RgCamera cameraVideoType:RgCameraVideoShootCool
+            [RgCamera cameraVideoType:RgCameraVideoShootCool
                          barFontColor:[UIColor whiteColor]
                              barColor:[UIColor orangeColor]
                             maxSecond:15
@@ -112,7 +112,7 @@
             NSLog(@"%f", (data.length / 1024.0 / 1024.0));
             
             [caremaEntity dismissViewControllerAnimated:YES completion:nil];
-        }] setShowsCameraControls:NO];
+        }];
             
         }
             break;

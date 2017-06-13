@@ -156,6 +156,7 @@
             self.sourceType = UIImagePickerControllerSourceTypeCamera;
             self.mediaTypes = @[(__bridge NSString *)kUTTypeMovie];
             self.videoQuality = UIImagePickerControllerQualityTypeMedium;
+            [self setShowsCameraControls:NO];
         
         }
             break;
@@ -251,7 +252,6 @@
 
 - (void)sureAction {
 
-    NSLog(@"选择了");
 
 }
 
