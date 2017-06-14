@@ -9,7 +9,6 @@
 #import "RgCamera.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <AVFoundation/AVFoundation.h>
-#import "UIImagePickerController+RgCameraNavigationController.h"
 #import "ZProgressButton.h"
 #import "ZPlayImageView.h"
 #import "ZCameraControlButton.h"
@@ -177,6 +176,17 @@
     [parentController presentViewController:self animated:YES completion:nil];
     
     return self;
+}
+
+#pragma mark - Category
+
+- (void)setCameraBarWithFontColor:(UIColor *)fontColor barColor:(UIColor *)barColor {
+    
+    self.navigationBar.tintColor = fontColor;
+    self.navigationBar.barTintColor = barColor;
+    
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : fontColor}];
+    
 }
 
 #pragma mark - viewDidLoad
