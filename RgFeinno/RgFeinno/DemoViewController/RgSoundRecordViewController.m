@@ -37,13 +37,15 @@
     [bu addTarget:self action:@selector(begin) forControlEvents:UIControlEventTouchUpInside];
     bu.frame = CGRectMake(20, 100, CGRectGetWidth(self.view.frame) - 40, 40);
     [self.view addSubview:bu];
-//    
-//    UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
-//    bt.backgroundColor = [UIColor redColor];
-//    [bt addTarget:self action:@selector(stop) forControlEvents:UIControlEventTouchUpInside];
-//    bt.frame = CGRectMake(200, 100, 100, 40);
-//    [self.view addSubview:bt];
-//    
+    
+    UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
+    bt.backgroundColor = [UIColor redColor];
+    [bt setTitle:@"停止" forState:UIControlStateNormal];
+    bt.titleLabel.textColor = [UIColor whiteColor];
+    [bt addTarget:self action:@selector(stop) forControlEvents:UIControlEventTouchUpInside];
+    bt.frame = CGRectMake(20, 20, CGRectGetWidth(self.view.frame) - 40, 40);
+    [self.view addSubview:bt];
+//
 //    UIButton *bb = [UIButton buttonWithType:UIButtonTypeCustom];
 //    bb.backgroundColor = [UIColor redColor];
 //    [bb addTarget:self action:@selector(read) forControlEvents:UIControlEventTouchUpInside];
@@ -68,6 +70,7 @@
 - (void)stop {
 
     self.fileURL = [self.soundRecord endRecord];
+    NSLog(@"~~~~ %@", self.fileURL);
     [UIView animateWithDuration:0.3
                      animations:^{
                          self.wave.alpha = 0;
