@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824C057B1F00F3F200F02FC4 /* ColViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824C057A1F00F3F200F02FC4 /* ColViewController.m */; };
 		8291D0FE1DB603AE00BD579F /* RgAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D0FD1DB603AE00BD579F /* RgAlertView.m */; };
 		8291D1011DB604B300BD579F /* RgAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1001DB604B300BD579F /* RgAlertViewController.m */; };
 		8291D1171DB75F8B00BD579F /* RgLinkLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8291D1151DB75F8B00BD579F /* RgLinkLabel.m */; };
@@ -169,6 +170,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		824C05791F00F3F200F02FC4 /* ColViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColViewController.h; sourceTree = "<group>"; };
+		824C057A1F00F3F200F02FC4 /* ColViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColViewController.m; sourceTree = "<group>"; };
 		8291D0FC1DB603AE00BD579F /* RgAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgAlertView.h; sourceTree = "<group>"; };
 		8291D0FD1DB603AE00BD579F /* RgAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RgAlertView.m; sourceTree = "<group>"; };
 		8291D0FF1DB604B300BD579F /* RgAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RgAlertViewController.h; sourceTree = "<group>"; };
@@ -657,6 +660,8 @@
 				8291D1191DB850BA00BD579F /* RgAlertViewControl.m */,
 				8291D0FF1DB604B300BD579F /* RgAlertViewController.h */,
 				8291D1001DB604B300BD579F /* RgAlertViewController.m */,
+				824C05791F00F3F200F02FC4 /* ColViewController.h */,
+				824C057A1F00F3F200F02FC4 /* ColViewController.m */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -1391,6 +1396,7 @@
 				C18D376F1D868A5500604B24 /* VoiceConverter.mm in Sources */,
 				C16E713B1D7D0CFD00CCAD79 /* AFNetworkReachabilityManager.m in Sources */,
 				C152B0381D795A9C000EE3E7 /* unzip.c in Sources */,
+				824C057B1F00F3F200F02FC4 /* ColViewController.m in Sources */,
 				8291D1171DB75F8B00BD579F /* RgLinkLabel.m in Sources */,
 				C16E715A1D7D178B00CCAD79 /* NSString+MD5.m in Sources */,
 				C152AFF91D77FE0B000EE3E7 /* RgUMPush.m in Sources */,

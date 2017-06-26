@@ -29,6 +29,7 @@
 #import "RgCaremaViewController.h"
 #import "RgAlertViewController.h"
 #import "ViewController.h"
+#import "ColViewController.h"
 
 @interface AppDelegate ()
 
@@ -61,7 +62,7 @@
     [RgBugly buglyWithAppid:@"192e167175"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    RgSoundRecordViewController *vc = [RgSoundRecordViewController new];
+    ColViewController *vc = [ColViewController new];
     UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = navigation;
     [self.window makeKeyAndVisible];
